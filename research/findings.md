@@ -53,6 +53,16 @@
 
 ---
 
+## Finding 4b — The 2018–2023 coverage change is threshold-driven, not merger-driven
+
+**Fact (Phase 0 crosswalk).** The e-Stat municipal merger history shows **18 status changes** between 2018 and 2023, but **no municipal mergers**. The vacancy-table coverage changed because **29 towns/villages dropped out** of the 2023 table and **2 entered**. One code has a name change (28221 篠山市 → 丹波篠山市).
+
+**Fact (Phase 0 crosswalk).** The balanced 2018–2023 panel is **1,057 municipal units**: 1,056 matched + 1 name change. The 29 dropped and 2 added units are excluded from the balanced panel but retained in the full crosswalk.
+
+**Implication:** for 2018–2023, the municipal-code crosswalk is simple; the harder harmonisation problem starts with 2013 and 2008. Do not attribute the 27-unit coverage change to mergers.
+
+---
+
 ## Finding 5 — Demand factors dominate prior prefectural studies, but supply and demolition matter
 
 **Fact / association.** JRI's 2003–2023 prefectural panel finds that death rates, out-migration, and in-migration are significantly associated with "other vacant" rates; old-housing share is negatively associated, consistent with old stock being demolished. The model fits well (adjusted R² ≈ 0.88), but it is prefectural and correlational.

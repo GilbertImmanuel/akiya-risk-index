@@ -150,6 +150,8 @@ Layout differences from 2023:
 - Building labels: `00_総数`, `11_一戸建`, `20_長屋建・共同住宅・その他`.
 - 2018 covers **1,086 clean municipal units** (271 towns/villages); 2023 covers **1,059** (244 towns/villages).
 - 2018 covered vacancy: **8,077,270 (95.2%)**; uncovered **411,330 (4.85%)**.
+- **Crosswalk:** 1,056 matched, 1 name change (28221 篠山市→丹波篠山市), 29 only in 2018, 2 only in 2023; balanced panel **1,057**.
+- **Merger check:** e-Stat merger history shows 18 status changes in 2018–2023 but **no municipal mergers**; the coverage change is threshold-driven.
 
 **2018 → 2023 comparison:**
 

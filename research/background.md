@@ -66,7 +66,7 @@ The 2023 Housing and Land Survey (令和5年住宅・土地統計調査), conduc
 
 This also means the 2018–2023 comparison is not a clean "risk trend" without the `廃屋` caveat.
 
-**Coverage comparison:** 2018 covers 1,086 clean municipal units (95.2% of the national vacancy stock); 2023 covers 1,059 (94.4%). The 27-unit difference is partly municipal mergers and partly municipalities falling below the 15,000 reporting threshold. The uncovered vacancy rose from 411,330 (4.85%) to 500,360 (5.56%).
+**Coverage comparison:** 2018 covers 1,086 clean municipal units (95.2% of the national vacancy stock); 2023 covers 1,059 (94.4%). The 27-unit difference is **threshold-driven, not merger-driven**: the e-Stat merger history shows no municipal mergers in 2018–2023; 29 towns/villages dropped out of the 2023 table and 2 entered. The uncovered vacancy rose from 411,330 (4.85%) to 500,360 (5.56%). The balanced 2018–2023 panel is **1,057 units**.
 
 ---
 

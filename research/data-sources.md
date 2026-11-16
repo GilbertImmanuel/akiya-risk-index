@@ -60,7 +60,7 @@ Japan has **926 towns/villages** (743 towns + 183 villages). Therefore **682 tow
 
 **Coverage of the vacancy stock:** the 1,059 clean units account for **8,501,240 vacant dwellings**, or **94.4%** of the national **9,001,600**. The **500,360 vacant dwellings (5.6%)** in the missing municipalities are not separately reported. This is a substantive gap, not just a place-count issue.
 
-**Coverage changed between waves.** 2018 has **1,086 clean municipal units** (271 towns/villages) and covers **8,077,270 vacant dwellings (95.2%)**; 2023 has **1,059** (244 towns/villages) and covers **8,501,240 (94.4%)**. The 27-unit difference is partly municipal mergers and partly municipalities falling below the 15,000 reporting threshold. A balanced 2018–2023 panel will therefore be smaller than either wave's full universe.
+**Coverage changed between waves.** 2018 has **1,086 clean municipal units** (271 towns/villages) and covers **8,077,270 vacant dwellings (95.2%)**; 2023 has **1,059** (244 towns/villages) and covers **8,501,240 (94.4%)**. The 27-unit difference is **threshold-driven, not merger-driven**: the e-Stat merger history shows no municipal mergers in 2018–2023; 29 towns/villages dropped out and 2 entered. The balanced 2018–2023 panel is **1,057 units**.
 
 **What to do:**
 - Define the national index universe as the **1,059 clean municipal units**.

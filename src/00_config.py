@@ -39,3 +39,7 @@ VACANCY_2023_XLSX = DATA_RAW / "estat_34-2_2023_2026-11-16.xlsx"
 VACANCY_2023_CSV = DATA_INTERIM / "vacancy_2023.csv"
 VACANCY_2018_XLSX = DATA_RAW / "estat_35-2_2018_2026-11-16.xlsx"
 VACANCY_2018_CSV = DATA_INTERIM / "vacancy_2018.csv"
+
+# Municipal code crosswalk.
+MERGERS_CSV = DATA_RAW / "estat_municipal_mergers_2026-11-16.csv"
+CROSSWALK_2018_2023 = DATA_PROCESSED / "municipality_crosswalk_2018_2023.csv"

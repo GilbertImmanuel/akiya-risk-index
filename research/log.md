@@ -5,6 +5,16 @@
 
 ---
 
+## 2026-11-16 — 2018–2023 crosswalk built; no mergers in the period
+
+- **Action:** Downloaded the e-Stat municipal merger/boundary-change history (3,507 rows) and built `src/03_crosswalk.py`.
+- **Result:** 18 status changes between 2018 and 2023, but **no municipal mergers**. The vacancy-table coverage change is **threshold-driven**: 29 towns/villages dropped out of 2023 and 2 entered. One name change (28221 篠山市 → 丹波篠山市).
+- **Balanced panel:** **1,057 units** (1,056 matched + 1 name change). The 29 dropped and 2 added units are retained in the full crosswalk but excluded from the balanced panel.
+- **Output:** `data/processed/municipality_crosswalk_2018_2023.csv`.
+- **Why it mattered:** the 2018–2023 panel is simpler than assumed; the harder harmonisation problem starts with 2013 and 2008.
+
+---
+
 ## 2026-11-16 — 2018 table parsed; measured dilapidation fell
 
 - **Action:** Downloaded 2018 table 35-2 (`statInfId=000031865730`) and refactored `src/02_parse_vacancy.py` to handle both 2018 and 2023 layouts.

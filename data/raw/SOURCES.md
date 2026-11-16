@@ -58,3 +58,22 @@
 - `src/02_parse_vacancy.py` (generic for 2018 and 2023)
 - Output: `data/interim/vacancy_2018.csv`
 - QA: national totals and hierarchy counts validated; covered vacancy 8,077,270 vs national 8,488,600; uncovered 411,330 (4.85%).
+
+## Municipal merger and boundary-change history
+
+- **File:** `estat_municipal_mergers_2026-11-16.csv`
+- **Source:** e-Stat, 廃置分合等情報
+- **Page:** https://www.e-stat.go.jp/municipalities/cities/absorption-separation-of-municipalities
+- **Download:** generated from the page's form with `op=download&file_format=csv&charset=UTF-8&bom=1`
+- **Access date:** 2026-11-16
+- **SHA-256:** `9D34AAC7B05D571D92AFE66AB4C1A226B8CB0CF8052817ECB419FDF9A80D69A0`
+- **Size:** 700,270 bytes
+- **Rows:** 3,507
+- **Licence:** e-Stat terms; CC BY 4.0-compatible; attribution required.
+
+### 2018–2023 check
+
+- 18 entries between 2018-01-01 and 2023-12-31.
+- None are municipal mergers; they are city-status changes, a name change, and a town-to-city change.
+- The 2018→2023 vacancy-table coverage change is therefore **threshold-driven**, not merger-driven.
+- Crosswalk result: 1,056 matched, 1 name change, 29 only in 2018, 2 only in 2023; balanced panel **1,057** units.
