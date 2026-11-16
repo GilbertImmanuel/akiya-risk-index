@@ -42,7 +42,7 @@ These are tracked in `open-questions.md`.
 
 > Which Japanese municipalities face persistent structural vacancy risk, and is that risk already reflected in local housing markets — or is it accumulating in places where prices and transactions have not yet adjusted?
 
-**Scope:** **1,059 clean municipal units** (from 1,235 reporting rows; 15,000+ universe) + 6–8 small-municipality case studies; vacancy 2008–2023 (2003 context); demography 2000–2025; market data 2005–2026; policy 2014–2026. No property-level prediction, no causal evaluation of the 2023 Act, no investment advice.
+**Scope:** **1,059 clean municipal units** (from 1,235 reporting rows; 15,000+ universe) + 6–8 small-municipality case studies; vacancy **2018–2023 core** (balanced 1,057 units), with **2013/2008 city/ward context** and 2003 context; demography 2000–2025; market data 2005–2026; policy 2014–2026. No property-level prediction, no causal evaluation of the 2023 Act, no investment advice.
 
 **Deliverable:** interactive map + open data/code + short report/methodology, aimed at researchers and policymakers.
 
@@ -73,7 +73,7 @@ The user accepted all recommended options on 2026-11-12:
 | D1 | Unit and coverage | 1,059-unit clean universe + 6–8 case studies |
 | D2 | Deliverable | Map + open data/code + report |
 | D3 | Second lens | Activation + capacity, risk core |
-| D4 | Time window | 2008–2023 core, 2003 context |
+| D4 | Time window | 2018–2023 core; 2013/2008 city/ward context |
 | D5 | Weights | Equal headline + PCA/policy sensitivity |
 | D6 | Akiya banks | Official aggregates/participation + manual counts; no scraping |
 | D7 | Case studies | 6–8, selected after Phase 0 |
@@ -87,7 +87,7 @@ Remaining decisions are reversible/methodological and can be made during Phase 0
 
 1. **Reframe "other vacant"** — it is a residual category, not "abandoned"; use **dilapidated "other vacant"** as the headline risk measure.
 2. **Confront coverage bias** — the national index cannot honestly cover all 1,741 municipalities; restrict it to **1,059 clean municipal units** and treat the **682 missing towns/villages** separately. The missing places hold **500,360 vacant dwellings (5.6%)**.
-3. **Shorten the vacancy panel to 2008–2023** — 2003 adds merger/definitional risk for modest gain.
+3. **Use 2018–2023 as the core panel**, with 2013/2008 as city/ward context — the API's 2013/2008 four-category tables are 市区 only, so a four-wave municipal panel would lose all towns/villages.
 4. **Update the policy timeline** — 2023 Act effective Dec 2023; Sept 2026 amendment; 2026 registration; Kyoto tax FY2030; DPFP bill not law; no national akiya tax.
 5. **Replace "opportunity" with "activation potential"** — more defensible for a policy/research audience and avoids investment advice.
 6. **Treat akiya banks and designations as selected/endogenous signals** — they are not unbiased validation.

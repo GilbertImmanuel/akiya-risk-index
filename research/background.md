@@ -68,6 +68,8 @@ This also means the 2018–2023 comparison is not a clean "risk trend" without t
 
 **Coverage comparison:** 2018 covers 1,086 clean municipal units (95.2% of the national vacancy stock); 2023 covers 1,059 (94.4%). The 27-unit difference is **threshold-driven, not merger-driven**: the e-Stat merger history shows no municipal mergers in 2018–2023; 29 towns/villages dropped out of the 2023 table and 2 entered. The uncovered vacancy rose from 411,330 (4.85%) to 500,360 (5.56%). The balanced 2018–2023 panel is **1,057 units**.
 
+**2013/2008 limitation (Phase 0 API check).** The e-Stat API's 2013 table 53 and 2008 table 043-2 are **市区 only** (cities/wards); they have no towns/villages. A four-wave municipal panel including towns/villages is therefore not available from the API. The core panel is 2018–2023; 2013/2008 are used as city/ward context only.
+
 ---
 
 ## 2. What "vacant" actually means

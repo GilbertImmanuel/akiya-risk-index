@@ -29,7 +29,7 @@ The user accepted the recommended options:
 | D1 | Unit and coverage | **1,059 clean municipal units** (792 cities + 23 special wards + 244 towns/villages) **+ 6–8 small-municipality case studies.** The 1,235 table rows include duplicate city/ward levels; the national index does not pretend to rank all 1,741 local governments. |
 | D2 | Core deliverable | **Interactive map + open data/code + short report/methodology.** |
 | D3 | Second analytical lens | **Both activation potential and response capacity**, with risk as the core. |
-| D4 | Time window | **2008–2023 core vacancy panel**, with 2003 as context; demography 2000–2025; market data 2005–2026. |
+| D4 | Time window | **2018–2023 core vacancy panel** (balanced 1,057 units), with **2013/2008 city/ward context**; demography 2000–2025; market data 2005–2026. |
 | D5 | Index weights | **Equal weights headline**, with PCA and policy-informed weights as sensitivity checks. |
 | D6 | Akiya-bank method | **Official aggregates + participation lists + manual case-study counts; no scraping.** |
 | D7 | Case studies | **6–8 municipalities**, selected after Phase 0. |

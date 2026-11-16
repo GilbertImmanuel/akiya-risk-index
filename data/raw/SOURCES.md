@@ -77,3 +77,29 @@
 - None are municipal mergers; they are city-status changes, a name change, and a town-to-city change.
 - The 2018→2023 vacancy-table coverage change is therefore **threshold-driven**, not merger-driven.
 - Crosswalk result: 1,056 matched, 1 name change, 29 only in 2018, 2 only in 2023; balanced panel **1,057** units.
+
+## 2025 Census — municipal population and households
+
+### Table 1-2: population 2020, households 2025/2020, area, density
+
+- **File:** `estat_census2025_table1-2_2026-11-16.json`
+- **Source:** e-Stat API, 2025 Census table 1-2 (`statsDataId=0004050417`)
+- **Access date:** 2026-11-16
+- **SHA-256:** `EE52EE6EC75C96C9189353EC2B98A29F2D31C18CCC23F995867FB6A6E2A15BB2`
+- **Size:** 1,989,314 bytes
+- **Records:** 19,610 (10 indicators × 1,961 areas)
+- **Licence:** e-Stat terms; CC BY 4.0-compatible.
+
+### Table 1-1: 2025 population
+
+- **File:** `estat_census2025_table1-1_2026-11-16.json`
+- **Source:** e-Stat API, 2025 Census table 1-1 (`statsDataId=0004050397`)
+- **Access date:** 2026-11-16
+- **SHA-256:** `D8ABC7EB37E2D3510167D231A26F14D9DAC030D7E607271A86FFF98136E1E490`
+- **Size:** 373,418 bytes
+- **Records:** 1,961 (total population by area)
+- **Licence:** e-Stat terms; CC BY 4.0-compatible.
+
+### Discrepancy
+
+The API table's national 2025 population is **123,049,524**, while the summary PDF headline is **122,972,528** (difference **76,996**). The API table is internally consistent with its 2020 baseline and five-year change. Use the API table for municipal joins; cite the headline separately and note the difference. The cause is not yet established (possible tabulation/universe difference).

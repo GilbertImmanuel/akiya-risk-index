@@ -8,7 +8,7 @@
 ## 1. Guiding constraints
 
 - **Scope:** **1,059 clean municipal units** (from 1,235 reporting rows; 15,000+ universe) + 6–8 small-municipality case studies. The 682 missing towns/villages hold 500,360 vacant dwellings (5.6%).
-- **Core panel:** 2008–2023 vacancy waves; 2003 context only.
+- **Core panel:** 2018–2023 vacancy waves (balanced 1,057 units); 2013/2008 city/ward context; 2003 context.
 - **Deliverable:** interactive map + open data/code + short report/methodology.
 - **Methods:** transparent, reproducible, uncertainty-aware; no causal claims; no investment advice.
 - **Data:** public sources; no akiya-bank scraping; no proprietary prediction map as input.
@@ -183,7 +183,7 @@ Answer:
 |---|---|---|
 | **M0 — Source/licence matrix** | End of week 1 | All core sources confirmed; access keys in place; licences recorded. |
 | **M1 — 2023 pilot panel** | End of week 2 | 2023 vacancy data parsed; joins tested on three prefectures; QA report. |
-| **M2 — Four-wave panel** | End of week 3 / early week 4 | 2008–2023 harmonised; crosswalk; coverage flags; go/no-go memo. |
+| **M2 — Core panel** | End of week 3 / early week 4 | 2018–2023 harmonised (1,057 units); 2013/2008 flagged as city/ward context; crosswalk; go/no-go memo. |
 | **M3 — Index v1** | End of week 7 | Risk/activation/capacity indices; equal/PCA/policy weights; uncertainty. |
 | **M4 — Validation + archetypes** | End of week 9 | Market-lag tests; akiya-bank analysis; case studies; archetype tables. |
 | **M5 — Public v1** | End of week 10–11 | Map, report, open data/code, methodology, caveats. |

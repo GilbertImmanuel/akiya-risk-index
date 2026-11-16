@@ -31,8 +31,8 @@
 |---|---|---|---|
 | 2023 | **34-2** | 空き家の種類(4区分)、腐朽・破損の有無(2区分)、建て方(2区分)、構造(2区分)別空き家数－全国、都道府県、市区町村 | The core table. Includes the 4 vacancy categories, dilapidation, building type, and structure. |
 | 2018 | **35-2** | Same structure as 2023 | Directly comparable conceptually, but the Excel layout differs: 11 header rows, 17 columns, and count columns ordered **total, secondary, rental, sale, other**. Label was `その他の住宅`. Parsed; 1,086 clean municipal units. |
-| 2013 | **53** | 空き家の種類(4区分)、腐朽・破損の有無(2区分)、建て方(2区分)、構造(2区分)別空き家数－市区 | The main table is **市区**; a separate 町村 table must be identified before assuming municipal coverage. |
-| 2008 | **043-1** | 空き家の種類(5区分)、腐朽・破損の有無(2区分)、建て方(4区分) | Five categories; needs reconciliation to the 4-category definition. |
+| 2013 | **53** | 空き家の種類(4区分)、腐朽・破損の有無(2区分)、建て方(2区分)、構造(2区分)別空き家数－市区 | The API table is **市区 only**; no 町村 table in the API. City/ward context only. |
+| 2008 | **043-2** | 空き家の種類(4区分)、腐朽・破損の有無(2区分)、建て方(2区分)、構造(2区分)別空き家数－市区 | The API table is **市区 only**; five-category table 043-1 is prefectural. City/ward context only. |
 
 **Action for Phase 0:** download each table, compare category labels and totals, and build a crosswalk. Do not assume the 2013 and 2008 tables are directly comparable.
 
@@ -99,8 +99,13 @@ Japan has **926 towns/villages** (743 towns + 183 villages). Therefore **682 tow
 - **What:** population, households, age structure, dwelling tenure, employment status (later releases).
 - **Geography:** municipal; 2000, 2005, 2010, 2015, 2020, 2025.
 - **Timing:** 2025 population census basic tabulation published **29 September 2026**; some tables later.
+- **API tables used:**
+  - table 1-2, `statsDataId=0004050417`: 2020 population, 2025/2020 households, area, density.
+  - table 1-1, `statsDataId=0004050397`: 2025 population.
+  - 1,961 areas (national, prefectures, municipalities/wards).
 - **Use:** denominator variables, demand pressure, household change, ageing.
 - **Caveat:** census population and housing-survey households are not identical concepts; do not mix them without checking.
+- **Discrepancy:** the API table’s national 2025 population is **123,049,524**, while the summary PDF headline is **122,972,528** (difference **76,996**). The API table is internally consistent with its 2020 baseline and five-year change. Use the API table for municipal joins; cite the headline separately and note the difference. Cause not yet established.
 
 **Verdict:** core.
 

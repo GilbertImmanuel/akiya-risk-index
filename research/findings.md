@@ -61,6 +61,12 @@
 
 **Implication:** for 2018–2023, the municipal-code crosswalk is simple; the harder harmonisation problem starts with 2013 and 2008. Do not attribute the 27-unit coverage change to mergers.
 
+### Finding 4c — The 2013/2008 API tables are city/ward only
+
+**Fact (Phase 0 API check).** The e-Stat API's 2013 table 53 (`statsDataId=0003100835`) and 2008 table 043-2 (`statsDataId=0003010419`) are **市区 only** (cities/wards). They do not include towns/villages. The 2008 table 043-1 is prefectural, not municipal.
+
+**Implication:** a four-wave municipal panel that includes towns/villages is **not available from the API**. The core panel is **2018–2023** (balanced 1,057 units); 2013/2008 are used as **city/ward context** only. Extracting the 2013/2008 町村 tables from printed reports would be a separate manual project and is not part of Phase 1.
+
 ---
 
 ## Finding 5 — Demand factors dominate prior prefectural studies, but supply and demolition matter

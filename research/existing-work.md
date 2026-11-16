@@ -100,7 +100,7 @@ The closest products are:
 | Dimension | Prior work | This project |
 |---|---|---|
 | Geography | National descriptive maps; prefectural panels; metro case studies | 1,059 clean municipal units, with explicit coverage limits and small-municipality case studies |
-| Time | Mostly 2018/2023 or prefectural 2003–2023 | 2008–2023 municipal panel, 2003 context, 2025 census demand data |
+| Time | Mostly 2018/2023 or prefectural 2003–2023 | 2018–2023 municipal panel; 2013/2008 city/ward context; 2025 census demand data |
 | Outcome | Total vacancy or a single predicted rate | Dilapidated "other vacant" as headline; broad rate as context |
 | Structure | One score or one map | Risk, activation potential, and response capacity as separate lenses |
 | Uncertainty | Rarely reported | Simulation/smoothing and rank-stability reporting |

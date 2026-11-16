@@ -32,7 +32,7 @@ This preserves the brief's core intent but sharpens the contribution. The projec
 | **Primary universe** | The **1,059 clean municipal units** in the 2023 Housing and Land Survey: 792 cities (20 designated + 772 non-designated), 23 special wards, and 244 towns/villages with 15,000+ population. The 1,235 table rows include 175 designated-city wards and 1 Tokyo special-wards group, which duplicate city-level rows and are excluded from the analysis. |
 | **Secondary universe** | The **682 small towns/villages** absent from the survey: **6–8 case studies and a coverage-extension appendix**, not the national index. They hold **500,360 vacant dwellings (5.6% of the national total)**. |
 | **Unit** | Municipality; wards separate where the survey reports them; district-level only in case studies. |
-| **Vacancy time window** | **2008–2023** core (four waves); 2003 context only. |
+| **Vacancy time window** | **2018–2023** core (balanced 1,057 units); 2013/2008 city/ward context only; 2003 context. |
 | **Demography** | 2000–2025 (census; 2025 basic tabulation published 2026-09-29). |
 | **Market data** | Land prices and transactions 2005–2026. |
 | **Policy** | 2014–2026. |
@@ -74,7 +74,7 @@ This preserves the brief's core intent but sharpens the contribution. The projec
 | Brief | Refined | Why |
 |---|---|---|
 | National municipal index for all municipalities | **1,059 clean municipal units** + case studies | The 1,235 table rows double-count city/ward levels; 682 towns/villages (73.6%) are absent and hold 500,360 vacant dwellings (5.6%); a national ranking would be biased. |
-| Vacancy 2003–2023 | 2008–2023 core; 2003 context | 2003 predates the Heisei mergers and has greater definitional/coverage risk. |
+| Vacancy 2003–2023 | 2018–2023 core; 2013/2008 city/ward context; 2003 context | The API's 2013/2008 four-category tables are 市区 only; a four-wave municipal panel would lose all towns/villages. |
 | "Other vacant" as the core risk measure | **Dilapidated "other vacant"** as headline; broad rate as context | "Other vacant" includes long-term absence and demolition-planned homes; it is not "abandoned." |
 | Single risk-and-opportunity index | Risk core + activation + capacity lenses | Risk, market demand, and fiscal capacity are different constructs; a single net score hides policy-relevant cases. |
 | Buyers, researchers, policymakers equally | Researchers/policymakers primary; buyer summary derivative | The data are municipal and sample-based; a buyer's guide would overreach. |
