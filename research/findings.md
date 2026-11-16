@@ -33,6 +33,14 @@
 
 **Why detached:** 74% of "other vacant" dwellings are detached houses (2.851m of 3.856m). The structural problem is predominantly a detached-house problem.
 
+### Finding 3b — Measured dilapidation fell between 2018 and 2023, but partly by attrition
+
+**Fact (Phase 0 parse).** The broad "other vacant" stock rose from **3,487,200 to 3,856,000 (+10.6%)**, but the **dilapidated** "other vacant" stock fell from **1,006,000 to 895,300 (−11.0%)**. The dilapidated share fell from **28.8% to 23.2%**. Dilapidated detached "other vacant" fell from **799,900 to 715,000**.
+
+**Inference.** This is not necessarily improvement. A Daiwa Real Estate Appraisal analysis notes that some abandoned houses deteriorated into `廃屋` and left the survey universe, alongside policy/redevelopment effects. The measured decline can therefore be partly **attrition**. The headline risk measure is a lower bound that can fall mechanically when the worst structures become statistically invisible.
+
+**Implication:** do not assume a monotonic risk trend. Separate "dilapidated but still a dwelling" from "ruined and outside the survey"; use case studies to understand which is happening.
+
 ---
 
 ## Finding 4 — The national municipal table covers most of the population but not most of the places

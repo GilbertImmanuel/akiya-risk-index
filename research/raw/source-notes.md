@@ -126,6 +126,42 @@ National risk measure:
 - Dilapidated "other vacant": **895,300** (23.2% of 3,856,000).
 - Dilapidated detached "other vacant": **715,000**.
 
+### 2018 table 35-2 — national totals and layout
+
+**Source:** e-Stat, 2018 table 35-2.
+**File list:** https://www.e-stat.go.jp/stat-search/files?page=1&layout=datalist&lid=000001238098
+**Download:** https://www.e-stat.go.jp/stat-search/file-download?statInfId=000031865730&fileKind=0
+
+National totals (2018):
+
+- Total vacant: **8,488,600**.
+- "Other vacant": **3,487,200**.
+- Rental: **4,327,200**.
+- For sale: **293,200**.
+- Secondary: **381,000**.
+- Dilapidated "other vacant": **1,006,000** (28.8%).
+- Dilapidated detached "other vacant": **799,900**.
+
+Layout differences from 2023:
+
+- 11 header rows; 17 columns.
+- Hierarchy in column E, region in F, dilapidation in H, building in J, structure in L.
+- Count columns M–Q are ordered **total, secondary, rental, sale, other** (2023 is total, other, rental, sale, secondary).
+- Building labels: `00_総数`, `11_一戸建`, `20_長屋建・共同住宅・その他`.
+- 2018 covers **1,086 clean municipal units** (271 towns/villages); 2023 covers **1,059** (244 towns/villages).
+- 2018 covered vacancy: **8,077,270 (95.2%)**; uncovered **411,330 (4.85%)**.
+
+**2018 → 2023 comparison:**
+
+| Indicator | 2018 | 2023 | Change |
+|---|---:|---:|---:|
+| "Other vacant" | 3,487,200 | 3,856,000 | +368,800 (+10.6%) |
+| Dilapidated "other vacant" | 1,006,000 | 895,300 | −110,700 (−11.0%) |
+| Dilapidated share | 28.8% | 23.2% | −5.6 pp |
+| Dilapidated detached "other vacant" | 799,900 | 715,000 | −84,900 (−10.6%) |
+
+**Caveat:** the decline in measured dilapidation is partly attributed to `廃屋` attrition — the worst structures leaving the survey universe — alongside policy and redevelopment effects. See Daiwa Real Estate Appraisal (2024) for the three-channel discussion.
+
 ### Wave-specific table numbers
 
 | Wave | Table | Notes |

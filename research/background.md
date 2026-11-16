@@ -47,6 +47,27 @@ The 2023 Housing and Land Survey (令和5年住宅・土地統計調査), conduc
 
 **Fact.** 4.753 million households own a dwelling other than their current home; 1.416 million of those households own a vacant dwelling; 47.5% of owner-owned vacant dwellings are "other vacant." This is consistent with inheritance and absentee ownership as important channels, though it does not by itself prove causation.
 
+### 2018 → 2023: measured dilapidation fell
+
+**Fact (Phase 0 parse of tables 35-2 and 34-2).**
+
+| Indicator | 2018 | 2023 | Change |
+|---|---:|---:|---:|
+| "Other vacant" | 3,487,200 | 3,856,000 | **+368,800 (+10.6%)** |
+| Dilapidated "other vacant" | 1,006,000 | 895,300 | **−110,700 (−11.0%)** |
+| Dilapidated share of "other vacant" | 28.8% | 23.2% | −5.6 pp |
+| Dilapidated detached "other vacant" | 799,900 | 715,000 | **−84,900 (−10.6%)** |
+
+**Inference.** The broad "other vacant" stock grew, but the *measured dilapidated* stock fell. This is not necessarily good news. A Daiwa Real Estate Appraisal analysis of the 2023 survey notes three possible reasons: (1) policy and management efforts, (2) redevelopment of well-located vacant houses during the land-price rise, and (3) some abandoned houses deteriorated into `廃屋` and fell **outside the survey universe**. The third channel means the measured decline can be partly **attrition**, not improvement.
+
+**Implication for the index:** do not assume a monotonic increase in risk. The headline measure is a lower bound that can fall when the worst structures leave the statistics. The project should distinguish:
+- **dilapidated but still a dwelling** — measured by the survey;
+- **ruined and outside the survey** — not measured, but still a policy problem.
+
+This also means the 2018–2023 comparison is not a clean "risk trend" without the `廃屋` caveat.
+
+**Coverage comparison:** 2018 covers 1,086 clean municipal units (95.2% of the national vacancy stock); 2023 covers 1,059 (94.4%). The 27-unit difference is partly municipal mergers and partly municipalities falling below the 15,000 reporting threshold. The uncovered vacancy rose from 411,330 (4.85%) to 500,360 (5.56%).
+
 ---
 
 ## 2. What "vacant" actually means

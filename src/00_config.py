@@ -34,6 +34,8 @@ VACANCY_TABLES = {
     2008: "043-1",
 }
 
-# Phase 0: downloaded 2023 table 34-2.
+# Phase 0: downloaded vacancy tables.
 VACANCY_2023_XLSX = DATA_RAW / "estat_34-2_2023_2026-11-16.xlsx"
 VACANCY_2023_CSV = DATA_INTERIM / "vacancy_2023.csv"
+VACANCY_2018_XLSX = DATA_RAW / "estat_35-2_2018_2026-11-16.xlsx"
+VACANCY_2018_CSV = DATA_INTERIM / "vacancy_2018.csv"

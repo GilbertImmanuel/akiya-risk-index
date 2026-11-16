@@ -5,6 +5,16 @@
 
 ---
 
+## 2026-11-16 — 2018 table parsed; measured dilapidation fell
+
+- **Action:** Downloaded 2018 table 35-2 (`statInfId=000031865730`) and refactored `src/02_parse_vacancy.py` to handle both 2018 and 2023 layouts.
+- **Result:** 2018 national totals: 8,488,600 vacant; 3,487,200 "other vacant"; 1,006,000 dilapidated "other vacant"; 799,900 dilapidated detached. 2018 covers 1,086 clean units (271 towns/villages), 95.2% of the vacancy stock; 411,330 (4.85%) uncovered.
+- **Comparison:** broad "other vacant" **+10.6%** (2018→2023), but dilapidated "other vacant" **−11.0%** (1,006,000 → 895,300). The dilapidated share fell from 28.8% to 23.2%. Part of the decline is likely `廃屋` attrition — the worst structures leaving the survey — alongside policy/redevelopment effects.
+- **Why it mattered:** the measured risk trend is not monotonic. The headline measure is a lower bound that can fall when the worst structures leave the statistics. The dossier now carries this caveat.
+- **Next:** 2013 table 53 (+ 町村) and 2008 table 043-1.
+
+---
+
 ## 2026-11-16 — Phase 0 parse corrects the coverage calculation
 
 - **Action:** Downloaded the 2023 table 34-2 Excel from e-Stat (`statInfId=000040209901`) and parsed it with `src/02_parse_vacancy.py`.

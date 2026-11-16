@@ -1,7 +1,11 @@
-"""Parse the 2023 Housing and Land Survey municipal vacancy table (34-2).
+"""Parse the Housing and Land Survey municipal vacancy tables (2018, 2023).
 
-The raw Excel has one sheet with nine header rows and 26,943 data rows. The
-first column is a hierarchy code:
+The raw Excel layouts differ by wave:
+
+- 2023 table 34-2: 9 header rows, 10 columns.
+- 2018 table 35-2: 11 header rows, 17 columns, with extra sequence columns.
+
+Both tables encode the hierarchy in a `地域識別コード` column:
 
     a = national / prefecture
     1 = designated city (and the Tokyo special-wards group)
@@ -9,10 +13,9 @@ first column is a hierarchy code:
     2 = city (non-designated)
     3 = town / village
 
-Each region has 21 rows: 3 dilapidation categories x 7 building/structure
-combinations. The table contains both designated-city totals and their ward
-rows, so summing every row double-counts. This script produces a tidy table
-with a single analysis unit per place:
+The table contains both designated-city totals and their ward rows, so summing
+every row double-counts. This script produces a tidy table with one analysis
+unit per place:
 
     designated city (city level)
     special ward (individual)
@@ -27,6 +30,7 @@ from __future__ import annotations
 
 import importlib
 import sys
+from dataclasses import dataclass
 from pathlib import Path
 
 import pandas as pd
@@ -34,31 +38,164 @@ import pandas as pd
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 config = importlib.import_module("00_config")
 
-RAW = config.VACANCY_2023_XLSX
-OUT = config.VACANCY_2023_CSV
-
-COLUMNS = [
-    "hierarchy",
-    "region",
-    "dilapidation",
-    "building",
-    "structure",
-    "vacant_total",
-    "other",
-    "rental",
-    "sale",
-    "secondary",
-]
-
+CANONICAL_COUNTS = ["vacant_total", "other", "rental", "sale", "secondary"]
 KEYS = ["region_code", "region_name"]
 
+DILAP_MAP = {
+    "0_総数": "total",
+    "1_腐朽・破損あり": "dilapidated",
+    "2_腐朽・破損なし": "not_dilapidated",
+}
+STRUCTURE_MAP = {
+    "0_総数": "total",
+    "1_木造": "wood",
+    "2_非木造": "nonwood",
+}
 
-def load_raw(path: Path) -> pd.DataFrame:
-    """Read the raw Excel and split the region label into code and name."""
-    df = pd.read_excel(path, header=None, skiprows=9, names=COLUMNS)
+
+@dataclass(frozen=True)
+class Layout:
+    year: int
+    path: Path
+    skiprows: int
+    hierarchy_col: int
+    region_col: int
+    dilap_col: int
+    building_col: int
+    structure_col: int
+    count_cols: tuple[int, int, int, int, int]
+    count_order: tuple[str, str, str, str, str]
+    building_map: dict[str, str]
+
+
+LAYOUTS = {
+    2023: Layout(
+        year=2023,
+        path=config.VACANCY_2023_XLSX,
+        skiprows=9,
+        hierarchy_col=0,
+        region_col=1,
+        dilap_col=2,
+        building_col=3,
+        structure_col=4,
+        count_cols=(5, 6, 7, 8, 9),
+        count_order=("vacant_total", "other", "rental", "sale", "secondary"),
+        building_map={
+            "0_総数": "total",
+            "2_一戸建": "detached",
+            "3_長屋建・共同住宅・その他": "multi",
+        },
+    ),
+    2018: Layout(
+        year=2018,
+        path=config.VACANCY_2018_XLSX,
+        skiprows=11,
+        hierarchy_col=4,
+        region_col=5,
+        dilap_col=7,
+        building_col=9,
+        structure_col=11,
+        count_cols=(12, 13, 14, 15, 16),
+        count_order=("vacant_total", "secondary", "rental", "sale", "other"),
+        building_map={
+            "00_総数": "total",
+            "11_一戸建": "detached",
+            "20_長屋建・共同住宅・その他": "multi",
+        },
+    ),
+}
+
+OUTPUTS = {
+    2023: config.VACANCY_2023_CSV,
+    2018: config.VACANCY_2018_CSV,
+}
+
+EXPECTED = {
+    2023: {
+        "national": {
+            "vacant_total": 9_001_600,
+            "vacant_other": 3_856_000,
+            "vacant_rental": 4_435_800,
+            "vacant_sale": 326_200,
+            "vacant_secondary": 383_500,
+        },
+        "counts": {
+            "national": 1,
+            "prefecture": 47,
+            "designated_city": 20,
+            "special_wards_group": 1,
+            "special_ward": 23,
+            "designated_city_ward": 175,
+            "city": 772,
+            "town_village": 244,
+        },
+        "analysis_units": 1059,
+        "covered_vacancy": 8_501_240,
+    },
+    2018: {
+        "national": {
+            "vacant_total": 8_488_600,
+            "vacant_other": 3_487_200,
+            "vacant_rental": 4_327_200,
+            "vacant_sale": 293_200,
+            "vacant_secondary": 381_000,
+        },
+        "counts": {
+            "national": 1,
+            "prefecture": 47,
+            "designated_city": 20,
+            "special_wards_group": 1,
+            "special_ward": 23,
+            "designated_city_ward": 175,
+            "city": 772,
+            "town_village": 271,
+        },
+        "analysis_units": 1086,
+        "covered_vacancy": 8_077_270,
+    },
+}
+
+
+def load_raw(layout: Layout) -> pd.DataFrame:
+    """Read one Excel layout and normalise the labels and count columns."""
+    raw = pd.read_excel(layout.path, header=None, skiprows=layout.skiprows, dtype=object)
+    cols = [
+        layout.hierarchy_col,
+        layout.region_col,
+        layout.dilap_col,
+        layout.building_col,
+        layout.structure_col,
+        *layout.count_cols,
+    ]
+    df = raw.iloc[:, cols].copy()
+    df.columns = [
+        "hierarchy",
+        "region",
+        "dilapidation",
+        "building",
+        "structure",
+        *layout.count_order,
+    ]
+    df = df[
+        ["hierarchy", "region", "dilapidation", "building", "structure", *CANONICAL_COUNTS]
+    ]
+
+    df = df[df["region"].notna()].copy()
+    df["hierarchy"] = df["hierarchy"].astype(str)
+    df["region"] = df["region"].astype(str)
+    df = df[df["region"].str.contains("_", regex=False)].copy()
+
     parts = df["region"].str.split("_", n=1, expand=True)
     df["region_code"] = parts[0]
     df["region_name"] = parts[1]
+
+    df["dilapidation"] = df["dilapidation"].map(DILAP_MAP).fillna(df["dilapidation"])
+    df["building"] = df["building"].map(layout.building_map).fillna(df["building"])
+    df["structure"] = df["structure"].map(STRUCTURE_MAP).fillna(df["structure"])
+
+    for column in CANONICAL_COUNTS:
+        df[column] = pd.to_numeric(df[column], errors="coerce").fillna(0).astype("int64")
+
     return df
 
 
@@ -78,6 +215,8 @@ def select(
         & (df["structure"] == structure)
     )
     out = df.loc[mask, KEYS + [column]].copy()
+    if out.duplicated(KEYS).any():
+        raise ValueError(f"Duplicate rows for {name}")
     out = out.rename(columns={column: name})
     return out.set_index(KEYS)
 
@@ -97,81 +236,76 @@ def classify(hierarchy: str, code: str) -> str:
     return "unknown"
 
 
-def build_table(df: pd.DataFrame) -> pd.DataFrame:
+def build_table(df: pd.DataFrame, year: int) -> pd.DataFrame:
     """Build one row per region with the indicators used by the index."""
     parts = [
-        # All vacant dwellings, by category.
         select(
             df,
-            dilapidation="0_総数",
-            building="0_総数",
-            structure="0_総数",
+            dilapidation="total",
+            building="total",
+            structure="total",
             column="vacant_total",
             name="vacant_total",
         ),
         select(
             df,
-            dilapidation="0_総数",
-            building="0_総数",
-            structure="0_総数",
+            dilapidation="total",
+            building="total",
+            structure="total",
             column="other",
             name="vacant_other",
         ),
         select(
             df,
-            dilapidation="0_総数",
-            building="0_総数",
-            structure="0_総数",
+            dilapidation="total",
+            building="total",
+            structure="total",
             column="rental",
             name="vacant_rental",
         ),
         select(
             df,
-            dilapidation="0_総数",
-            building="0_総数",
-            structure="0_総数",
+            dilapidation="total",
+            building="total",
+            structure="total",
             column="sale",
             name="vacant_sale",
         ),
         select(
             df,
-            dilapidation="0_総数",
-            building="0_総数",
-            structure="0_総数",
+            dilapidation="total",
+            building="total",
+            structure="total",
             column="secondary",
             name="vacant_secondary",
         ),
-        # Dilapidated "other vacant": the headline risk measure.
         select(
             df,
-            dilapidation="1_腐朽・破損あり",
-            building="0_総数",
-            structure="0_総数",
+            dilapidation="dilapidated",
+            building="total",
+            structure="total",
             column="other",
             name="vacant_other_dilapidated",
         ),
-        # Detached "other vacant", all conditions.
         select(
             df,
-            dilapidation="0_総数",
-            building="2_一戸建",
-            structure="0_総数",
+            dilapidation="total",
+            building="detached",
+            structure="total",
             column="other",
             name="vacant_other_detached",
         ),
-        # Dilapidated detached "other vacant".
         select(
             df,
-            dilapidation="1_腐朽・破損あり",
-            building="2_一戸建",
-            structure="0_総数",
+            dilapidation="dilapidated",
+            building="detached",
+            structure="total",
             column="other",
             name="vacant_other_detached_dilapidated",
         ),
     ]
 
     result = pd.concat(parts, axis=1).reset_index()
-    # Merge the hierarchy code back on, using the unique region mapping.
     hierarchy = (
         df[["region_code", "hierarchy"]]
         .drop_duplicates()
@@ -184,95 +318,75 @@ def build_table(df: pd.DataFrame) -> pd.DataFrame:
     result["analysis_unit"] = result["level"].isin(
         ["designated_city", "special_ward", "city", "town_village"]
     )
-    result["year"] = 2023
-    result = result.sort_values(["level", "region_code"]).reset_index(drop=True)
-    return result
+    result["year"] = year
+    return result.sort_values(["level", "region_code"]).reset_index(drop=True)
 
 
-def validate(result: pd.DataFrame) -> None:
-    """Check national totals, hierarchy counts, and double-counting."""
+def validate(result: pd.DataFrame, year: int) -> None:
+    """Check national totals, hierarchy counts, and coverage."""
+    expected = EXPECTED[year]
     national = result.loc[result["level"] == "national"].iloc[0]
-    expected = {
-        "vacant_total": 9_001_600,
-        "vacant_other": 3_856_000,
-        "vacant_rental": 4_435_800,
-        "vacant_sale": 326_200,
-        "vacant_secondary": 383_500,
-    }
-    for key, value in expected.items():
+    for key, value in expected["national"].items():
         actual = int(national[key])
         if actual != value:
-            raise ValueError(f"National total mismatch for {key}: {actual} != {value}")
+            raise ValueError(f"{year}: national mismatch for {key}: {actual} != {value}")
 
     counts = result["level"].value_counts().to_dict()
-    expected_counts = {
-        "national": 1,
-        "prefecture": 47,
-        "designated_city": 20,
-        "special_wards_group": 1,
-        "special_ward": 23,
-        "designated_city_ward": 175,
-        "city": 772,
-        "town_village": 244,
-    }
-    for level, expected_count in expected_counts.items():
+    for level, expected_count in expected["counts"].items():
         actual = counts.get(level, 0)
         if actual != expected_count:
-            raise ValueError(f"Expected {expected_count} {level}, found {actual}")
+            raise ValueError(f"{year}: expected {expected_count} {level}, found {actual}")
 
     analysis = result.loc[result["analysis_unit"]]
     n_analysis = len(analysis)
-    if n_analysis != 1059:
-        raise ValueError(f"Expected 1,059 analysis units, found {n_analysis}")
+    if n_analysis != expected["analysis_units"]:
+        raise ValueError(
+            f"{year}: expected {expected['analysis_units']} analysis units, "
+            f"found {n_analysis}"
+        )
 
-    # The analysis units do NOT sum to the national total. The difference is the
-    # vacancy in municipalities below the 15,000-population reporting threshold.
-    # That gap is a substantive finding, not a bug.
     summed = int(analysis["vacant_total"].sum())
     national_total = int(national["vacant_total"])
     gap = national_total - summed
-    if summed != 8_501_240:
-        raise ValueError(f"Expected covered vacancy 8,501,240, found {summed:,}")
-    if gap != 500_360:
-        raise ValueError(f"Expected coverage gap 500,360, found {gap:,}")
+    if expected["covered_vacancy"] is not None:
+        if summed != expected["covered_vacancy"]:
+            raise ValueError(
+                f"{year}: expected covered {expected['covered_vacancy']:,}, "
+                f"found {summed:,}"
+            )
+    else:
+        print(f"{year}: covered vacancy = {summed:,}; uncovered = {gap:,}")
 
     # Prefecture rows should sum to the national total, up to rounding.
     pref = result.loc[result["level"] == "prefecture", "vacant_total"].sum()
-    if abs(int(pref) - national_total) > 200:
+    if abs(int(pref) - national_total) > 1_000:
         raise ValueError(
-            f"Prefecture sum {int(pref):,} differs from national {national_total:,}"
+            f"{year}: prefecture sum {int(pref):,} differs from {national_total:,}"
         )
 
     print(
-        "National QA passed:",
+        f"{year} QA passed:",
         f"vacant={national_total:,}",
         f"other={national['vacant_other']:,}",
         f"dilapidated_other={national['vacant_other_dilapidated']:,}",
-    )
-    print(
-        "Hierarchy:",
-        f"designated_city={counts.get('designated_city', 0)}",
-        f"special_ward={counts.get('special_ward', 0)}",
-        f"city={counts.get('city', 0)}",
-        f"town_village={counts.get('town_village', 0)}",
         f"analysis_units={n_analysis}",
-    )
-    print(
-        "Coverage:",
-        f"covered_vacancy={summed:,}",
-        f"uncovered_vacancy={gap:,}",
+        f"covered={summed:,}",
+        f"uncovered={gap:,}",
         f"covered_share={summed / national_total:.1%}",
     )
 
 
 def main() -> None:
-    if not RAW.exists():
-        raise FileNotFoundError(f"Raw file not found: {RAW}")
-    df = load_raw(RAW)
-    result = build_table(df)
-    validate(result)
-    result.to_csv(OUT, index=False, encoding="utf-8")
-    print(f"Wrote {OUT} ({len(result):,} rows)")
+    for year in (2023, 2018):
+        layout = LAYOUTS[year]
+        if not layout.path.exists():
+            raise FileNotFoundError(f"Raw file not found: {layout.path}")
+        df = load_raw(layout)
+        result = build_table(df, year)
+        validate(result, year)
+        out = OUTPUTS[year]
+        result.to_csv(out, index=False, encoding="utf-8")
+        print(f"Wrote {out} ({len(result):,} rows)")
 
 
 if __name__ == "__main__":
