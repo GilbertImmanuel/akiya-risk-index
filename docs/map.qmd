@@ -12,8 +12,16 @@ The real municipal layer will replace this in Phase 1.
 
 ```{ojs}
 //| echo: false
-const group = view(Inputs.select(["All", "A", "B"], {label: "Group", value: "All"}));
+group = view(Inputs.select(["All", "A", "B"], {label: "Group", value: "All"}))
+```
+
+```{ojs}
+//| echo: false
 window.dispatchEvent(new CustomEvent("akiya-filter", {detail: {group}}));
+```
+
+```{ojs}
+//| echo: false
 html`<p class="map-note">Selected group: <strong>${group}</strong></p>`;
 ```
 
