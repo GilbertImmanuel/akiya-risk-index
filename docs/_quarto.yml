@@ -1,0 +1,32 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "The Empty House Atlas"
+  site-url: "https://gilbertimmanuel.github.io/akiya-risk-index/"
+  description: "Municipal housing vacancy risk and activation in Japan"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Overview
+      - href: map.qmd
+        text: Map prototype
+    right:
+      - href: https://github.com/gilbertimmanuel/akiya-risk-index
+        text: GitHub
+  page-footer:
+    left: "Data: Statistics Bureau, MLIT, IPSS, GSI"
+    right: "Code: MIT"
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    code-fold: true
+    fig-width: 8
+    fig-height: 5
+
+execute:
+  freeze: auto

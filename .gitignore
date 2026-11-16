@@ -1,0 +1,34 @@
+# Local-only project memory. Do not commit or publish.
+memory/
+
+# API keys and local environment files
+.env
+.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Quarto build output
+docs/_site/
+docs/_freeze/
+.quarto/
+
+# Data: keep folder placeholders, ignore raw/interim contents
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/SOURCES.md
+data/interim/*
+!data/interim/.gitkeep
+*.parquet
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log

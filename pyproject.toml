@@ -1,0 +1,56 @@
+[project]
+name = "akiya-risk-index"
+version = "0.1.0"
+description = "Municipal housing vacancy risk and activation index for Japan"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+license = { text = "MIT" }
+authors = [{ name = "Gilbert Immanuel" }]
+dependencies = [
+  "altair>=5.4",
+  "duckdb>=1.1",
+  "geopandas>=1.0",
+  "httpx>=0.27",
+  "linearmodels>=6.1",
+  "matplotlib>=3.9",
+  "numpy>=2.0",
+  "openpyxl>=3.1",
+  "pandas>=2.2",
+  "pandera>=0.20",
+  "pyarrow>=17.0",
+  "pydantic-settings>=2.4",
+  "pyogrio>=0.10",
+  "pyproj>=3.6",
+  "python-dotenv>=1.0",
+  "scikit-learn>=1.5",
+  "scipy>=1.14",
+  "shapely>=2.0",
+  "statsmodels>=0.14",
+  "tenacity>=9.0",
+]
+
+[dependency-groups]
+dev = [
+  "jupyterlab>=4.2",
+  "pre-commit>=3.8",
+  "pytest>=8.0",
+  "ruff>=0.6",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[project.urls]
+Homepage = "https://gilbertimmanuel.github.io/akiya-risk-index/"
+Repository = "https://github.com/gilbertimmanuel/akiya-risk-index"

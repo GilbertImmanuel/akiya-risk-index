@@ -1,0 +1,82 @@
+---
+title: "The Empty House Atlas"
+subtitle: "Municipal housing vacancy risk and activation in Japan"
+---
+
+::: {.callout-note}
+## Status: Phase 0 scaffold
+
+The research dossier is complete. The data pipeline, index, and real map are not
+built yet. The [map prototype](map.qmd) uses **placeholder geometry** to test the
+Quarto + MapLibre + Observable JS stack.
+:::
+
+## What this project is
+
+A reproducible, municipal-level study of housing vacancy in Japan. It asks:
+
+> Which municipalities face persistent structural vacancy risk, and is that risk
+> already reflected in local housing markets — or is it accumulating in places
+> where prices and transactions have not yet adjusted?
+
+The project separates three lenses:
+
+- **Risk** — current blight and forward pressure.
+- **Activation potential** — accessibility, demand, and market momentum.
+- **Response capacity** — fiscal and administrative capacity.
+
+It is **not** a property-level prediction tool, a causal evaluation of the 2023
+Vacant Houses Act, or investment advice.
+
+## Why the headline is not enough
+
+Japan had **9,002,000 vacant dwellings in 2023**, or **13.8%** of the housing
+stock. But the composition matters:
+
+- 4,436,000 rental vacancies
+- 326,000 for sale
+- 384,000 secondary residences
+- **3,856,000 “other vacant”**
+
+“Other vacant” is a residual category. It includes long-term absence, homes
+awaiting demolition, storage, unknown use, and genuine abandonment. It also
+**excludes `廃屋`** (ruined structures). The project therefore focuses on
+**dilapidated “other vacant”** housing as the closest available risk measure.
+
+## Coverage caveat
+
+The 2023 table has 1,235 municipal reporting rows, but they double-count
+designated cities and their wards. The clean analysis universe is **1,059
+municipal units** (792 cities + 23 special wards + 244 towns/villages).
+**682 of 926 towns/villages (73.6%) are absent**, and they hold **500,360 vacant
+dwellings (5.6% of the national total)**. The project does not pretend to rank
+all 1,741 local governments; it uses the measured universe plus 6–8 case
+studies.
+
+## Explore
+
+- [Map prototype](map.qmd) — the Quarto + MapLibre + OJS stack.
+- [Research summary](https://github.com/gilbertimmanuel/akiya-risk-index/blob/main/research/summary.md) — verified facts, scope, and plan.
+- [Data sources](https://github.com/gilbertimmanuel/akiya-risk-index/blob/main/research/data-sources.md) — what is free, what is covered, what is not.
+
+## Data sources
+
+All core data are free government statistics:
+
+- Housing and Land Survey (Statistics Bureau / e-Stat)
+- 2025 Census (Statistics Bureau / e-Stat)
+- IPSS municipal population projections
+- MLIT Real Estate Information Library (transactions and land prices)
+- MLIT / GSI boundaries and rail data
+- Local finance survey
+- MLIT policy and akiya-bank aggregates
+
+See `DATA_LICENCES.md` in the repository for terms and attribution.
+
+## What comes next
+
+1. Parse the 2023 municipal vacancy table and reconcile earlier waves.
+2. Build the municipal-code crosswalk.
+3. Pilot Tokyo, Nagano, and Kochi.
+4. Build the risk, activation, and capacity indices.
+5. Replace the placeholder map with the real municipal layer.

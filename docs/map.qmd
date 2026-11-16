@@ -1,0 +1,156 @@
+---
+title: "Map prototype"
+---
+
+::: {.callout-warning}
+## Placeholder geometry, not real data
+
+This page tests the **Quarto + MapLibre + Observable JS** stack. The polygons are
+arbitrary rectangles, not municipal boundaries. The filter is a technical demo.
+The real municipal layer will replace this in Phase 1.
+:::
+
+```{ojs}
+//| echo: false
+const group = view(Inputs.select(["All", "A", "B"], {label: "Group", value: "All"}));
+window.dispatchEvent(new CustomEvent("akiya-filter", {detail: {group}}));
+html`<p class="map-note">Selected group: <strong>${group}</strong></p>`;
+```
+
+```{=html}
+<link href="https://cdn.jsdelivr.net/npm/maplibre-gl@5/dist/maplibre-gl.css" rel="stylesheet">
+<div id="map"></div>
+<script type="module">
+import maplibregl from "https://cdn.jsdelivr.net/npm/maplibre-gl@5/+esm";
+
+const placeholder = {
+  type: "FeatureCollection",
+  features: [
+    {
+      type: "Feature",
+      properties: { name: "Placeholder A", group: "A", value: 10 },
+      geometry: {
+        type: "Polygon",
+        coordinates: [[
+          [139.40, 35.50], [139.80, 35.50], [139.80, 35.80],
+          [139.40, 35.80], [139.40, 35.50]
+        ]]
+      }
+    },
+    {
+      type: "Feature",
+      properties: { name: "Placeholder B", group: "B", value: 20 },
+      geometry: {
+        type: "Polygon",
+        coordinates: [[
+          [139.80, 35.50], [140.20, 35.50], [140.20, 35.80],
+          [139.80, 35.80], [139.80, 35.50]
+        ]]
+      }
+    },
+    {
+      type: "Feature",
+      properties: { name: "Placeholder C", group: "A", value: 30 },
+      geometry: {
+        type: "Polygon",
+        coordinates: [[
+          [139.40, 35.20], [139.80, 35.20], [139.80, 35.50],
+          [139.40, 35.50], [139.40, 35.20]
+        ]]
+      }
+    }
+  ]
+};
+
+const map = new maplibregl.Map({
+  container: "map",
+  style: {
+    version: 8,
+    sources: {
+      gsi: {
+        type: "raster",
+        tiles: ["https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png"],
+        tileSize: 256,
+        attribution: "国土地理院"
+      }
+    },
+    layers: [{ id: "gsi", type: "raster", source: "gsi" }]
+  },
+  center: [139.70, 35.65],
+  zoom: 7
+});
+
+map.addControl(new maplibregl.NavigationControl(), "top-right");
+
+map.on("load", () => {
+  map.addSource("municipalities", { type: "geojson", data: placeholder });
+
+  map.addLayer({
+    id: "municipalities-fill",
+    type: "fill",
+    source: "municipalities",
+    paint: {
+      "fill-color": [
+        "match", ["get", "group"],
+        "A", "#4c78a8",
+        "B", "#f58518",
+        "#54a24b"
+      ],
+      "fill-opacity": 0.55
+    }
+  });
+
+  map.addLayer({
+    id: "municipalities-line",
+    type: "line",
+    source: "municipalities",
+    paint: { "line-color": "#ffffff", "line-width": 1.5 }
+  });
+
+  map.on("click", "municipalities-fill", (event) => {
+    const props = event.features[0].properties;
+    new maplibregl.Popup()
+      .setLngLat(event.lngLat)
+      .setHTML(
+        `<strong>${props.name}</strong><br>` +
+        `Group: ${props.group}<br>` +
+        `Value: ${props.value}`
+      )
+      .addTo(map);
+  });
+
+  map.on("mouseenter", "municipalities-fill", () => {
+    map.getCanvas().style.cursor = "pointer";
+  });
+  map.on("mouseleave", "municipalities-fill", () => {
+    map.getCanvas().style.cursor = "";
+  });
+
+  window.akiyaMapReady = true;
+  window.dispatchEvent(new Event("akiya-ready"));
+});
+
+window.updateAkiyaMap = (group) => {
+  if (!map.getLayer("municipalities-fill")) return;
+  const filter = group === "All" ? null : ["==", ["get", "group"], group];
+  map.setFilter("municipalities-fill", filter);
+  map.setFilter("municipalities-line", filter);
+};
+
+window.addEventListener("akiya-filter", (event) => {
+  window.updateAkiyaMap(event.detail.group);
+});
+</script>
+```
+
+## What this tests
+
+- **Quarto** renders the page as a static HTML site.
+- **Observable JS** provides the filter and will later host the charts.
+- **MapLibre** renders a raster basemap and a GeoJSON layer.
+- **The bridge** is a custom event: OJS dispatches `akiya-filter`; the map listens
+  and updates its layer filter.
+
+In the real product, the GeoJSON will be a municipal layer with the risk,
+activation, and capacity indicators. The OJS filter will control the map, the
+charts, and the table together.
