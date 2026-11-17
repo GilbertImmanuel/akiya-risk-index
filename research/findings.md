@@ -145,6 +145,20 @@
 
 ---
 
+## Pilot v0 observations (preliminary, not a final ranking)
+
+**Fact (Phase 0 pilot).** The first pilot panel covers **89 units** in Tokyo (51), Nagano (25), and Kochi (13). All have 2018 vacancy data and 2025 census data; 23 Tokyo special wards lack the municipal fiscal strength index.
+
+**Preliminary pattern (descriptive, not causal).** Using **dilapidated “other vacant” per 1,000 households** as a provisional proxy:
+
+- Kochi’s rural cities (土佐清水市, 室戸市, いの町, 須崎市, 宿毛市) show the highest values, alongside steep population decline and low fiscal strength.
+- Nagano’s towns/cities (下諏訪町, 佐久市, 伊那市, 大町市, 東御市) are next.
+- Tokyo’s special wards and suburban cities are lower on this proxy, though some have large absolute vacancy counts.
+
+**Caveats:** households are not dwellings; the real denominator must come from the total-dwelling table. The pilot is not representative and the index weights are not yet applied. Treat this as a data-join test, not a finding about which places are “most at risk.”
+
+---
+
 ## What would change these conclusions
 
 - **If the 2013/2008 tables are not comparable** to 2018/2023, the panel shrinks to two waves and the persistence analysis weakens.

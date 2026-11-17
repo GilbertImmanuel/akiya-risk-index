@@ -103,3 +103,20 @@
 ### Discrepancy
 
 The API table's national 2025 population is **123,049,524**, while the summary PDF headline is **122,972,528** (difference **76,996**). The API table is internally consistent with its 2020 baseline and five-year change. Use the API table for municipal joins; cite the headline separately and note the difference. The cause is not yet established (possible tabulation/universe difference).
+
+## Municipal fiscal strength index (FY2022)
+
+- **File:** `estat_ssdse_fiscal_2022_2026-11-17.json`
+- **Source:** e-Stat API, Social and Demographic Statistics System (SSDSE), table D 行政基盤 (`statsDataId=0000020204`), indicator `D2201_財政力指数（市町村財政）`
+- **Fiscal year:** 2022 (`cdTime=2022100000`)
+- **Access date:** 2026-11-17
+- **SHA-256:** `9AA33FE168974AD210AB67E1501EB51885AA10ABCA9C3BF23947EB3209A610BB`
+- **Size:** 385,779 bytes
+- **Rows:** 1,913 areas
+- **Licence:** e-Stat terms; CC BY 4.0-compatible.
+
+### Notes
+
+- FY2023 and FY2024 return no data in this table; FY2022 is the latest available.
+- 195 areas have no index: all 195 are wards (171 designated-city wards + 23 special wards + 1 special-wards group). The index is municipal, not ward-level.
+- Coverage in the 2023 analysis universe: **1,036 of 1,059 units (97.8%)**; the only missing units are the 23 special wards.

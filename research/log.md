@@ -5,6 +5,16 @@
 
 ---
 
+## 2026-11-17 — Fiscal capacity and pilot panel v0
+
+- **Action:** Pulled the municipal fiscal strength index from SSDSE table D 行政基盤 (`statsDataId=0000020204`, indicator D2201) for FY2022; built `data/interim/fiscal_2022.csv`. Built the first pilot panel for Tokyo, Nagano, and Kochi (`data/processed/pilot_panel_v0.csv`).
+- **Fiscal result:** 1,913 areas; 1,036 of 1,059 analysis units covered (97.8%). The 23 Tokyo special wards have no index because the index is municipal, not ward-level. FY2023/2024 return no data in this table; FY2022 is the latest.
+- **Pilot result:** 89 units (Tokyo 51, Nagano 25, Kochi 13). No missing 2018 vacancy or 2025 census; 23 special wards missing fiscal.
+- **Preliminary pattern:** using dilapidated “other vacant” per 1,000 households as a provisional proxy, Kochi’s rural cities and Nagano’s towns/cities rank highest; Tokyo’s wards/suburbs lower. Not a final ranking.
+- **Next:** total dwellings (proper denominator), accessibility, market data (MLIT key pending), akiya-bank participation, case studies, go/no-go memo.
+
+---
+
 ## 2026-11-16 — 2025 Census municipal data pulled
 
 - **Action:** Used the e-Stat API to pull 2025 Census table 1-2 (`0004050417`) and table 1-1 (`0004050397`); built `data/interim/census_2025.csv`.

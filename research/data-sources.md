@@ -166,13 +166,15 @@ Japan has **926 towns/villages** (743 towns + 183 villages). Therefore **682 tow
 
 ## 8. Local finance
 
-- **Source:** 地方財政状況調査 (e-Stat / 総務省), 市町村別決算状況調.
+- **Source:** 地方財政状況調査 (e-Stat / 総務省), 市町村別決算状況調; **SSDSE table D 行政基盤** (`statsDataId=0000020204`), indicator `D2201_財政力指数（市町村財政）`.
 - **What:** fiscal strength index, debt, tax base, expenditure.
 - **Geography:** municipal; annual.
+- **Latest available in SSDSE:** **FY2022** (`cdTime=2022100000`); FY2023/2024 return no data in this table.
+- **Coverage:** 1,913 areas; **1,036 of 1,059** analysis units (97.8%). The 23 Tokyo special wards have no index because the index is municipal, not ward-level.
 - **Use:** response-capacity overlay; not a risk outcome.
-- **Caveat:** fiscal years and municipal boundaries must be aligned with the survey waves.
+- **Caveat:** fiscal years and municipal boundaries must be aligned with the survey waves. The FY2022 index lags the 2023 vacancy survey; label the lag.
 
-**Verdict:** good.
+**Verdict:** good, with a special-ward gap and a one-year lag.
 
 ---
 
