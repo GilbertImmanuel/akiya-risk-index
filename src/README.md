@@ -11,7 +11,9 @@ Numbered scripts, run in order. Phase 0 placeholders are marked
 | `03_crosswalk.py` | Harmonise municipal codes across mergers. |
 | `04_census.py` | Parse the 2025 Census municipal population/household tables. |
 | `04b_fiscal.py` | Parse the municipal fiscal strength index (FY2022, SSDSE). |
-| `04_join_panel.py` | Join vacancy, demography, market, fiscal, accessibility. |
+| `04c_dwellings.py` | Parse total dwellings and vacancy categories (2023/2018 tables 1-2-1). |
+| `04d_vacancy_panel.py` | Build the full 2018–2023 vacancy panel with proper rates. |
+| `04_join_panel.py` | Join vacancy, demography, market, fiscal, accessibility (pilot). |
 | `05_index.py` | Build risk, activation, and capacity indices. |
 | `06_validate.py` | Schema checks, uncertainty, sensitivity, validation. |
 | `07_export_map.py` | Export GeoJSON/JSON for the Quarto site. |

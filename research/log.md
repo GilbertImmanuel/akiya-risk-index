@@ -5,6 +5,17 @@
 
 ---
 
+## 2026-11-23 — Total dwellings and proper vacancy rates
+
+- **Action:** Pulled 2023/2018 table 1-2-1 (`0004021421` / `0003355290`) and built `dwellings_2023.csv`, `dwellings_2018.csv`, `vacancy_panel_2018_2023.csv`, and `pilot_panel_v1.csv`.
+- **Validation:** total dwellings 65,046,700 / 62,407,400; **1,059/1,059** and **1,086/1,086** coverage; vacancy counts match tables 34-2/35-2 with **0 mismatches**.
+- **Coverage:** the 682 missing municipalities hold 500,360 vacant (5.6%), 327,880 other vacant (8.5%), and **89,240 dilapidated other vacant (10.0%)** — the risk measure has a larger coverage gap.
+- **Proper rates:** top 2023 dilapidated other-vacancy rates are 川崎町 12.25%, 新上五島町 11.89%, 平戸市 9.29%, 垂水市 9.29%, 室戸市 9.11%. Largest increases: 川崎町 +8.48 pp, さつま町 +6.51, 有田川町 +5.48, 新上五島町 +5.23, 平戸市 +4.79.
+- **Proxy comparison:** household proxy vs proper rate Spearman **0.991**; 軽井沢町 is proxy rank 9 vs proper rank 35. The proxy misranks secondary-home/large-household places; the proper denominator is required.
+- **Caveat:** municipal survey estimates are noisy; the top rates/changes need uncertainty bands.
+
+---
+
 ## 2026-11-17 — Fiscal capacity and pilot panel v0
 
 - **Action:** Pulled the municipal fiscal strength index from SSDSE table D 行政基盤 (`statsDataId=0000020204`, indicator D2201) for FY2022; built `data/interim/fiscal_2022.csv`. Built the first pilot panel for Tokyo, Nagano, and Kochi (`data/processed/pilot_panel_v0.csv`).

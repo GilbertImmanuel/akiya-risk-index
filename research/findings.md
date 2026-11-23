@@ -47,9 +47,9 @@
 
 **Fact (Phase 0 parse).** The 2023 table has 1,283 geographic rows: 1 national + 47 prefectures + **1,235 municipal reporting rows**. The 1,235 rows are **not a clean municipality count**: they include 792 cities (20 designated + 772 non-designated), 23 special wards, 244 towns/villages, 175 designated-city wards, and 1 Tokyo special-wards group. To avoid double counting, the analysis uses **1,059 clean municipal units**: 792 cities + 23 special wards + 244 towns/villages.
 
-**Fact (Phase 0 parse).** Japan has 926 towns/villages; the table covers **244**, so **682 (73.6%) are missing**. The 1,059 covered units account for **8,501,240 vacant dwellings (94.4%)**; the missing municipalities hold **500,360 vacant dwellings (5.6%)**.
+**Fact (Phase 0 parse).** Japan has 926 towns/villages; the table covers **244**, so **682 (73.6%) are missing**. The 1,059 covered units account for **8,501,240 vacant dwellings (94.4%)**; the missing municipalities hold **500,360 vacant dwellings (5.6%)**, **327,880 “other vacant” (8.5%)**, and **89,240 dilapidated “other vacant” (10.0%)**.
 
-**Implication:** the national index must be explicitly scoped to the **1,059 clean municipal units**. The 682 missing towns/villages need a separate case-study/coverage-extension track. A map that colours all of Japan would be misleading, and the 5.6% uncovered vacancy must be stated, not hidden.
+**Implication:** the national index must be explicitly scoped to the **1,059 clean municipal units**. The 682 missing towns/villages need a separate case-study/coverage-extension track. A map that colours all of Japan would be misleading, and the 10% uncovered dilapidated stock must be stated, not hidden.
 
 ---
 
@@ -66,6 +66,33 @@
 **Fact (Phase 0 API check).** The e-Stat API's 2013 table 53 (`statsDataId=0003100835`) and 2008 table 043-2 (`statsDataId=0003010419`) are **市区 only** (cities/wards). They do not include towns/villages. The 2008 table 043-1 is prefectural, not municipal.
 
 **Implication:** a four-wave municipal panel that includes towns/villages is **not available from the API**. The core panel is **2018–2023** (balanced 1,057 units); 2013/2008 are used as **city/ward context** only. Extracting the 2013/2008 町村 tables from printed reports would be a separate manual project and is not part of Phase 1.
+
+---
+
+## Finding 4d — Proper dwelling denominators change the risk picture
+
+**Fact (Phase 0 Installment 2).** Total dwellings are now available for **1,059/1,059** 2023 units and **1,086/1,086** 2018 units. The vacancy counts match the vacancy tables exactly (0 mismatches). The full 2018–2023 vacancy panel has **1,059 units**, of which **1,057** are balanced.
+
+**Fact (2023 proper rates).** The highest **dilapidated “other vacant” / total dwellings** rates are:
+
+| Municipality | Prefecture | Rate |
+|---|---|---:|
+| 川崎町 | Miyagi | **12.25%** |
+| 新上五島町 | Nagasaki | **11.89%** |
+| 平戸市 | Nagasaki | **9.29%** |
+| 垂水市 | Kagoshima | **9.29%** |
+| 室戸市 | Kochi | **9.11%** |
+| さつま町 | Kagoshima | **9.04%** |
+| いの町 | Kochi | **8.75%** |
+| 伊佐市 | Kagoshima | **8.61%** |
+| 三種町 | Akita | **8.60%** |
+| 珠洲市 | Ishikawa | **8.51%** |
+
+**Fact (2018→2023 change).** The largest increases are 川崎町 (+8.48 pp), さつま町 (+6.51), 有田川町 (+5.48), 新上五島町 (+5.23), and 平戸市 (+4.79). Some high-rate places improved (室戸市 −3.21 pp).
+
+**Proxy comparison.** The household proxy and the proper rate have a Spearman correlation of **0.991** overall, but the proxy misranks places with secondary homes or large households: 軽井沢町 is rank 9 on the proxy and rank 35 on the proper rate. The proper denominator is required for the index.
+
+**Caveat:** municipal survey estimates are noisy; the top rates and changes should be read with uncertainty bands. This is not a causal claim.
 
 ---
 

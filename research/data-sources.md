@@ -58,7 +58,15 @@ The designated-city wards and the special-wards group duplicate the city-level r
 
 Japan has **926 towns/villages** (743 towns + 183 villages). Therefore **682 towns/villages (73.6%) are missing** from the table.
 
-**Coverage of the vacancy stock:** the 1,059 clean units account for **8,501,240 vacant dwellings**, or **94.4%** of the national **9,001,600**. The **500,360 vacant dwellings (5.6%)** in the missing municipalities are not separately reported. This is a substantive gap, not just a place-count issue.
+**Coverage of the vacancy stock:** the 1,059 clean units account for **8,501,240 vacant dwellings**, or **94.4%** of the national **9,001,600**. The **500,360 vacant dwellings (5.6%)** in the missing municipalities are not separately reported. The gap is larger for the risk measure: the missing municipalities hold **327,880 “other vacant” (8.5%)** and **89,240 dilapidated “other vacant” (10.0%)**. This is a substantive gap, not just a place-count issue.
+
+### 2.2a Total-dwelling tables
+
+- **2023 table 1-2-1:** `statsDataId=0004021421`; 15,396 rows; 1,283 areas.
+- **2018 table 1-2-1:** `statsDataId=0003355290`; 15,720 rows; 1,310 areas.
+- **Validation:** total dwellings 65,046,700 (2023) / 62,407,400 (2018); vacant 9,001,600 / 8,488,600; other vacant 3,856,000 / 3,487,200. Vacancy counts match tables 34-2 / 35-2 with **0 mismatches**; total-dwelling coverage is **1,059/1,059** and **1,086/1,086**.
+- **Category-code trap:** 2023 `221` = other vacant; 2018 `221` = secondary. Map by year-specific code, not position.
+- **Coverage of national totals (2023 units):** total dwellings 96.6%; vacant 94.4%; other vacant 91.5%; dilapidated other vacant **90.0%**.
 
 **Coverage changed between waves.** 2018 has **1,086 clean municipal units** (271 towns/villages) and covers **8,077,270 vacant dwellings (95.2%)**; 2023 has **1,059** (244 towns/villages) and covers **8,501,240 (94.4%)**. The 27-unit difference is **threshold-driven, not merger-driven**: the e-Stat merger history shows no municipal mergers in 2018–2023; 29 towns/villages dropped out and 2 entered. The balanced 2018–2023 panel is **1,057 units**.
 

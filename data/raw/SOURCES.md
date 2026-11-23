@@ -120,3 +120,48 @@ The API table's national 2025 population is **123,049,524**, while the summary P
 - FY2023 and FY2024 return no data in this table; FY2022 is the latest available.
 - 195 areas have no index: all 195 are wards (171 designated-city wards + 23 special wards + 1 special-wards group). The index is municipal, not ward-level.
 - Coverage in the 2023 analysis universe: **1,036 of 1,059 units (97.8%)**; the only missing units are the 23 special wards.
+
+## Total-dwelling tables (2023 and 2018)
+
+### 2023 table 1-2-1
+
+- **File:** `estat_2023_table1-2-1_2026-11-23.json`
+- **Source:** e-Stat API, 2023 Housing and Land Survey table 1-2-1 (`statsDataId=0004021421`)
+- **Access date:** 2026-11-23
+- **SHA-256:** `333673980F872AB3A77E53F914C892FFD35455D5D6C07301FBA73ADA5358EEA3`
+- **Size:** 1,749,881 bytes
+- **Rows:** 15,396 (12 categories × 1,283 areas)
+- **Licence:** e-Stat terms; CC BY 4.0-compatible.
+
+### 2018 table 1-2-1
+
+- **File:** `estat_2018_table1-2-1_2026-11-23.json`
+- **Source:** e-Stat API, 2018 Housing and Land Survey table 1-2-1 (`statsDataId=0003355290`)
+- **Access date:** 2026-11-23
+- **SHA-256:** `5D84E3CF44F414865BE83074423B0D0E216536FE14FA33146A9E07EF6AA27432`
+- **Size:** 1,785,570 bytes
+- **Rows:** 15,720 (12 categories × 1,310 areas)
+- **Licence:** e-Stat terms; CC BY 4.0-compatible.
+
+### Category-code trap
+
+The category codes differ between waves:
+
+- 2023: `221` = other vacant, `222` = rental, `223` = sale, `224` = secondary.
+- 2018: `221` = secondary, `222` = rental, `223` = sale, `224` = other vacant.
+
+Map by code per year, not by position.
+
+### Validation
+
+| | 2023 | 2018 |
+|---|---:|---:|
+| Total dwellings | 65,046,700 | 62,407,400 |
+| Vacant total | 9,001,600 | 8,488,600 |
+| Other vacant | 3,856,000 | 3,487,200 |
+| Clean-unit coverage | 1,059/1,059 | 1,086/1,086 |
+| Vacancy-count mismatches vs 34-2/35-2 | 0 | 0 |
+
+**Coverage of national totals (2023 clean units):** total dwellings 96.6%; vacant 94.4%; other vacant 91.5%; dilapidated other vacant **90.0%**.
+
+**Important:** the 682 missing municipalities hold **327,880 other vacant (8.5%)** and **89,240 dilapidated other vacant (10.0%)**. The risk measure has a larger coverage gap than the headline vacancy count.
