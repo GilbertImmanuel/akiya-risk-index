@@ -1,7 +1,7 @@
 # The Empty House Atlas — Research Dossier
 
 **Status:** Phase 0 — research and data audit. No data pipeline, index, or map has been built yet.
-**Last updated:** 2026-11-12
+**Last updated:** 2026-11-23
 **Project root:** `C:\Users\Gilbert\Documents\Projects\akiya-risk-index`
 
 ---

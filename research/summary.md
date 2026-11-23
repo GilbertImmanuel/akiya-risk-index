@@ -1,6 +1,6 @@
 # Session Summary: What Was Verified, What Changed, and What Comes Next
 
-**Date:** 2026-11-12
+**Date:** 2026-11-23
 **Purpose:** A one-page executive summary of the research dossier. Read this after `README.md`; details are in the linked files.
 
 ---

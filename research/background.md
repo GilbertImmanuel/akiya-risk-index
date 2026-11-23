@@ -1,6 +1,6 @@
 # Background: Verified Numbers, Definitions, and Measurement Caveats
 
-**Last updated:** 2026-11-12
+**Last updated:** 2026-11-23
 **Purpose:** Establish the verified factual baseline for the project. This file replaces the provisional background in the brief where the two differ.
 
 ---

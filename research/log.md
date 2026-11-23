@@ -1,6 +1,6 @@
 # Research Log
 
-**Last updated:** 2026-11-12
+**Last updated:** 2026-11-23
 **Purpose:** A chronological record of searches, sources, and what they changed. This is the audit trail for the dossier.
 
 ---

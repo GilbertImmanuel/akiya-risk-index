@@ -1,6 +1,6 @@
 # Decision Log
 
-**Last updated:** 2026-11-12
+**Last updated:** 2026-11-23
 **Purpose:** Record material changes to the brief, with date, old approach, new approach, evidence, and rationale. Reversible choices are logged here too, but identity-changing choices are marked clearly.
 
 ---

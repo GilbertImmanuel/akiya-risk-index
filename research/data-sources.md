@@ -1,6 +1,6 @@
 # Data Sources: Inventory, Coverage, Access, and Feasibility
 
-**Last updated:** 2026-11-12
+**Last updated:** 2026-11-23
 **Purpose:** A working inventory of every dataset the project may use, with coverage, access method, licence, and a feasibility verdict. This is the file to update first when a new source is found.
 
 ---

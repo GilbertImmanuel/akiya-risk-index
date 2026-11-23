@@ -1,6 +1,6 @@
 # Findings: What We Have Established So Far
 
-**Last updated:** 2026-11-12
+**Last updated:** 2026-11-23
 **Purpose:** Synthesise the research into a small number of claims, each labelled **Fact**, **Inference**, or **Hypothesis**. This is the file to update as the data audit progresses.
 
 ---
