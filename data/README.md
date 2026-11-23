@@ -12,7 +12,6 @@
 - Record the source URL, access date, and checksum in `data/raw/SOURCES.md`.
 - Use ISO dates in filenames: `estat_34-2_2023_2026-11-16.xlsx`.
 - Processed files: `panel_v1.parquet`, `index_v1.csv`.
-- Do not commit API keys or `.env`.
 
 ## Reproducibility
 

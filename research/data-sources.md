@@ -188,14 +188,45 @@ Japan has **926 towns/villages** (743 towns + 183 villages). Therefore **682 tow
 
 ## 9. Boundaries and accessibility
 
-- **Boundaries:** 国土数値情報 N03 (administrative areas), GSI; municipal codes; commercial use permitted.
-- **Rail:** 国土数値情報 N02 (railway lines/stations); station passenger data (S12) where available.
-- **Accessibility metrics:** station count per 10,000 population; distance from the municipal population centroid to the nearest station; DID share.
-- **Travel time:** requires a routing engine and OSM/MLIT road data; defer to Phase 2 unless a precomputed dataset is available.
-- **OSM/Overpass:** ODbL 1.0; attribution and share-alike for derived databases; rate-limited. Prefer 国土数値情報 for the core index to avoid ODbL complications.
-- **Use:** activation-potential lens.
+### 9.1 Administrative boundaries — N03
 
-**Verdict:** good for simple metrics; travel time is a Phase 2 enhancement.
+- **Dataset:** 国土数値情報 **N03 行政区域**, 2023-01-01 version.
+- **Source / licence:** MLIT National Land Information Division; open data (CC BY 4.0) since 2018; attribution required.
+- **Download:** https://nlftp.mlit.go.jp/ksj/gml/data/N03/N03-2023/N03-20230101_GML.zip (448,421,619 bytes; SHA-256 `D0CF37CF…C962E7A`).
+- **Structure:** 122,929 polygons; 1,917 codes; `N03_007` is the 5-digit administrative code; DBF is Shift-JIS.
+- **Why it matters:** gives a consistent 2023 municipal geography and a polygon area denominator that matches the station numerator.
+- **Processing:** dissolve designated-city wards into their city; keep the 23 special wards separate; exclude `所属未定地`. Result: **1,059/1,059** panel polygons, median area ratio vs census 1.0000.
+- **Caveat:** 19 designated cities are represented only by wards; 岡山市 has an extra `所属未定地` polygon (excluded). N03 is 2023-01-01, while the vacancy survey is 2023-10-01; no relevant merger occurred in the window.
+
+### 9.2 Rail stations — N02
+
+- **Dataset:** 国土数値情報 **N02 鉄道**, FY2023 (as of 2023-12-31).
+- **Source / licence:** MLIT; open data (CC BY 4.0) since 2020; attribution required.
+- **Download:** https://nlftp.mlit.go.jp/ksj/gml/data/N02/N02-23/N02-23_GML.zip (17,518,918 bytes; SHA-256 `E91ECDEE…9C82A40`).
+- **Structure:** `Station` layer has 10,240 LineString records (one per line/operator), 10,160 station codes, 9,059 group codes. A group code collapses same-name stations within 300 m.
+- **Processing:** exclude funicular (`13`) and trolleybus (`17`); collapse to group facilities; take the representative point of the merged platform geometry. Result: **9,007 facilities**.
+- **Headline definition:** `station_count` counts **heavy-rail facilities** (JR, private railways, subway, monorail, AGT, guided rail, maglev). Tram-only stops (`21` 軌道) are reported separately as `tram_stop_count`.
+- **Why trams are separate:** tram stops are local street access, not regional rail access. In 高知市, for example, 57 tram stops would otherwise swamp 10 heavy-rail stations.
+- **Caveat:** station geometries are short platform segments, not points; the representative point is an approximation. 375 panel stations are within 100 m of a boundary and 48 within 1 m; assignment uses the containing polygon. One station needed a 1.42 km nearest-polygon fallback.
+
+### 9.3 Station passengers — S12
+
+- **Dataset:** 国土数値情報 **S12 駅別乗降客数**, FY2023 (file `S12-24`, compiled 2024).
+- **Source / licence:** MLIT, compiled from operator data; open data (CC BY 4.0); attribution required.
+- **Download:** https://nlftp.mlit.go.jp/ksj/gml/data/S12/S12-24/S12-24_GML.zip (6,244,895 bytes; SHA-256 `37E7B9B3…D80E974F`).
+- **Structure:** 10,531 records; per-year blocks of duplicate code, data-existence code, notes, passengers. FY2023 = `S12_054`–`S12_057`.
+- **Trap:** no-data records store `0`, not null. Only records with duplicate code `1` and existence code `1` carry usable values.
+- **Coverage:** **6,536 / 7,479 (87.4%)** of heavy-rail stations in the panel have passenger data. JR Hokkaido/Tohoku unmanned stations and JR Kyushu stations outside the top 300 are missing.
+- **Definition:** 乗降客数 counts **boardings + alightings**, not unique travellers. `passengers_per_capita` can exceed 1 in employment centres (e.g., 千代田区 68) because residents are few relative to commuters; do not read it as resident trip frequency.
+- **Use:** secondary metric only. Report `passenger_data_share` alongside `passengers_per_capita`; do not compare per-capita passenger totals where coverage is low.
+
+### 9.4 Metrics and deferred work
+
+- **v0 metrics:** heavy-rail station count, station density per 100 km², stations per 10,000 population, passenger sums and per-capita passengers (secondary), tram-stop count (separate), population density.
+- **Deferred to Phase 1:** nearest-station distance and travel time require a population-weighted centroid or population grid; a geometric-centroid distance would be misleading in rural municipalities. DID share is also deferred.
+- **OSM/Overpass:** ODbL 1.0; attribution and share-alike for derived databases; rate-limited. Prefer 国土数値情報 for the core index to avoid ODbL complications.
+
+**Verdict:** good for simple, reproducible municipal access metrics; travel time is a Phase 2 enhancement.
 
 ---
 

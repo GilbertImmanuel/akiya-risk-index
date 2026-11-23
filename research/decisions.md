@@ -49,6 +49,11 @@ The user comes from an **IT background** with no housing or real-estate experien
 | Policy variables | Descriptive context, not validation | Designations are endogenous to administrative capacity. |
 | Akiya-bank variables | Participation dummy + aggregate trend + manual case-study counts | No scraping; avoids treating listings as vacancy. |
 | Pilot prefectures | Tokyo, Nagano, Kochi | Contrasting demand, secondary-home, and rural/thin-market conditions. |
+| Accessibility headline | **Heavy-rail station count** (JR, private, subway, monorail, AGT, maglev); tram-only stops reported separately | Trams are local street access, not regional rail access; including them would let 高知市’s 57 tram stops swamp its 10 heavy-rail stations. |
+| Station unit | **N02 group code** (same name within 300 m), one representative point per facility | Counts station facilities, not line/operator records; avoids double-counting interchanges. |
+| Boundary assignment | **Containing N03 polygon**; one nearest-polygon fallback logged; 375 stations within 100 m of a boundary flagged | Nearest-centroid reassignment would be less defensible than the containing polygon. |
+| Area denominator | **Dissolved N03 polygon area**, not census reference area | Keeps numerator (station points) and denominator (polygon) on the same geography; median ratio vs census 1.0000. |
+| Passenger data | S12 **secondary**, with `passenger_data_share` flag; no headline per-capita passenger ranking | 12.6% of heavy stations lack data, concentrated in JR Hokkaido/Tohoku and JR Kyushu. |
 
 ---
 

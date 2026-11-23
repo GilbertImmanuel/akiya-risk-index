@@ -4,8 +4,8 @@ A reproducible, municipal-level study of housing vacancy in Japan: where
 structural vacancy is accumulating, what distinguishes places with different
 trajectories, and whether local housing markets already reflect the risk.
 
-**Status:** Phase 0 scaffold. The research dossier is complete; the data pipeline
-and index are not built yet.
+**Status:** Phase 0 in progress. Vacancy, census, fiscal, and accessibility data
+are built; market data and the index are next.
 
 ---
 
@@ -88,8 +88,6 @@ Copy `.env.example` to `.env` and fill in:
 - `ESTAT_APP_ID` — free from https://www.e-stat.go.jp/api/
 - `REINFOLIB_API_KEY` — free from https://www.reinfolib.mlit.go.jp/api/request/
 
-`.env` is git-ignored. Never commit keys.
-
 ### 3. Quarto
 
 Install Quarto: https://quarto.org/docs/get-started/
@@ -136,8 +134,7 @@ https://gilbertimmanuel.github.io/akiya-risk-index/
 ```
 
 The workflow in `.github/workflows/pages.yml` renders the Quarto site and
-deploys it. In the repository settings, set **Pages → Source** to
-**GitHub Actions**.
+deploys it to GitHub Pages.
 
 All site assets use relative paths because the site is served from a
 subpath.
@@ -148,6 +145,3 @@ subpath.
 
 Code: MIT (see [`LICENSE`](LICENSE)).
 Data: source-specific terms (see [`DATA_LICENCES.md`](DATA_LICENCES.md)).
-
-Local-only working notes are excluded from git; they are not part of the
-published repository.

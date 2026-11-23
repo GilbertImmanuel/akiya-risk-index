@@ -1,0 +1,113 @@
+Accessibility v0 validation
+========================================
+Headline = heavy-rail stations (JR, private, subway, monorail, AGT, maglev).
+Tram-only stops (軌道) are reported separately, not in station_count.
+Stations in N02 (after exclusions): 9,007
+  heavy-rail facilities: 8,399; tram-only stops: 608
+Assigned within panel: 8,083
+  heavy: 7,479; tram-only: 604
+Outside panel: 924
+Unassigned (no polygon): 0
+Units in panel: 1,059
+Units with accessibility row: 1,059
+Units with zero heavy-rail stations: 126 (11.9%)
+Total heavy-rail stations assigned to panel: 7,479
+Total tram-only stops assigned to panel: 604
+Heavy-rail passenger data coverage: 6,536 / 7,479 stations (87.4%)
+Spearman station density vs population density: rho=0.701, p=1.84e-157
+Spearman station count vs population: rho=0.559, p=6.81e-88
+
+Top 15 by station count:
+unit_code unit_name_2023  station_count  station_density_per_100km2  pop_2025
+    23100           名古屋市            152                   46.557371   2345892
+    14100            横浜市            138                   31.506492   3754840
+    27100            大阪市            123                   54.554441   2808624
+    28100            神戸市            121                   21.693288   1497630
+    26100            京都市             98                   11.838232   1431713
+    01100            札幌市             72                    6.421340   1964034
+    34100            広島市             72                    7.941014   1172423
+    40130            福岡市             70                   20.380298   1663892
+    40100           北九州市             58                   11.776686    904289
+    14130            川崎市             54                   37.772657   1561132
+    22130            浜松市             54                    3.464800    765750
+    04100            仙台市             53                    6.742205   1096951
+    12100            千葉市             47                   17.294353    994970
+    16201            富山市             46                    3.704409    402133
+    37201            高松市             46                   12.249178    407208
+
+Top 10 by station density (per 100 km2):
+unit_code unit_name_2023  station_count  station_density_per_100km2
+    13102            中央区             24                  234.743253
+    13101           千代田区             23                  200.303451
+    13103             港区             34                  165.586096
+    13106            台東区             16                  158.316713
+    13104            新宿区             26                  142.668836
+    13105            文京区             15                  132.906191
+    13116            豊島区             16                  122.963031
+    13113            渋谷区             18                  119.122417
+    13109            品川区             26                  113.858512
+    13107            墨田区             14                  101.654625
+
+Zero heavy-rail stations, largest population:
+unit_code unit_name_2023 level  pop_2025  tram_stop_count
+    47211            沖縄市  city    141894                0
+    47213           うるま市  city    128437                0
+    47205           宜野湾市  city    100158                0
+    46203            鹿屋市  city     96073                0
+    08232            神栖市  city     93286                0
+    14218            綾瀬市  city     82952                0
+    19208         南アルプス市  city     69250                0
+    13223          武蔵村山市  city     69076                0
+    43215            天草市  city     68105                0
+    47209            名護市  city     66084                0
+    47212           豊見城市  city     65669                0
+    47210            糸満市  city     60664                0
+    40210            八女市  city     57350                0
+    02206           十和田市  city     56775                0
+    01235            石狩市  city     55771                0
+
+Top 10 by tram-stop count:
+unit_code unit_name_2023  station_count  tram_stop_count  pop_2025
+    27100            大阪市            123               93   2808624
+    39201            高知市             10               57    309383
+    34100            広島市             72               55   1172423
+    42201            長崎市              5               38    381738
+    46201           鹿児島市             19               35    580970
+    43100            熊本市             27               34    730854
+    16201            富山市             46               28    402133
+    01202            函館市              3               26    230498
+    25201            大津市             16               24    343051
+    01100            札幌市             72               23   1964034
+
+Tokyo special wards, top 8 by heavy-rail station count:
+unit_code unit_name_2023  station_count  tram_stop_count  pop_2025
+    13111            大田区             40                0    759409
+    13103             港区             34                0    272662
+    13112           世田谷区             30                8    956608
+    13108            江東区             28                0    553358
+    13104            新宿区             26                2    361634
+    13109            品川区             26                0    426403
+    13102            中央区             24                0    181918
+    13121            足立区             24                0    702718
+
+Nagano sample:
+unit_code unit_name_2023  station_count  pop_2025
+    20201            長野市             20    357112
+    20202            松本市             20    232347
+    20203            上田市             18    144350
+    20204            岡谷市              2     44535
+    20205            飯田市             15     90652
+    20206            諏訪市              1     46402
+    20207            須坂市              4     47799
+    20208            小諸市              6     40217
+
+Kochi sample:
+unit_code unit_name_2023  station_count  pop_2025
+    39201            高知市             10    309383
+    39203            安芸市              7     14625
+    39204            南国市              4     45413
+    39206            須崎市              6     18310
+    39208            宿毛市              4     17239
+    39210           四万十市              8     30502
+    39211            香南市              5     31293
+    39212            香美市              4     24423

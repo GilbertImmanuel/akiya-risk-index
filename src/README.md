@@ -1,7 +1,7 @@
 # Source Pipeline
 
-Numbered scripts, run in order. Phase 0 placeholders are marked
-`NotImplementedError`; they will be filled as the audit progresses.
+Numbered scripts, run in order. Most Phase 0 data steps are implemented;
+index and map export remain placeholders.
 
 | Script | Purpose |
 |---|---|
@@ -17,6 +17,10 @@ Numbered scripts, run in order. Phase 0 placeholders are marked
 | `05_index.py` | Build risk, activation, and capacity indices. |
 | `06_validate.py` | Schema checks, uncertainty, sensitivity, validation. |
 | `07_export_map.py` | Export GeoJSON/JSON for the Quarto site. |
+| `08_download_ksj.py` | Download KSJ N03/N02/S12 with checksums. |
+| `09_municipal_boundaries.py` | Build the 1,059-unit dissolved boundary layer. |
+| `10_stations.py` | Build station facilities and join S12 passengers. |
+| `11_accessibility.py` | Spatial join, accessibility metrics, pilot v2. |
 
 ## Conventions
 

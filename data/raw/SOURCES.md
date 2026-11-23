@@ -165,3 +165,101 @@ Map by code per year, not by position.
 **Coverage of national totals (2023 clean units):** total dwellings 96.6%; vacant 94.4%; other vacant 91.5%; dilapidated other vacant **90.0%**.
 
 **Important:** the 682 missing municipalities hold **327,880 other vacant (8.5%)** and **89,240 dilapidated other vacant (10.0%)**. The risk measure has a larger coverage gap than the headline vacancy count.
+
+## KSJ N03 — administrative boundaries (2023-01-01)
+
+- **File:** `ksj_N03_2023.zip`
+- **Dataset:** 国土数値情報 N03 行政区域, 2023年（令和5年）版
+- **Vintage:** 2023-01-01
+- **Source:** MLIT, National Land Information Division
+- **Data list:** https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2023.html
+- **Download URL:** https://nlftp.mlit.go.jp/ksj/gml/data/N03/N03-2023/N03-20230101_GML.zip
+- **Access date:** 2026-11-23
+- **SHA-256:** `D0CF37CF450438A62B14007179CBC7BD47B085F20465F6A32F7EAAD8AC962E7A`
+- **Size:** 448,421,619 bytes
+- **Licence:** Open data (CC BY 4.0) for 2018 onward; attribution required.
+
+### Structure
+
+- GML zip also contains a shapefile and GeoJSON; the shapefile was used for speed.
+- 122,929 polygons; 1,917 unique 5-digit codes.
+- Fields: `N03_001` prefecture, `N03_002` subprefecture, `N03_003` county/designated-city name, `N03_004` municipality/ward name, `N03_007` administrative code.
+- CRS: JGD2011 (EPSG:6668). DBF attribute encoding is Shift-JIS (`cp932`).
+
+### Parser and outputs
+
+- `src/09_municipal_boundaries.py`
+- Outputs: `data/interim/municipal_boundaries.gpkg` (1,059 dissolved units), `data/interim/municipal_area.csv`, `data/interim/ward_to_city_2023.csv`.
+- Designated-city wards dissolved into their city; 23 special wards kept separate; `所属未定地` rows excluded.
+- **QA:** 1,059/1,059 panel units, 0 missing, 0 zero-area. Area ratio vs census: median 1.0000, min 0.959 (みやき町), max 1.114 (潟上市), consistent with boundary/reclamation vintage differences.
+
+## KSJ N02 — railway stations and lines (FY2023)
+
+- **File:** `ksj_N02_2023.zip`
+- **Dataset:** 国土数値情報 N02 鉄道, 2023年度（令和5年度）版
+- **Vintage:** as of 2023-12-31
+- **Data list:** https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2023.html
+- **Download URL:** https://nlftp.mlit.go.jp/ksj/gml/data/N02/N02-23/N02-23_GML.zip
+- **Access date:** 2026-11-23
+- **SHA-256:** `E91ECDEE90966877C6119AB94DC92EE6562EB9D89194F8A0A91F71B179C82A40`
+- **Size:** 17,518,918 bytes
+- **Licence:** Open data (CC BY 4.0) since 2020; attribution required.
+
+### Structure
+
+- `Station` layer: 10,240 LineString records; 10,160 station codes; 9,059 group codes.
+- Fields: `N02_001` rail type, `N02_002` operator type, `N02_003` line name, `N02_004` operator, `N02_005` station name, `N02_005c` station code, `N02_005g` group code.
+- Station geometries are short platform segments, not points; a representative point is taken after grouping.
+- CRS: JGD2011 (EPSG:6668); UTF-8 GeoJSON extracted from the zip.
+
+### Parser and outputs
+
+- `src/10_stations.py`
+- Outputs: `data/interim/stations.csv`, `data/interim/stations.geojson` (9,007 facilities).
+- Rail types excluded: `13` funicular (鋼索鉄道) and `17` trolleybus (無軌条鉄道).
+- `station_count` headline excludes tram-only stops (`21` 軌道); tram stops are reported separately.
+- **QA:** 10,240 records → 10,184 after exclusions → 9,007 facilities; 8,399 heavy-rail facilities and 608 tram-only stops.
+
+## KSJ S12 — station passengers (FY2023)
+
+- **File:** `ksj_S12_2023.zip`
+- **Dataset:** 国土数値情報 S12 駅別乗降客数, 2023年度（令和5年度）版
+- **Vintage:** FY2023 (file `S12-24`, compiled 2024)
+- **Data list:** https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-S12-2023.html
+- **Download URL:** https://nlftp.mlit.go.jp/ksj/gml/data/S12/S12-24/S12-24_GML.zip
+- **Access date:** 2026-11-23
+- **SHA-256:** `37E7B9B39586C324B70267A9E7118C9FA8D73AA2A8CC7C5E32665B8BD80E974F`
+- **Size:** 6,244,895 bytes
+- **Licence:** Open data (CC BY 4.0); attribution required.
+
+### Structure
+
+- 10,531 LineString records; 10,182 station codes; 9,076 group codes.
+- Identifiers: `S12_001` station name, `S12_001c` station code, `S12_001g` group code, `S12_002` operator, `S12_003` line, `S12_004` rail type, `S12_005` operator type.
+- Per-year blocks of four fields: duplicate code, data-existence code, notes, passengers. FY2023 = `S12_054`–`S12_057`.
+- `S12_054` duplicate code: `1` listed at this line's station, `2` listed at another line's station, `3` no station.
+- `S12_055` data-existence code: `1` data present, `2` no data, `3` not public, `4` no station.
+- **Trap:** no-data records store `0`, not null. Only records with duplicate code `1` and existence code `1` are summed.
+
+### Parser and outputs
+
+- `src/10_stations.py`
+- Join by station group code; group sums are operator-level, not unique traveller counts.
+- **QA:** 8,134 valid FY2023 records, 1,268 no-data records, 255 no-station records, 874 records listed under another line; total **117,888,360** daily passengers. Passenger data missing for **1,274 of 9,007** facilities (14.1%); heavy-rail station coverage in the panel is **6,536 / 7,479 (87.4%)**.
+- **Definition:** 乗降客数 counts **boardings + alightings**, not unique travellers. Per-capita values can exceed 1 in employment centres (e.g., 千代田区 68) because residents are few relative to commuters.
+
+### Combined accessibility outputs
+
+- `src/11_accessibility.py`
+- `data/processed/accessibility_2023.csv` — 1,059-unit unit-level table.
+- `data/processed/panel_with_accessibility_2023.csv` — vacancy panel plus accessibility.
+- `data/processed/pilot_panel_v2.csv` — 89-unit pilot.
+- `data/interim/station_assignments.csv` — station-to-municipality assignment log.
+- `outputs/accessibility_validation.txt`, `outputs/zero_station_municipalities.csv` — QA.
+
+### Notes and caveats
+
+- N02 station points are representative points of platform segments. 375 panel stations lie within 100 m of a municipal boundary; 48 within 1 m. Assignment uses the containing polygon; one station (大井競馬場前, Tokyo Monorail) needed a nearest-polygon fallback at 1.42 km.
+- 924 stations fall in the 682 out-of-scope municipalities and are excluded from the panel.
+- 126 of 1,059 units (11.9%) have no heavy-rail station; 15 of these have a rail line crossing the polygon but no station. This is a real access measure, not a data failure.
+- Passenger data are secondary: JR Hokkaido/Tohoku unmanned stations and JR Kyushu stations outside the top 300 are missing. Use `passenger_data_share` before comparing `passengers_per_capita`.

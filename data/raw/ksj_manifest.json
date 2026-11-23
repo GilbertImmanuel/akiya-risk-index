@@ -1,0 +1,32 @@
+{
+  "N02": {
+    "filename": "ksj_N02_2023.zip",
+    "dataset": "N02 鉄道",
+    "vintage": "FY2023 (2023-12-31)",
+    "url": "https://nlftp.mlit.go.jp/ksj/gml/data/N02/N02-23/N02-23_GML.zip",
+    "access_date": "2026-11-23",
+    "bytes": 17518918,
+    "sha256": "E91ECDEE90966877C6119AB94DC92EE6562EB9D89194F8A0A91F71B179C82A40",
+    "licence": "Open data (CC BY 4.0) since 2020; attribution required."
+  },
+  "S12": {
+    "filename": "ksj_S12_2023.zip",
+    "dataset": "S12 駅別乗降客数",
+    "vintage": "FY2023",
+    "url": "https://nlftp.mlit.go.jp/ksj/gml/data/S12/S12-24/S12-24_GML.zip",
+    "access_date": "2026-11-23",
+    "bytes": 6244895,
+    "sha256": "37E7B9B39586C324B70267A9E7118C9FA8D73AA2A8CC7C5E32665B8BD80E974F",
+    "licence": "Open data (CC BY 4.0); attribution required."
+  },
+  "N03": {
+    "filename": "ksj_N03_2023.zip",
+    "dataset": "N03 行政区域",
+    "vintage": "2023-01-01",
+    "url": "https://nlftp.mlit.go.jp/ksj/gml/data/N03/N03-2023/N03-20230101_GML.zip",
+    "access_date": "2026-11-23",
+    "bytes": 448421619,
+    "sha256": "D0CF37CF450438A62B14007179CBC7BD47B085F20465F6A32F7EAAD8AC962E7A",
+    "licence": "Open data (CC BY 4.0) since 2018; attribution required."
+  }
+}

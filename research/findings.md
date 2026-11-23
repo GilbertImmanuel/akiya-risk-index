@@ -172,6 +172,30 @@
 
 ---
 
+## Finding 13 — Rail access is associated with lower structural vacancy, but not with recent change
+
+**Fact (Phase 0 accessibility build).** The 2023 station layer contains **9,007 facilities**: **8,399 heavy-rail stations** (JR, private, subway, monorail, AGT, guided rail, maglev) and **608 tram-only stops**. After assigning stations to municipalities, **7,479 heavy-rail stations** fall inside the 1,059-unit panel; **924** fall in the 682 out-of-scope towns/villages.
+
+**Fact.** **126 units (11.9%) have no heavy-rail station**. Fifteen of these have a rail line crossing the municipality but no station (e.g., 綾瀬市, 阿見町, 十和田市); the rest are genuinely rail-free. Zero-station status is therefore an access measure, not a data failure.
+
+**Fact (association, not causation).** Across the 1,059 units:
+
+| Pair | Spearman ρ | Interpretation |
+|---|---:|---|
+| Station density vs population density | **+0.701** | Rail access tracks urbanity, as expected. |
+| Station density vs 2023 dilapidated “other vacant” rate | **−0.447** | More accessible places have lower structural vacancy. |
+| Station density vs 2023 total vacancy rate | **−0.365** | Same direction, weaker. |
+| Station density vs 2018–2023 change in dilapidated “other vacant” rate | **−0.018** | No association. |
+| Station density vs 2018–2023 change in broad “other vacant” rate | **−0.220** | Weak negative association. |
+
+**Inference.** Accessibility is a plausible part of the **activation lens**: places with more rail stations also have lower structural vacancy today. But the association is confounded with population density, age structure, and regional demand. The near-zero correlation with the **change** in dilapidated vacancy suggests accessibility explains the **level** of risk more than the **trajectory**.
+
+**Fact.** Passenger data are incomplete: **87.4%** of heavy-rail stations in the panel have S12 values. Coverage is especially thin for JR Hokkaido/Tohoku unmanned stations and JR Kyushu stations outside the top 300. Passenger-based metrics are secondary; station count and density are the robust v0 measures.
+
+**Implication:** use station count/density as the first activation variable, with `passenger_data_share` as a quality flag. Do not use `passengers_per_capita` as a headline without a coverage threshold. Revisit nearest-station distance and travel time in Phase 1 with a population-weighted centroid or grid.
+
+---
+
 ## Pilot v0 observations (preliminary, not a final ranking)
 
 **Fact (Phase 0 pilot).** The first pilot panel covers **89 units** in Tokyo (51), Nagano (25), and Kochi (13). All have 2018 vacancy data and 2025 census data; 23 Tokyo special wards lack the municipal fiscal strength index.

@@ -5,6 +5,20 @@
 
 ---
 
+## 2026-11-23 — Accessibility v0 (N03/N02/S12)
+
+- **Action:** Downloaded KSJ **N03** (2023-01-01 boundaries), **N02** (FY2023 rail), and **S12** (FY2023 passengers); recorded URLs, sizes, and SHA-256 in `data/raw/SOURCES.md` and `data/raw/ksj_manifest.json`.
+- **Boundaries:** built `data/interim/municipal_boundaries.gpkg`; 1,059/1,059 panel units, designated-city wards dissolved, special wards separate, `所属未定地` excluded; median area ratio vs census **1.0000**.
+- **Stations:** 10,240 N02 records → 9,007 facilities after excluding funicular/trolleybus; 8,399 heavy-rail, 608 tram-only. Representative points from platform LineStrings; grouped by N02 group code.
+- **Spatial join:** first matched to all N03 municipality polygons, then restricted to the panel, so stations in the 682 missing towns are not reassigned to neighbours. 7,479 heavy-rail stations in the panel; 924 outside; 126 units (11.9%) have no heavy-rail station.
+- **Passengers:** S12 FY2023; no-data records store 0, so only duplicate code 1 + existence code 1 were summed. 6,536/7,479 heavy stations (87.4%) have data.
+- **Associations:** station density vs population density **ρ=+0.701**; vs 2023 dilapidated other-vacancy rate **ρ=−0.447**; vs 2018–2023 change in that rate **ρ=−0.018**. Descriptive, not causal.
+- **Outputs:** `accessibility_2023.csv`, `panel_with_accessibility_2023.csv`, `pilot_panel_v2.csv`, `station_assignments.csv`, `zero_station_municipalities.csv`, `accessibility_validation.txt`.
+- **Caveat:** passenger metrics are secondary and coverage-sensitive; nearest-station distance and travel time deferred to Phase 1.
+- **Next:** market data (MLIT key pending; CSV fallback), akiya-bank participation, case studies, go/no-go memo.
+
+---
+
 ## 2026-11-23 — Total dwellings and proper vacancy rates
 
 - **Action:** Pulled 2023/2018 table 1-2-1 (`0004021421` / `0003355290`) and built `dwellings_2023.csv`, `dwellings_2018.csv`, `vacancy_panel_2018_2023.csv`, and `pilot_panel_v1.csv`.

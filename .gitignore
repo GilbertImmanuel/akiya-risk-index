@@ -22,6 +22,7 @@ docs/_freeze/
 data/raw/*
 !data/raw/.gitkeep
 !data/raw/SOURCES.md
+!data/raw/ksj_manifest.json
 data/interim/*
 !data/interim/.gitkeep
 *.parquet
