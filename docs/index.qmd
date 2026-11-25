@@ -6,9 +6,9 @@ subtitle: "Municipal housing vacancy risk and activation in Japan"
 ::: {.callout-note}
 ## Status: Phase 0 in progress
 
-The data baseline is built: vacancy, census, fiscal capacity, and accessibility.
-The [map prototype](map.qmd) still uses **placeholder geometry**; the real
-municipal layer is the next public milestone.
+The data baseline is built: vacancy, 2013/2008 city/ward context, census, fiscal
+capacity, and accessibility. The [map prototype](map.qmd) still uses
+**placeholder geometry**; the real municipal layer is the next public milestone.
 :::
 
 ## What this project is

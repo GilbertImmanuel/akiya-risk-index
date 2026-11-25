@@ -263,3 +263,63 @@ Map by code per year, not by position.
 - 924 stations fall in the 682 out-of-scope municipalities and are excluded from the panel.
 - 126 of 1,059 units (11.9%) have no heavy-rail station; 15 of these have a rail line crossing the polygon but no station. This is a real access measure, not a data failure.
 - Passenger data are secondary: JR Hokkaido/Tohoku unmanned stations and JR Kyushu stations outside the top 300 are missing. Use `passenger_data_share` before comparing `passengers_per_capita`.
+
+## 2013 Housing and Land Survey — table 53
+
+- **File:** `estat_vacancy_2013_2026-11-25.json`
+- **Survey:** 平成25年住宅・土地統計調査 (2013 Housing and Land Survey)
+- **Table:** 第53表 空き家の種類(4区分)，腐朽・破損の有無(2区分)，建て方(2区分)，構造(2区分)別空き家数―市区
+- **Source:** e-Stat API, `statsDataId=0003100835`
+- **Access date:** 2026-11-25
+- **SHA-256:** `EB3F6F2A1E4BBFF5369399101ABF9D468F6C84F4E39FEA36827FDEB005DCE91B`
+- **Size:** 17,025,550 bytes
+- **API rows:** 103,740
+- **Areas:** 988 (市区 only; cities and wards, no towns/villages)
+- **Licence:** e-Stat terms; CC BY 4.0-compatible; attribution required.
+
+### Structure
+
+- `cat01` = dilapidation (`00000` total, `00001` dilapidated, `00002` not)
+- `cat02` = structure (`00000` total, `00002` wooden, `00005` non-wooden)
+- `cat03` = building type (`00000` total, `00001` detached, `00004` terraced/apartment/other)
+- `cat04` = vacancy type (`00000` total, `00001` secondary, `00004` rental, `00005` sale, `00006` other)
+- `cat05` = vacant households (total only)
+
+### Parser and outputs
+
+- `src/12_vacancy_context.py`
+- Outputs: `data/interim/vacancy_2013.csv`, `data/processed/vacancy_context_2008_2023.csv`, `outputs/vacancy_comparability.txt`.
+- **Validation:** 812/815 target city/ward units; 3 missing units (滝沢市, 那珂川市, 富谷市) were towns/villages in 2013. Composition checks pass. 2013 vs 2018 vacant-count correlation **0.995**; median ratio **0.942**.
+
+## 2008 Housing and Land Survey — table 043-2
+
+- **File:** `estat_vacancy_2008_2026-11-25.json`
+- **Survey:** 平成20年住宅・土地統計調査 (2008 Housing and Land Survey)
+- **Table:** 第043-2表 空き家の種類(4区分)，腐朽・破損の有無(2区分)，建て方(2区分)，構造(2区分)別空き家数―市区
+- **Source:** e-Stat API, `statsDataId=0003010419`
+- **Access date:** 2026-11-25
+- **SHA-256:** `19157BDC7CC3B73FB5ACAC9073B8AC30D004B17F898C6BA883A501987FCA320C`
+- **Size:** 13,556,422 bytes
+- **API rows:** 101,850
+- **Areas:** 970 (市区 only; cities and wards, no towns/villages)
+- **Licence:** e-Stat terms; CC BY 4.0-compatible; attribution required.
+
+### Structure
+
+- `cat01` = dilapidation (`00` total, `01` dilapidated, `02` not)
+- `cat02` = vacancy type (`00` total, `01` secondary, `04` rental, `05` sale, `06` other)
+- `cat03` = building type (`00` total, `02` detached, `05` terraced/apartment/other)
+- `cat04` = structure (`00` total, `01` wooden, `02` non-wooden)
+
+### Parser and outputs
+
+- `src/12_vacancy_context.py`
+- Outputs: `data/interim/vacancy_2008.csv`, `data/processed/vacancy_context_2008_2023.csv`, `outputs/vacancy_comparability.txt`.
+- **Validation:** 805/815 target city/ward units; 10 missing units were towns/villages in 2008. Five units have ±20-dwelling composition rounding differences. 2008 vs 2018 vacant-count correlation **0.990**; median ratio **0.857**.
+
+### Decision
+
+- **2013:** usable as city/ward context with boundary flags.
+- **2008:** usable as city/ward context with stronger boundary flags; do not impute the 10 units that were not 市区 in 2008.
+- **Do not build a four-wave municipal panel.** The 2018–2023 panel remains the core; 2008/2013 are context only.
+- **Caveat:** rates are not computed for 2008/2013 because these tables do not include total dwellings. The context file reports counts and composition shares.

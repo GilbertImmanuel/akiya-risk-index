@@ -21,6 +21,7 @@ index and map export remain placeholders.
 | `09_municipal_boundaries.py` | Build the 1,059-unit dissolved boundary layer. |
 | `10_stations.py` | Build station facilities and join S12 passengers. |
 | `11_accessibility.py` | Spatial join, accessibility metrics, pilot v2. |
+| `12_vacancy_context.py` | Parse 2013/2008 city/ward tables; build context and comparability memo. |
 
 ## Conventions
 

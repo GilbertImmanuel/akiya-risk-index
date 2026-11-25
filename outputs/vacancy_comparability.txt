@@ -1,0 +1,36 @@
+2008/2013 vacancy context — comparability memo
+==================================================
+Access date: 2026-11-25
+2013 table 53: statsDataId=0003100835
+2008 table 043-2: statsDataId=0003010419
+
+Geography: 市区 only (cities and wards); no towns/villages.
+Target: 815 2023 city/ward units (772 cities + 20 designated cities + 23 special wards).
+
+Checks:
+2008: units=805/815; covered vacant=6,863,990; composition mismatches=5; other<dil=0; det<other=0; det_dil>det=0; boundary_changed=35
+2013: units=812/815; covered vacant=7,446,810; composition mismatches=0; other<dil=0; det<other=0; det_dil>det=0; boundary_changed=1
+2008 missing units (10): 姶良市, 大網白里市, あま市, 滝沢市, 白岡市, 那珂川市, 長久手市, みよし市, 富谷市, 野々市市
+2013 missing units (3): 滝沢市, 那珂川市, 富谷市
+The missing units were towns/villages in that wave, so they have no 市区 row.
+2008 composition differences: 5 units at ±20 dwellings, consistent with rounding.
+
+2013 vs 2018: n=812; median ratio=0.942; p05=0.727; p95=1.201; corr=0.995
+2008 vs 2018: n=805; median ratio=0.857; p05=0.607; p95=1.160; corr=0.990
+
+Category crosswalk:
+2008/2013: total, secondary, rental, sale, other.
+2018/2023: total, rental, sale, secondary, other (codes differ; map by year).
+The four substantive categories are stable; only labels/codes change.
+
+Decision:
+2013: usable as city/ward context with boundary flags (812/815 units; 1 boundary change).
+2008: usable as city/ward context with stronger boundary flags for 805/815 units.
+The 10 missing 2008 units were towns/villages then; do not impute them.
+Do not build a four-wave municipal panel; keep 2018–2023 as the core.
+
+Caveats:
+- 2008/2013 exclude towns/villages; the 1,059-unit panel is 2018–2023 only.
+- Heisei mergers mean 2008 boundaries often differ from 2023; boundary_changed flags this.
+- Rates are not computed for 2008/2013 because total dwellings are not in these tables.
+- Composition shares are comparable; counts are not a census of all vacant dwellings.

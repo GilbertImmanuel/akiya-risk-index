@@ -25,11 +25,11 @@
 - 2018–2023 municipal crosswalk; balanced panel 1,057 units.
 - 2025 Census population/households; FY2022 fiscal capacity.
 - Accessibility v0: 1,059-unit boundary layer, 9,007 station facilities, density and passenger metrics.
+- 2013/2008 city/ward context: 812/815 and 805/815 units, with boundary flags.
 - Public GitHub repository and GitHub Pages site.
 
 **Remaining**
 
-- 2013/2008 city/ward context.
 - Public map v1.
 - Market data (land prices and transactions).
 - Akiya-bank participation.
@@ -41,19 +41,19 @@
 
 ## 3. Phase 0 — Complete the data foundation
 
-### Stage A — 2013/2008 city/ward context
+### Stage A — 2013/2008 city/ward context — **complete**
 
-The last e-Stat-only vacancy task.
+- [x] Pull 2013 table 53 (`0003100835`) and 2008 table 043-2 (`0003010419`).
+- [x] Inspect hierarchy, coverage, and category labels.
+- [x] Build a historical code crosswalk from 2008/2013 to 2023, accounting for Heisei mergers.
+- [x] Dissolve designated-city wards; keep the 23 special wards separate.
+- [x] Harmonise categories and build `vacancy_context_2008_2023.csv`.
+- [x] Validate totals and overlap with 2018/2023.
+- [x] Write a comparability memo.
 
-- [ ] Pull 2013 table 53 (`0003100835`) and 2008 table 043-2 (`0003010419`).
-- [ ] Inspect hierarchy, coverage, and category labels.
-- [ ] Build a historical code crosswalk from 2008/2013 to 2023, accounting for Heisei mergers.
-- [ ] Dissolve designated-city wards; keep the 23 special wards separate.
-- [ ] Harmonise categories and build `vacancy_context_2008_2023.csv`.
-- [ ] Validate totals and overlap with 2018/2023.
-- [ ] Write a comparability memo.
+**Result:** 2013 covers **812/815** city/ward units; 2008 covers **805/815**. The missing units were towns/villages in those waves. 2013 has **1** post-2013 boundary change; 2008 has **35** post-2008 changes. Vacant-count correlation with 2018 is **0.995** (2013) and **0.990** (2008). Decision: use both as **city/ward context with boundary flags**; do not build a four-wave municipal panel.
 
-**Output:** city/ward context panel and a decision: use 2013/2008 with flags, or exclude them from municipal context.
+**Outputs:** `data/processed/vacancy_context_2008_2023.csv`, `outputs/vacancy_comparability.txt`, `src/12_vacancy_context.py`.
 
 ---
 
@@ -199,6 +199,7 @@ The Phase 0 gate.
 | **M0 — Source/licence matrix** | **Complete** | All core sources confirmed; credentials active; licences recorded. |
 | **M1 — 2023/2018 vacancy + pilot** | **Complete** | 2023 and 2018 parsed; joins tested; QA report. |
 | **M2 — Core panel + accessibility v0** | **Complete** | 2018–2023 harmonised (1,057 units); accessibility metrics; boundary layer. |
+| **M2b — 2013/2008 context** | **Complete** | 812/815 and 805/815 city/ward units; boundary flags; comparability memo. |
 | **M3 — Public map v1** | Stage B | Real municipal layer replaces the placeholder; filters work; site tested. |
 | **M4 — Market panel** | Stage C | 2018/2023 land prices and transactions; coverage flags; pilot/full decision. |
 | **M5 — Akiya-bank participation** | Stage D | Participation table and aggregate trend; no scraping. |

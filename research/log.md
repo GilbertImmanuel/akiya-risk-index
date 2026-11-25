@@ -5,6 +5,17 @@
 
 ---
 
+## 2026-11-25 — 2013/2008 city/ward context built
+
+- **Action:** Pulled 2013 table 53 (`0003100835`, 103,740 API rows) and 2008 table 043-2 (`0003010419`, 101,850 rows) via the e-Stat API; parsed categories, mapped old codes to 2023 units, and built `vacancy_context_2008_2023.csv`.
+- **Coverage:** 2013 covers **812/815** city/ward units; 2008 covers **805/815**. The missing units were towns/villages in those waves. 2013 has **1** post-2013 boundary change; 2008 has **35** post-2008 changes.
+- **Validation:** 2013 vs 2018 vacant-count correlation **0.995**, median ratio **0.942**; 2008 vs 2018 **0.990**, median ratio **0.857**. 2008 has five ±20-dwelling composition rounding differences; 2013 has none.
+- **Decision:** use 2013 and 2008 as **city/ward context with boundary flags**; do not build a four-wave municipal panel. Rates are not computed for 2008/2013 because total dwellings are not in these tables.
+- **Outputs:** `data/processed/vacancy_context_2008_2023.csv`, `data/interim/vacancy_2008.csv`, `data/interim/vacancy_2013.csv`, `outputs/vacancy_comparability.txt`; parser `src/12_vacancy_context.py`.
+- **Next:** Stage B — public map v1.
+
+---
+
 ## 2026-11-25 — Roadmap revised after accessibility and Pages milestones
 
 - **Action:** Rewrote `plan.md` around the remaining Phase 0 stages: **A** 2013/2008 context, **B** public map v1, **C** market data, **D** akiya-bank, **E** case studies, **F** go/no-go, then Phase 1a–1d.

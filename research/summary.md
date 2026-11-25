@@ -102,4 +102,4 @@ Remaining decisions are reversible/methodological and can be made during Phase 0
 
 ## 7. Next step
 
-Phase 0 is well advanced: the vacancy panel, total dwellings, crosswalk, 2025 Census, fiscal capacity, accessibility v0, and the public site are built. The next step is **Stage A — 2013/2008 city/ward context**. After that: **Stage B — public map v1**, **Stage C — market data**, **Stage D — akiya-bank**, **Stage E — case studies**, and **Stage F — go/no-go**.
+Phase 0 is well advanced: the vacancy panel, total dwellings, crosswalk, 2013/2008 city/ward context, 2025 Census, fiscal capacity, accessibility v0, and the public site are built. The next step is **Stage B — public map v1**. After that: **Stage C — market data**, **Stage D — akiya-bank**, **Stage E — case studies**, and **Stage F — go/no-go**.

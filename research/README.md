@@ -108,6 +108,6 @@ Where sources conflict, record both and explain the discrepancy. Do not convert 
 
 ## Next milestone
 
-**Phase 0 go/no-go:** vacancy, total dwellings, proper rates, the 2018–2023 crosswalk, 2025 Census, FY2022 fiscal capacity, accessibility v0, and the public site are built. Next: **Stage A — 2013/2008 city/ward context**, then **Stage B — public map v1**, **Stage C — market data**, **Stage D — akiya-bank**, **Stage E — case studies**, and **Stage F — go/no-go**.
+**Phase 0 go/no-go:** vacancy, total dwellings, proper rates, the 2018–2023 crosswalk, 2013/2008 context, 2025 Census, FY2022 fiscal capacity, accessibility v0, and the public site are built. Next: **Stage B — public map v1**, then **Stage C — market data**, **Stage D — akiya-bank**, **Stage E — case studies**, and **Stage F — go/no-go**.
 
 See `plan.md` for the full Phase 0/1 plan, milestones, data schema, risks, and go/no-go criteria.

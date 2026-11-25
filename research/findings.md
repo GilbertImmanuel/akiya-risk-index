@@ -65,7 +65,9 @@
 
 **Fact (Phase 0 API check).** The e-Stat API's 2013 table 53 (`statsDataId=0003100835`) and 2008 table 043-2 (`statsDataId=0003010419`) are **市区 only** (cities/wards). They do not include towns/villages. The 2008 table 043-1 is prefectural, not municipal.
 
-**Implication:** a four-wave municipal panel that includes towns/villages is **not available from the API**. The core panel is **2018–2023** (balanced 1,057 units); 2013/2008 are used as **city/ward context** only. Extracting the 2013/2008 町村 tables from printed reports would be a separate manual project and is not part of Phase 1.
+**Fact (2026-11-25 parse).** The tables were parsed into a city/ward context panel. 2013 covers **812/815** 2023 city/ward units; 2008 covers **805/815**. The missing units were towns/villages in those waves (e.g., 滝沢市, 富谷市, 那珂川市). 2013 has **1** post-2013 boundary change; 2008 has **35**, reflecting the Heisei mergers. Vacant-count correlation with 2018 is **0.995** for 2013 and **0.990** for 2008; median ratios are **0.942** and **0.857**. The four substantive vacancy categories are stable across the tables.
+
+**Implication:** a four-wave municipal panel that includes towns/villages is **not available from the API**. The core panel is **2018–2023** (balanced 1,057 units); 2013/2008 are used as **city/ward context only**, with boundary flags. Do not impute the missing units. Rates are not computed for 2008/2013 because those tables do not include total dwellings; the context panel reports counts and composition shares.
 
 ---
 

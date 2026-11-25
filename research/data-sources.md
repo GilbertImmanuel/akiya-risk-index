@@ -31,10 +31,19 @@
 |---|---|---|---|
 | 2023 | **34-2** | 空き家の種類(4区分)、腐朽・破損の有無(2区分)、建て方(2区分)、構造(2区分)別空き家数－全国、都道府県、市区町村 | The core table. Includes the 4 vacancy categories, dilapidation, building type, and structure. |
 | 2018 | **35-2** | Same structure as 2023 | Directly comparable conceptually, but the Excel layout differs: 11 header rows, 17 columns, and count columns ordered **total, secondary, rental, sale, other**. Label was `その他の住宅`. Parsed; 1,086 clean municipal units. |
-| 2013 | **53** | 空き家の種類(4区分)、腐朽・破損の有無(2区分)、建て方(2区分)、構造(2区分)別空き家数－市区 | The API table is **市区 only**; no 町村 table in the API. City/ward context only. |
-| 2008 | **043-2** | 空き家の種類(4区分)、腐朽・破損の有無(2区分)、建て方(2区分)、構造(2区分)別空き家数－市区 | The API table is **市区 only**; five-category table 043-1 is prefectural. City/ward context only. |
+| 2013 | **53** | 空き家の種類(4区分)、腐朽・破損の有無(2区分)、建て方(2区分)、構造(2区分)別空き家数－市区 | **Parsed 2026-11-25.** 988 areas, 103,740 API rows; **812/815** city/ward units. City/ward context only. |
+| 2008 | **043-2** | 空き家の種類(4区分)、腐朽・破損の有無(2区分)、建て方(2区分)、構造(2区分)別空き家数－市区 | **Parsed 2026-11-25.** 970 areas, 101,850 API rows; **805/815** city/ward units. City/ward context only; 043-1 is prefectural. |
 
-**Action for Phase 0:** download each table, compare category labels and totals, and build a crosswalk. Do not assume the 2013 and 2008 tables are directly comparable.
+**Action for Phase 0:** completed 2026-11-25. See the comparability result below.
+
+### 2.1b 2013/2008 comparability result
+
+- **Coverage:** 2013 covers **812/815** 2023 city/ward units; 2008 covers **805/815**. The missing units were towns/villages in those waves, so they have no 市区 row.
+- **Boundary changes:** 2013 has **1** unit with a post-2013 boundary change; 2008 has **35** post-2008 changes, reflecting the Heisei mergers.
+- **Category crosswalk:** the four substantive categories (secondary, rental, sale, other) are stable; only labels and codes change. Map by year, never by position.
+- **Validation:** 2013 vs 2018 vacant-count correlation **0.995**, median ratio **0.942**; 2008 vs 2018 correlation **0.990**, median ratio **0.857**. 2008 has five ±20-dwelling composition rounding differences; 2013 has none.
+- **Decision:** 2013 and 2008 are usable as **city/ward context with boundary flags**. Do not build a four-wave municipal panel; keep 2018–2023 as the core. Rates are not computed for 2008/2013 because those tables do not include total dwellings.
+- **Outputs:** `data/processed/vacancy_context_2008_2023.csv`, `outputs/vacancy_comparability.txt`, `src/12_vacancy_context.py`.
 
 ### 2.2 Coverage: the critical limitation
 
