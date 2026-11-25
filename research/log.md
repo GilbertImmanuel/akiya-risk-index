@@ -5,6 +5,15 @@
 
 ---
 
+## 2026-11-25 — Roadmap revised after accessibility and Pages milestones
+
+- **Action:** Rewrote `plan.md` around the remaining Phase 0 stages: **A** 2013/2008 context, **B** public map v1, **C** market data, **D** akiya-bank, **E** case studies, **F** go/no-go, then Phase 1a–1d.
+- **Rationale:** A closes the last e-Stat-only vacancy task; B uses existing data and replaces the placeholder map; C unblocks the market-lag question; D is independent; E needs C; F is the gate.
+- **Changes:** Updated the data schema for the actual accessibility v0 fields and the market v1 fields; updated milestones M0–M2 to complete; added map-performance risk; changed the market window to 2018/2023 for v1.
+- **Next:** Stage A — pull 2013 table 53 and 2008 table 043-2.
+
+---
+
 ## 2026-11-23 — Accessibility v0 (N03/N02/S12)
 
 - **Action:** Downloaded KSJ **N03** (2023-01-01 boundaries), **N02** (FY2023 rail), and **S12** (FY2023 passengers); recorded URLs, sizes, and SHA-256 in `data/raw/SOURCES.md` and `data/raw/ksj_manifest.json`.

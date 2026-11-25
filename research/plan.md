@@ -1,196 +1,216 @@
-# Phase 0/1 Plan: From Audit to Public v1
+# Roadmap: Phase 0 Completion and Public v1
 
-**Last updated:** 2026-11-12
-**Purpose:** A concrete, milestone-based plan for the next stage. Phase 0 is a feasibility audit; Phase 1 builds the panel, index, and public product. Do not skip Phase 0.
+**Last updated:** 2026-11-25
+**Purpose:** Updated roadmap after the accessibility v0 and GitHub Pages milestones. Phase 0 completes the data foundation; Phase 1 builds, validates, and publishes v1.
 
 ---
 
 ## 1. Guiding constraints
 
-- **Scope:** **1,059 clean municipal units** (from 1,235 reporting rows; 15,000+ universe) + 6–8 small-municipality case studies. The 682 missing towns/villages hold 500,360 vacant dwellings (5.6%).
-- **Core panel:** 2018–2023 vacancy waves (balanced 1,057 units); 2013/2008 city/ward context; 2003 context.
+- **Scope:** **1,059 clean municipal units** (from 1,235 reporting rows) + **6–8 small-municipality case studies**. The 682 missing towns/villages hold 500,360 vacant dwellings (5.6%).
+- **Core panel:** 2018–2023 vacancy (balanced 1,057 units); 2013/2008 city/ward context; 2003 context deferred.
+- **Market window:** 2018 and 2023 for v1; the API supports 2005+ for later extension.
 - **Deliverable:** interactive map + open data/code + short report/methodology.
 - **Methods:** transparent, reproducible, uncertainty-aware; no causal claims; no investment advice.
 - **Data:** public sources; no akiya-bank scraping; no proprietary prediction map as input.
 
 ---
 
-## 2. Phase 0 — Audit and spike (weeks 1–3)
+## 2. Current status
 
-### 0.1 Source and licence audit
+**Complete**
 
-- Confirm access to e-Stat, MLIT API, census, IPSS, local finance, boundaries.
-- Record licence/attribution requirements in `data-sources.md`.
-- Register for an e-Stat API application ID and a MLIT Real Estate Library API key.
-- **Output:** updated source inventory; access checklist.
+- Source and licence audit; e-Stat and MLIT API credentials active.
+- 2023 and 2018 vacancy tables; total dwellings; proper vacancy rates.
+- 2018–2023 municipal crosswalk; balanced panel 1,057 units.
+- 2025 Census population/households; FY2022 fiscal capacity.
+- Accessibility v0: 1,059-unit boundary layer, 9,007 station facilities, density and passenger metrics.
+- Public GitHub repository and GitHub Pages site.
 
-### 0.2 Vacancy table audit
+**Remaining**
 
-- Download 2023 table 34-2, 2018 table 35-2, 2013 table 53 (+ 町村 table), 2008 table 043-1.
-- Compare:
-  - category labels and definitions;
-  - municipal coverage;
-  - totals vs published national figures;
-  - `腐朽・破損` cells and suppression.
-- Build a harmonised vacancy table with a `wave` and `table_id` column.
-- **Output:** vacancy panel v0; table-comparability memo.
-
-### 0.3 Municipal code crosswalk
-
-- Download e-Stat municipal code/merger tables.
-- Build a crosswalk from historical codes to 2023 boundaries.
-- Flag municipalities that cannot be cleanly mapped.
-- Decide whether to aggregate predecessors or drop them.
-- **Output:** `municipality_crosswalk.csv`; merger QA report.
-
-### 0.4 Three-prefecture pilot
-
-Pilot **Tokyo, Nagano, Kochi**:
-
-- Tokyo: high demand, many wards, secondary homes, data-rich.
-- Nagano: high vacancy, secondary homes, rural towns, tourism.
-- Kochi: high vacancy, ageing, rural, thin market data.
-
-For each:
-
-- join vacancy, census, local finance, land prices, transactions, accessibility;
-- count records per municipality;
-- test price aggregation and transaction liquidity;
-- identify missing/thin cells.
-- **Output:** pilot panel; coverage diagnostics; go/no-go recommendation.
-
-### 0.5 Akiya-bank feasibility
-
-- Compile the official participation list.
-- Extract the aggregate listing trend.
-- Select 6–8 case-study municipalities for manual listing counts.
-- Confirm that no scraping is needed.
-- **Output:** akiya-bank participation table; case-study protocol.
-
-### 0.6 Case-study shortlist
-
-- Select 6–8 municipalities covering:
-  - high risk / high activation;
-  - high risk / low activation;
-  - low risk / high activation;
-  - low risk / low activation;
-  - secondary-home composition;
-  - urban shrinkage;
-  - disaster/geography.
-- **Output:** shortlist with data profile and rationale.
-
-### 0.7 Go/no-go memo
-
-Answer:
-
-- Can at least 90% of the 1,059 clean municipal units join cleanly across vacancy, census, and fiscal data?
-- Is price/transaction coverage sufficient for at least 60% of units, or is a pooling strategy defensible?
-- Are 2013/2008 comparable enough to include as a four-wave panel?
-- Is akiya-bank participation data compilable without scraping?
-- Are the case studies feasible?
-
-**If no:** revise scope before Phase 1. Do not build on a broken panel.
+- 2013/2008 city/ward context.
+- Public map v1.
+- Market data (land prices and transactions).
+- Akiya-bank participation.
+- Case studies.
+- Go/no-go memo.
+- Phase 1 index, validation, and publication.
 
 ---
 
-## 3. Phase 1 — Build, validate, publish (weeks 4–10)
+## 3. Phase 0 — Complete the data foundation
 
-### 1a. Panel build (weeks 4–6)
+### Stage A — 2013/2008 city/ward context
 
-- ETL all vacancy waves; harmonise codes; join:
-  - census 2000–2025;
-  - IPSS projections;
-  - local finance;
-  - land prices and transactions;
-  - housing starts/demolition proxy;
-  - accessibility;
-  - akiya-bank participation.
-- QA: missingness, outliers, duplicate codes, boundary changes.
-- **Output:** `panel_v1.parquet` (or CSV), data dictionary, QA report.
+The last e-Stat-only vacancy task.
 
-### 1b. Index construction (weeks 7–8)
+- [ ] Pull 2013 table 53 (`0003100835`) and 2008 table 043-2 (`0003010419`).
+- [ ] Inspect hierarchy, coverage, and category labels.
+- [ ] Build a historical code crosswalk from 2008/2013 to 2023, accounting for Heisei mergers.
+- [ ] Dissolve designated-city wards; keep the 23 special wards separate.
+- [ ] Harmonise categories and build `vacancy_context_2008_2023.csv`.
+- [ ] Validate totals and overlap with 2018/2023.
+- [ ] Write a comparability memo.
 
-- Build current-risk sub-index:
-  - dilapidated other-vacant rate (headline);
-  - other-vacant rate;
-  - detached other-vacant share;
-  - persistence across waves.
-- Build pressure sub-index:
-  - population change;
-  - ageing;
-  - household change;
-  - net migration;
-  - dwelling growth minus household growth;
-  - pre-1981 stock share;
-  - demolition proxy.
-- Build activation index:
-  - station density/distance;
-  - DID share;
-  - recent migration;
-  - land-price level and change;
-  - transaction liquidity.
-- Build capacity overlay:
-  - fiscal strength;
-  - plan adoption (if available);
-  - support corporations (if available).
-- Weights: equal headline; PCA and policy weights as sensitivity.
-- Uncertainty: simulation and/or empirical Bayes; rank stability.
-- **Output:** index v1; sensitivity report; methodology note.
-
-### 1c. Validation and typology (weeks 9–10)
-
-- Market-lag test: risk vs 2018–2023 and 2023–2026 price/transaction changes.
-- Akiya-bank: participation/listing intensity vs risk, conditional on accessibility.
-- Policy designations: prefecture-level context; case studies.
-- Typology: risk × activation; risk × capacity; price level × price change (secondary).
-- Case studies: 6–8; local documents, plans, and (if feasible) interviews.
-- **Output:** validation report; archetype tables; case-study notes.
-
-### 1d. Publication (weeks 10–11)
-
-- Interactive map:
-  - layers: current risk, pressure, activation, capacity, archetype;
-  - uncertainty/insufficient-evidence hatching;
-  - tooltips with source/provenance.
-- Scatter: risk vs price momentum; risk vs fiscal capacity.
-- Tables: top/bottom, archetypes, case studies.
-- Report: 10–15 pages + methodology appendix + caveats.
-- Open data/code: panel, codebook, scripts, licence/provenance.
-- **Output:** public v1.
+**Output:** city/ward context panel and a decision: use 2013/2008 with flags, or exclude them from municipal context.
 
 ---
 
-## 4. Data schema (minimum viable)
+### Stage B — Public map v1
+
+Uses only data already built.
+
+- [ ] Export simplified municipal GeoJSON for 1,059 units.
+- [ ] Include vacancy, census, fiscal, and accessibility attributes.
+- [ ] Add `panel.json` and `meta.json`; document the schema.
+- [ ] Replace the placeholder geometry in `docs/map.qmd`.
+- [ ] Add metric selector, OJS filter, legend, popup, and missing-value styling.
+- [ ] Update `docs/index.qmd`; test locally and on GitHub Pages.
+
+**Output:** a real public map, not the placeholder rectangles.
+
+---
+
+### Stage C — Market data
+
+- [ ] Pull XIT001 for Tokyo, Nagano, and Kochi, 2018 and 2023.
+- [ ] Download L01/L02 land-price files for 2018 and 2023.
+- [ ] Parse and filter: land-only, land+house, condos; residential focus.
+- [ ] Map designated-city wards to cities; keep special wards separate.
+- [ ] Build the pilot market panel; QA coverage and thin cells.
+- [ ] Decide whether to pull all 47 prefectures.
+- [ ] Pull the full market data if coverage is workable.
+- [ ] Join to the vacancy/accessibility panel; build pilot v3.
+
+**Headline:** official residential land price median and matched-site five-year change. Transactions are secondary.
+
+**Output:** market panel with coverage flags.
+
+---
+
+### Stage D — Akiya-bank participation
+
+Independent of the MLIT data; can run alongside Stage C.
+
+- [ ] Compile the official participation list.
+- [ ] Extract the aggregate listing trend.
+- [ ] Build the participation table: participation dummy, listing status, counts.
+- [ ] Confirm no scraping is needed; document terms.
+- [ ] Join as a descriptive variable.
+
+**Output:** participation table and aggregate trend.
+
+---
+
+### Stage E — Case studies
+
+After market data, so selection uses the full risk/activation/capacity picture.
+
+- [ ] Build a provisional archetype shortlist.
+- [ ] Select 6–8 municipalities covering the required archetypes.
+- [ ] Check local data and document availability.
+- [ ] Write the case-study protocol.
+- [ ] Start local document collection.
+- [ ] Draft case-study notes.
+
+**Output:** shortlist, protocol, and case-study notes.
+
+---
+
+### Stage F — Go/no-go memo
+
+The Phase 0 gate.
+
+- [ ] Check join coverage across vacancy, census, and fiscal: target ≥90%.
+- [ ] Check market coverage: target ≥60%, or a defensible pooling strategy.
+- [ ] Record the 2013/2008 comparability decision.
+- [ ] Confirm akiya-bank participation is compilable without scraping.
+- [ ] Confirm 6–8 case studies are feasible.
+- [ ] Revise scope if any gate fails.
+- [ ] Write `docs/phase0_go_no_go.md`.
+
+**Output:** a written go/no-go decision.
+
+---
+
+## 4. Phase 1 — Build, validate, publish
+
+### 1a. Panel build
+
+- [ ] Join vacancy, census, fiscal, accessibility, market, and akiya-bank data.
+- [ ] Add IPSS projections and housing starts; build the demolition proxy.
+- [ ] QA missingness, outliers, duplicate codes, and boundary changes.
+- [ ] Write the data dictionary and QA report.
+- [ ] Output `panel_v1.parquet` (or CSV).
+
+### 1b. Index construction
+
+- [ ] Current-risk sub-index: dilapidated “other vacant,” other-vacant rate, detached share, persistence.
+- [ ] Pressure sub-index: population, ageing, households, migration, dwelling growth, old stock, demolition proxy.
+- [ ] Activation sub-index: station density, market level/change, transaction liquidity, migration, DID share.
+- [ ] Capacity overlay: fiscal strength, plan adoption, support corporations.
+- [ ] Equal weights headline; PCA and policy weights as sensitivity.
+- [ ] Uncertainty and rank stability.
+- [ ] Output `index_v1.csv`, sensitivity report, methodology note.
+
+### 1c. Validation and typology
+
+- [ ] Market-lag test: risk versus 2018–2023 and 2023–2026 price/transaction changes.
+- [ ] Akiya-bank signal: participation/listing intensity versus risk, conditional on accessibility.
+- [ ] Policy designations: prefecture-level context and case studies.
+- [ ] Typology: risk × activation, risk × capacity, price level × price change.
+- [ ] Integrate case-study evidence.
+- [ ] Output validation report and archetype tables.
+
+### 1d. Publication v1
+
+- [ ] Map v2 with risk, pressure, activation, capacity, and archetype layers.
+- [ ] Uncertainty and insufficient-evidence hatching.
+- [ ] Scatter plots: risk versus price momentum; risk versus fiscal capacity.
+- [ ] Tables: top/bottom, archetypes, case studies.
+- [ ] Report: 10–15 pages plus methodology and caveats.
+- [ ] Open data/code: panel, codebook, scripts, licences.
+- [ ] Public v1 release.
+
+---
+
+## 5. Data schema (minimum viable)
 
 | Table | Key fields |
 |---|---|
 | `municipality` | `municipality_code`, `name_ja`, `name_en`, `prefecture`, `type`, `area_km2`, `centroid_lat`, `centroid_lon`, `boundary_year` |
-| `vacancy` | `municipality_code`, `year`, `total_dwellings`, `vacant_total`, `rental`, `sale`, `secondary`, `other_vacant`, `other_vacant_dilapidated`, `other_vacant_detached`, `vacancy_rate`, `other_vacancy_rate`, `table_id` |
+| `vacancy` | `municipality_code`, `year`, `total_dwellings`, `vacant_total`, `rental`, `sale`, `secondary`, `other_vacant`, `other_vacant_dilapidated`, `other_vacant_detached`, `vacancy_rate`, `other_vacancy_rate`, `table_id`, `context_flag` |
 | `demography` | `municipality_code`, `year`, `population`, `households`, `age_0_14`, `age_15_64`, `age_65_plus`, `deaths`, `net_migration`, `day_night_ratio` |
 | `housing` | `municipality_code`, `year`, `starts`, `demolition_proxy`, `stock`, `pre1981_share`, `avg_floor_area` |
-| `market` | `municipality_code`, `year`, `land_price_median`, `land_price_change_5y`, `transaction_count`, `transaction_median_price`, `transaction_liquidity` |
+| `market` | `municipality_code`, `year`, `land_price_median`, `land_price_matched_change_5y`, `land_price_points`, `transaction_count`, `transaction_liquidity`, `land_transaction_median_unit_price`, `house_transaction_median_price`, `condo_transaction_median_unit_price`, `thin_flag` |
 | `fiscal` | `municipality_code`, `fiscal_year`, `fiscal_strength_index`, `debt_service_ratio`, `tax_revenue_per_capita` |
-| `accessibility` | `municipality_code`, `station_count`, `station_density`, `nearest_station_km`, `did_share`, `travel_time_to_100k_city` |
+| `accessibility` | `municipality_code`, `station_count`, `station_density_per_100km2`, `stations_per_10k_pop`, `station_passengers_sum`, `passenger_data_share`, `tram_stop_count`; `nearest_station_km`, `did_share`, `travel_time_to_100k_city` deferred |
 | `policy` | `municipality_code`, `year`, `plan_adopted`, `akiya_bank_participant`, `designation_count_pref` |
 | `index` | `municipality_code`, `version`, `risk_current`, `risk_pressure`, `risk_composite`, `activation`, `capacity`, `archetype`, `uncertainty`, `insufficient_evidence` |
 | `provenance` | `dataset`, `source_url`, `access_date`, `licence`, `transformation`, `notes` |
 
 ---
 
-## 5. Milestones
+## 6. Milestones
 
-| Milestone | Timing | Success criterion |
+| Milestone | Status | Success criterion |
 |---|---|---|
-| **M0 — Source/licence matrix** | End of week 1 | All core sources confirmed; access keys in place; licences recorded. |
-| **M1 — 2023 pilot panel** | End of week 2 | 2023 vacancy data parsed; joins tested on three prefectures; QA report. |
-| **M2 — Core panel** | End of week 3 / early week 4 | 2018–2023 harmonised (1,057 units); 2013/2008 flagged as city/ward context; crosswalk; go/no-go memo. |
-| **M3 — Index v1** | End of week 7 | Risk/activation/capacity indices; equal/PCA/policy weights; uncertainty. |
-| **M4 — Validation + archetypes** | End of week 9 | Market-lag tests; akiya-bank analysis; case studies; archetype tables. |
-| **M5 — Public v1** | End of week 10–11 | Map, report, open data/code, methodology, caveats. |
+| **M0 — Source/licence matrix** | **Complete** | All core sources confirmed; credentials active; licences recorded. |
+| **M1 — 2023/2018 vacancy + pilot** | **Complete** | 2023 and 2018 parsed; joins tested; QA report. |
+| **M2 — Core panel + accessibility v0** | **Complete** | 2018–2023 harmonised (1,057 units); accessibility metrics; boundary layer. |
+| **M3 — Public map v1** | Stage B | Real municipal layer replaces the placeholder; filters work; site tested. |
+| **M4 — Market panel** | Stage C | 2018/2023 land prices and transactions; coverage flags; pilot/full decision. |
+| **M5 — Akiya-bank participation** | Stage D | Participation table and aggregate trend; no scraping. |
+| **M6 — Case studies** | Stage E | 6–8 municipalities selected; protocol and notes. |
+| **M7 — Go/no-go** | Stage F | All criteria assessed; scope confirmed or revised. |
+| **M8 — Index v1** | Phase 1b | Risk/activation/capacity indices; weights; uncertainty. |
+| **M9 — Validation + archetypes** | Phase 1c | Market-lag tests; akiya-bank signal; case studies; archetype tables. |
+| **M10 — Public v1** | Phase 1d | Map, report, open data/code, methodology, caveats. |
 
 ---
 
-## 6. Risks and mitigations
+## 7. Risks and mitigations
 
 | Risk | Likelihood | Impact | Mitigation |
 |---|---|---|---|
@@ -205,10 +225,11 @@ Answer:
 | Licensing (OSM, MLIT, portals) | Medium | Medium | Attribution; ODbL isolation; no scraping; legal review if needed. |
 | Investment-advice risk | Medium | High | Policy framing; disclaimers; no property-level recommendations. |
 | Scope creep (forecasting, causal evaluation) | High | Medium | Keep Phase 1 descriptive; defer extensions. |
+| Map performance / heavy geometry | Medium | Medium | Simplify and quantise polygons; target a small GeoJSON; test on mobile. |
 
 ---
 
-## 7. Go/no-go criteria
+## 8. Go/no-go criteria
 
 Proceed to Phase 1 only if:
 
@@ -222,7 +243,7 @@ If any criterion fails, revise the scope before building.
 
 ---
 
-## 8. What not to do
+## 9. What not to do
 
 - Do not scrape akiya-bank listings.
 - Do not rank all 1,741 municipalities.
@@ -235,13 +256,16 @@ If any criterion fails, revise the scope before building.
 
 ---
 
-## 9. Resourcing
+## 10. Resourcing
 
-The work is feasible for a small team (1–2 people) over about 10–11 weeks, assuming:
+The remaining Phase 0 work is feasible for one person part-time over roughly 3–5 weeks, depending on how thin the market data are. Phase 1 is roughly 8–12 weeks part-time. The sequence matters more than the calendar:
 
-- access to a machine with Python/R and GIS libraries;
-- API keys for e-Stat and MLIT;
-- willingness to do manual case-study collection;
-- no proprietary data purchases.
+1. Stage A — 2013/2008 context.
+2. Stage B — public map v1.
+3. Stage C — market data.
+4. Stage D — akiya-bank (can overlap with C).
+5. Stage E — case studies.
+6. Stage F — go/no-go.
+7. Phase 1a–1d.
 
-If only one person is available part-time, Phase 0 may take 4–6 weeks and Phase 1 8–12 weeks. The plan should be adjusted rather than skipping the audit.
+If a stage fails its coverage test, revise the scope rather than forcing the next stage.

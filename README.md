@@ -4,8 +4,9 @@ A reproducible, municipal-level study of housing vacancy in Japan: where
 structural vacancy is accumulating, what distinguishes places with different
 trajectories, and whether local housing markets already reflect the risk.
 
-**Status:** Phase 0 in progress. Vacancy, census, fiscal, and accessibility data
-are built; market data and the index are next.
+**Status:** Phase 0 in progress. The vacancy, census, fiscal, and accessibility
+baseline is built. Next: 2013/2008 context, public map v1, market data, and the
+index.
 
 ---
 

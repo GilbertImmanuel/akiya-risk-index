@@ -7,7 +7,7 @@ title: "Map prototype"
 
 This page tests the **Quarto + MapLibre + Observable JS** stack. The polygons are
 arbitrary rectangles, not municipal boundaries. The filter is a technical demo.
-The real municipal layer will replace this in Phase 1.
+The real municipal layer will replace this in the next stage.
 :::
 
 ```{ojs}

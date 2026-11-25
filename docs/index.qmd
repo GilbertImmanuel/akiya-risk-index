@@ -4,11 +4,11 @@ subtitle: "Municipal housing vacancy risk and activation in Japan"
 ---
 
 ::: {.callout-note}
-## Status: Phase 0 scaffold
+## Status: Phase 0 in progress
 
-The research dossier is complete. The data pipeline, index, and real map are not
-built yet. The [map prototype](map.qmd) uses **placeholder geometry** to test the
-Quarto + MapLibre + Observable JS stack.
+The data baseline is built: vacancy, census, fiscal capacity, and accessibility.
+The [map prototype](map.qmd) still uses **placeholder geometry**; the real
+municipal layer is the next public milestone.
 :::
 
 ## What this project is
