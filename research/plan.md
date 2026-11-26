@@ -26,11 +26,11 @@
 - 2025 Census population/households; FY2022 fiscal capacity.
 - Accessibility v0: 1,059-unit boundary layer, 9,007 station facilities, density and passenger metrics.
 - 2013/2008 city/ward context: 812/815 and 805/815 units, with boundary flags.
+- Public map v1: 1,059 features, six fixed-break indicators, Leaflet, Lighthouse 100.
 - Public GitHub repository and GitHub Pages site.
 
 **Remaining**
 
-- Public map v1.
 - Market data (land prices and transactions).
 - Akiya-bank participation.
 - Case studies.
@@ -57,18 +57,18 @@
 
 ---
 
-### Stage B — Public map v1
+### Stage B — Public map v1 — **complete**
 
-Uses only data already built.
+- [x] Export simplified municipal GeoJSON for 1,059 units.
+- [x] Include vacancy, census, fiscal, and accessibility attributes.
+- [x] Add `panel.json` and `meta.json`; document the schema.
+- [x] Replace the placeholder geometry in `docs/map.qmd`.
+- [x] Add metric selector, legend, popup, and missing-value styling.
+- [x] Update `docs/index.qmd`; test locally and on GitHub Pages.
 
-- [ ] Export simplified municipal GeoJSON for 1,059 units.
-- [ ] Include vacancy, census, fiscal, and accessibility attributes.
-- [ ] Add `panel.json` and `meta.json`; document the schema.
-- [ ] Replace the placeholder geometry in `docs/map.qmd`.
-- [ ] Add metric selector, OJS filter, legend, popup, and missing-value styling.
-- [ ] Update `docs/index.qmd`; test locally and on GitHub Pages.
+**Result:** 1,059 features; six fixed-break indicators; simplified to 500 m and 0.001°; 1.42 MB GeoJSON, 0.27 MB gzip. Leaflet 1.9 replaced MapLibre after MapLibre failed to initialise in the test browser. Lighthouse 100 accessibility, 100 best practices, 100 SEO.
 
-**Output:** a real public map, not the placeholder rectangles.
+**Outputs:** `docs/data/municipalities.geojson`, `panel.json`, `meta.json`; `docs/map.js`, `docs/map.qmd`, `docs/styles.css`; `src/07_export_map.py`.
 
 ---
 
@@ -200,7 +200,7 @@ The Phase 0 gate.
 | **M1 — 2023/2018 vacancy + pilot** | **Complete** | 2023 and 2018 parsed; joins tested; QA report. |
 | **M2 — Core panel + accessibility v0** | **Complete** | 2018–2023 harmonised (1,057 units); accessibility metrics; boundary layer. |
 | **M2b — 2013/2008 context** | **Complete** | 812/815 and 805/815 city/ward units; boundary flags; comparability memo. |
-| **M3 — Public map v1** | Stage B | Real municipal layer replaces the placeholder; filters work; site tested. |
+| **M3 — Public map v1** | **Complete** | 1,059 features; six indicators; simplified boundaries; Lighthouse 100. |
 | **M4 — Market panel** | Stage C | 2018/2023 land prices and transactions; coverage flags; pilot/full decision. |
 | **M5 — Akiya-bank participation** | Stage D | Participation table and aggregate trend; no scraping. |
 | **M6 — Case studies** | Stage E | 6–8 municipalities selected; protocol and notes. |

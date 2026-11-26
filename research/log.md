@@ -5,6 +5,18 @@
 
 ---
 
+## 2026-11-26 — Public map v1 built
+
+- **Action:** Built `src/07_export_map.py` and the public map page. The map shows six fixed-break indicators for 1,059 municipal units: dilapidated other-vacancy rate, total vacancy rate, 2018–2023 dilapidated change, 2020–2025 population change, FY2022 fiscal strength, and heavy-rail station density.
+- **Data:** boundaries simplified at 500 m in EPSG:6933, rounded to 0.001°; `municipalities.geojson` 1.42 MB raw and 0.27 MB gzip; `panel.json` 0.25 MB; `meta.json` 3.5 KB.
+- **Interface:** Leaflet 1.9, native indicator select, legend, distribution, highest/lowest lists, hover tooltip, click popup, reset view, and URL state `?metric=...`.
+- **Validation:** 1,059 features, unique codes, valid geometries, complete classes; all six metrics switch; deep link works; desktop and mobile layouts checked. Lighthouse **100 accessibility, 100 best practices, 100 SEO**.
+- **Stack change:** MapLibre 5 and 4 both failed to initialise in the test browser; Leaflet 1.9 replaced it for v1. The OJS input also failed because Quarto’s runtime lacked `view`, so the map uses a native select.
+- **Outputs:** `docs/map.qmd`, `docs/map.js`, `docs/styles.css`, `docs/data/municipalities.geojson`, `docs/data/panel.json`, `docs/data/meta.json`, `src/07_export_map.py`.
+- **Next:** Stage C — market data.
+
+---
+
 ## 2026-11-25 — 2013/2008 city/ward context built
 
 - **Action:** Pulled 2013 table 53 (`0003100835`, 103,740 API rows) and 2008 table 043-2 (`0003010419`, 101,850 rows) via the e-Stat API; parsed categories, mapped old codes to 2023 units, and built `vacancy_context_2008_2023.csv`.

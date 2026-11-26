@@ -1,29 +1,31 @@
 ---
 title: "The Empty House Atlas"
 subtitle: "Municipal housing vacancy risk and activation in Japan"
+description: "A reproducible municipal study of housing vacancy, population change, fiscal capacity, and rail access in Japan."
 ---
 
 ::: {.callout-note}
 ## Status: Phase 0 in progress
 
-The data baseline is built: vacancy, 2013/2008 city/ward context, census, fiscal
-capacity, and accessibility. The [map prototype](map.qmd) still uses
-**placeholder geometry**; the real municipal layer is the next public milestone.
+The municipal map is live. Market data, akiya-bank participation, case studies, and the index are next.
 :::
 
 ## What this project is
 
 A reproducible, municipal-level study of housing vacancy in Japan. It asks:
 
-> Which municipalities face persistent structural vacancy risk, and is that risk
-> already reflected in local housing markets — or is it accumulating in places
-> where prices and transactions have not yet adjusted?
+> Which Japanese municipalities face persistent structural vacancy risk, and is
+> that risk already reflected in local housing markets, or is it accumulating in
+> places where prices and transactions have not yet adjusted?
+
+Start with the [municipal map](map.qmd). It shows six indicators for the 1,059
+municipal units in the 2023 Housing and Land Survey.
 
 The project separates three lenses:
 
-- **Risk** — current blight and forward pressure.
-- **Activation potential** — accessibility, demand, and market momentum.
-- **Response capacity** — fiscal and administrative capacity.
+- **Risk**: current blight and forward pressure.
+- **Activation potential**: accessibility, demand, and market momentum.
+- **Response capacity**: fiscal and administrative capacity.
 
 It is **not** a property-level prediction tool, a causal evaluation of the 2023
 Vacant Houses Act, or investment advice.
@@ -55,9 +57,9 @@ studies.
 
 ## Explore
 
-- [Map prototype](map.qmd) — the Quarto + MapLibre + OJS stack.
-- [Research summary](https://github.com/gilbertimmanuel/akiya-risk-index/blob/main/research/summary.md) — verified facts, scope, and plan.
-- [Data sources](https://github.com/gilbertimmanuel/akiya-risk-index/blob/main/research/data-sources.md) — what is free, what is covered, what is not.
+- [Municipal map](map.qmd): six indicators across 1,059 municipal units.
+- [Research summary](https://github.com/gilbertimmanuel/akiya-risk-index/blob/main/research/summary.md): verified facts, scope, and plan.
+- [Data sources](https://github.com/gilbertimmanuel/akiya-risk-index/blob/main/research/data-sources.md): what is free, what is covered, what is not.
 
 ## Data sources
 
@@ -75,8 +77,8 @@ See `DATA_LICENCES.md` in the repository for terms and attribution.
 
 ## What comes next
 
-1. Parse the 2023 municipal vacancy table and reconcile earlier waves.
-2. Build the municipal-code crosswalk.
-3. Pilot Tokyo, Nagano, and Kochi.
+1. Add market data: official land prices and transactions.
+2. Compile akiya-bank participation and aggregate listing trends.
+3. Select 6 to 8 case studies.
 4. Build the risk, activation, and capacity indices.
-5. Replace the placeholder map with the real municipal layer.
+5. Publish the report and open data.

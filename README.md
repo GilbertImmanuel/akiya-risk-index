@@ -4,9 +4,8 @@ A reproducible, municipal-level study of housing vacancy in Japan: where
 structural vacancy is accumulating, what distinguishes places with different
 trajectories, and whether local housing markets already reflect the risk.
 
-**Status:** Phase 0 in progress. The vacancy, 2013/2008 context, census, fiscal,
-and accessibility baseline is built. Next: public map v1, market data, and the
-index.
+**Status:** Phase 0 in progress. The public municipal map is live. Next: market
+data, akiya-bank participation, case studies, and the index.
 
 ---
 
@@ -33,8 +32,8 @@ one-page summary is [`research/summary.md`](research/summary.md).
 | Geospatial | geopandas, shapely, pyogrio, pyproj |
 | Statistics | statsmodels, linearmodels, scikit-learn, scipy |
 | Report | Quarto |
-| Interactivity | Observable JS (`{ojs}`), Observable Plot, `Inputs` |
-| Map | MapLibre GL JS |
+| Interactivity | Native HTML controls for the map; Observable Plot planned for charts |
+| Map | Leaflet 1.9 |
 | Frontend language | Plain JavaScript (ES modules) |
 | Deployment | GitHub Pages (static) |
 
@@ -55,7 +54,7 @@ All core data sources are free. See [`DATA_LICENCES.md`](DATA_LICENCES.md) and
 ├── docs/               # Quarto website
 │   ├── _quarto.yml
 │   ├── index.qmd
-│   ├── map.qmd         # MapLibre + OJS prototype
+│   ├── map.qmd         # Leaflet map
 │   └── data/           # precomputed JSON/GeoJSON for the browser
 ├── outputs/            # figures, tables, exports
 ├── research/           # evidence dossier

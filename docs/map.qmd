@@ -1,164 +1,79 @@
 ---
-title: "Map prototype"
+title: "Housing vacancy across Japan"
+subtitle: "Six indicators for 1,059 municipal units, 2023"
+description: "Map of housing vacancy, population change, fiscal strength, and rail access across 1,059 Japanese municipal units in 2023."
+format:
+  html:
+    page-layout: full
+    toc: false
 ---
 
-::: {.callout-warning}
-## Placeholder geometry, not real data
-
-This page tests the **Quarto + MapLibre + Observable JS** stack. The polygons are
-arbitrary rectangles, not municipal boundaries. The filter is a technical demo.
-The real municipal layer will replace this in the next stage.
+::: {.atlas-intro}
+The map shows where structural vacancy is concentrated and which places have the fiscal and rail capacity to respond. It covers the 1,059 municipal units in the 2023 Housing and Land Survey. The 682 towns and villages below the survey threshold are not mapped.
 :::
 
-```{ojs}
-//| echo: false
-group = view(Inputs.select(["All", "A", "B"], {label: "Group", value: "All"}))
-```
+::: {.atlas-controls}
+<label class="control-label" for="metric-select">Indicator</label>
+<select id="metric-select" name="metric">
+  <option value="dilapidated" selected>Dilapidated other-vacancy rate</option>
+  <option value="vacancy">Total vacancy rate</option>
+  <option value="dilapidated_change">Change in dilapidated other-vacancy rate</option>
+  <option value="population_change">Population change, 2020–2025</option>
+  <option value="fiscal">Fiscal strength index</option>
+  <option value="station_density">Heavy-rail station density</option>
+</select>
+:::
 
-```{ojs}
-//| echo: false
-window.dispatchEvent(new CustomEvent("akiya-filter", {detail: {group}}));
-```
+<div class="atlas-grid">
+<div class="atlas-map">
+<div id="map" tabindex="0" role="region" aria-label="Map of housing vacancy, population change, fiscal strength, and rail access across Japanese municipalities"></div>
+<div id="map-status" class="map-status" role="status" aria-live="polite">Loading map data…</div>
+<div id="map-tooltip" class="map-tooltip" hidden></div>
+<button id="map-reset" class="map-reset" type="button">Reset to Japan</button>
+<noscript><p class="map-status">This map needs JavaScript. The ranked lists and source links still provide a text view.</p></noscript>
+</div>
 
-```{ojs}
-//| echo: false
-html`<p class="map-note">Selected group: <strong>${group}</strong></p>`;
-```
+<aside class="atlas-panel" aria-label="Indicator controls, legend, and summary">
+<div class="panel-block">
+<h2>About this indicator</h2>
+<p id="metric-definition" aria-live="polite"></p>
+<p id="metric-note" class="note" hidden></p>
+</div>
+
+<div class="panel-block">
+<h2>Legend</h2>
+<div id="legend" class="legend"></div>
+<p class="note">Colors use fixed policy breaks, so a class means the same thing in every municipality.</p>
+</div>
+
+<div class="panel-block">
+<h2>Distribution</h2>
+<dl id="summary" class="summary"></dl>
+</div>
+
+<div class="panel-block">
+<h2>Highest</h2>
+<div id="top-list" class="rank-list"></div>
+</div>
+
+<div class="panel-block">
+<h2>Lowest</h2>
+<div id="bottom-list" class="rank-list"></div>
+</div>
+
+<div class="panel-block coverage">
+<h2>Coverage</h2>
+<p>1,059 municipal units are mapped. The 682 towns and villages below the 2023 survey threshold are not. The initial view shows the main islands; pan south for Okinawa and other island municipalities.</p>
+<p>The 23 special wards have no municipal fiscal-strength index. Station density counts heavy-rail stations only; tram stops are excluded.</p>
+<p class="data-links"><a href="data/panel.json" download>Download the panel data</a><br><a href="data/municipalities.geojson" download>Download the map data</a></p>
+</div>
+</aside>
+</div>
 
 ```{=html}
-<link href="https://cdn.jsdelivr.net/npm/maplibre-gl@5/dist/maplibre-gl.css" rel="stylesheet">
-<div id="map"></div>
-<script type="module">
-import maplibregl from "https://cdn.jsdelivr.net/npm/maplibre-gl@5/+esm";
-
-const placeholder = {
-  type: "FeatureCollection",
-  features: [
-    {
-      type: "Feature",
-      properties: { name: "Placeholder A", group: "A", value: 10 },
-      geometry: {
-        type: "Polygon",
-        coordinates: [[
-          [139.40, 35.50], [139.80, 35.50], [139.80, 35.80],
-          [139.40, 35.80], [139.40, 35.50]
-        ]]
-      }
-    },
-    {
-      type: "Feature",
-      properties: { name: "Placeholder B", group: "B", value: 20 },
-      geometry: {
-        type: "Polygon",
-        coordinates: [[
-          [139.80, 35.50], [140.20, 35.50], [140.20, 35.80],
-          [139.80, 35.80], [139.80, 35.50]
-        ]]
-      }
-    },
-    {
-      type: "Feature",
-      properties: { name: "Placeholder C", group: "A", value: 30 },
-      geometry: {
-        type: "Polygon",
-        coordinates: [[
-          [139.40, 35.20], [139.80, 35.20], [139.80, 35.50],
-          [139.40, 35.50], [139.40, 35.20]
-        ]]
-      }
-    }
-  ]
-};
-
-const map = new maplibregl.Map({
-  container: "map",
-  style: {
-    version: 8,
-    sources: {
-      gsi: {
-        type: "raster",
-        tiles: ["https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png"],
-        tileSize: 256,
-        attribution: "国土地理院"
-      }
-    },
-    layers: [{ id: "gsi", type: "raster", source: "gsi" }]
-  },
-  center: [139.70, 35.65],
-  zoom: 7
-});
-
-map.addControl(new maplibregl.NavigationControl(), "top-right");
-
-map.on("load", () => {
-  map.addSource("municipalities", { type: "geojson", data: placeholder });
-
-  map.addLayer({
-    id: "municipalities-fill",
-    type: "fill",
-    source: "municipalities",
-    paint: {
-      "fill-color": [
-        "match", ["get", "group"],
-        "A", "#4c78a8",
-        "B", "#f58518",
-        "#54a24b"
-      ],
-      "fill-opacity": 0.55
-    }
-  });
-
-  map.addLayer({
-    id: "municipalities-line",
-    type: "line",
-    source: "municipalities",
-    paint: { "line-color": "#ffffff", "line-width": 1.5 }
-  });
-
-  map.on("click", "municipalities-fill", (event) => {
-    const props = event.features[0].properties;
-    new maplibregl.Popup()
-      .setLngLat(event.lngLat)
-      .setHTML(
-        `<strong>${props.name}</strong><br>` +
-        `Group: ${props.group}<br>` +
-        `Value: ${props.value}`
-      )
-      .addTo(map);
-  });
-
-  map.on("mouseenter", "municipalities-fill", () => {
-    map.getCanvas().style.cursor = "pointer";
-  });
-  map.on("mouseleave", "municipalities-fill", () => {
-    map.getCanvas().style.cursor = "";
-  });
-
-  window.akiyaMapReady = true;
-  window.dispatchEvent(new Event("akiya-ready"));
-});
-
-window.updateAkiyaMap = (group) => {
-  if (!map.getLayer("municipalities-fill")) return;
-  const filter = group === "All" ? null : ["==", ["get", "group"], group];
-  map.setFilter("municipalities-fill", filter);
-  map.setFilter("municipalities-line", filter);
-};
-
-window.addEventListener("akiya-filter", (event) => {
-  window.updateAkiyaMap(event.detail.group);
-});
-</script>
+<script type="module" src="map.js"></script>
 ```
 
-## What this tests
+## Sources
 
-- **Quarto** renders the page as a static HTML site.
-- **Observable JS** provides the filter and will later host the charts.
-- **MapLibre** renders a raster basemap and a GeoJSON layer.
-- **The bridge** is a custom event: OJS dispatches `akiya-filter`; the map listens
-  and updates its layer filter.
-
-In the real product, the GeoJSON will be a municipal layer with the risk,
-activation, and capacity indicators. The OJS filter will control the map, the
-charts, and the table together.
+Housing and Land Survey 2023, Statistics Bureau of Japan. 2020 and 2025 Censuses. FY2022 local finance survey. MLIT National Land Numerical Information N03, N02, and S12. GSI pale basemap.

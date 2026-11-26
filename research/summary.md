@@ -16,6 +16,7 @@
 - **Proper rates available:** total dwellings now cover **1,059/1,059** 2023 units and **1,086/1,086** 2018 units. The highest 2023 dilapidated “other vacant” rates are 川崎町 (12.25%), 新上五島町 (11.89%), 平戸市 (9.29%), 垂水市 (9.29%), and 室戸市 (9.11%). The full 2018–2023 panel has **1,057 balanced units**.
 - **2018–2023 crosswalk:** the coverage change is **threshold-driven, not merger-driven** (no municipal mergers in the period). The balanced panel is **1,057 units** (1,056 matched + 1 name change).
 - **Accessibility v0:** **9,007 rail facilities** in 2023 (8,399 heavy-rail stations, 608 tram-only stops). The 1,059-unit panel contains **7,479 heavy-rail stations**; **126 units (11.9%) have none**. Station density correlates **+0.701** with population density and **−0.447** with the 2023 dilapidated “other vacant” rate, but only **−0.018** with its 2018–2023 change. Treat this as a descriptive activation variable, not a causal effect.
+- **Public map v1:** six fixed-break indicators for **1,059 municipal units**, covering dilapidated and total vacancy, recent vacancy change, population change, fiscal strength, and rail access. The map is live at `https://gilbertimmanuel.github.io/akiya-risk-index/map.html`.
 - **Demography:** The 2025 Census shows **122.97m people**, down **2.5%** from 2020; **57.18m households**, up **1.477m**; **91.2%** of municipal units lost population.
 - **Policy:** The 2023 Act took effect **2023-12-13** and created `管理不全空家等` (guidance → recommendation → tax exception removed). The **2026-04-01 address-change registration** is a registration rule, not a tax. There is **no national akiya tax**; the DPFP `空室税` bill is not law; Kyoto's local tax is planned for **FY2030**.
 - **Akiya banks:** **1,155 participating municipalities**, **750 currently listing**, **20,089 current listings**, ~29,000 cumulative transactions (Oct 2026). Listings are ~0.2% of the vacant stock; they are a selected signal, not a vacancy census.
@@ -102,4 +103,4 @@ Remaining decisions are reversible/methodological and can be made during Phase 0
 
 ## 7. Next step
 
-Phase 0 is well advanced: the vacancy panel, total dwellings, crosswalk, 2013/2008 city/ward context, 2025 Census, fiscal capacity, accessibility v0, and the public site are built. The next step is **Stage B — public map v1**. After that: **Stage C — market data**, **Stage D — akiya-bank**, **Stage E — case studies**, and **Stage F — go/no-go**.
+Phase 0 is well advanced: the vacancy panel, total dwellings, crosswalk, 2013/2008 city/ward context, 2025 Census, fiscal capacity, accessibility v0, and the public map are built. The next step is **Stage C — market data**. After that: **Stage D — akiya-bank**, **Stage E — case studies**, and **Stage F — go/no-go**.
