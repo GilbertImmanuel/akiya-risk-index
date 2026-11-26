@@ -1,15 +1,17 @@
-"""Download KSJ (国土数値情報) accessibility data.
+"""Download KSJ (国土数値情報) data.
 
 Sources:
 - N03 行政区域: municipal boundaries, 2023-01-01.
 - N02 鉄道: rail lines and stations, FY2023 (data as of 2023-12-31).
 - S12 駅別乗降客数: station passengers, FY2023.
+- L01 地価公示: official land prices, 2018 and 2023.
+- L02 都道府県地価調査: prefectural land prices, 2018 and 2023.
 
 Files are large; this script streams them to data/raw/ and writes a manifest
 with URL, size, access date, and SHA-256. Run once per file or all at once:
 
     uv run python src/08_download_ksj.py N02 S12
-    uv run python src/08_download_ksj.py N03
+    uv run python src/08_download_ksj.py L01_2018 L01_2023 L02_2018 L02_2023
 
 Re-running skips a file whose size matches the expected size.
 """
@@ -54,6 +56,41 @@ FILES = {
         "dataset": "S12 駅別乗降客数",
         "vintage": "FY2023",
         "licence": "Open data (CC BY 4.0); attribution required.",
+    },
+    "L01_2018": {
+        "filename": "ksj_L01_2018.zip",
+        "url": "https://nlftp.mlit.go.jp/ksj/gml/data/L01/L01-18/L01-18_GML.zip",
+        "expected_bytes": 16_074_319,
+        "dataset": "L01 地価公示",
+        "vintage": "2018-01-01",
+        "licence": (
+            "Free for commercial use with attribution (pre-2019 terms); "
+            "not the post-2019 open-data terms."
+        ),
+    },
+    "L01_2023": {
+        "filename": "ksj_L01_2023.zip",
+        "url": "https://nlftp.mlit.go.jp/ksj/gml/data/L01/L01-23/L01-23_GML.zip",
+        "expected_bytes": 19_915_437,
+        "dataset": "L01 地価公示",
+        "vintage": "2023-01-01",
+        "licence": "Open data since 2019; attribution required.",
+    },
+    "L02_2018": {
+        "filename": "ksj_L02_2018.zip",
+        "url": "https://nlftp.mlit.go.jp/ksj/gml/data/L02/L02-18/L02-18_GML.zip",
+        "expected_bytes": 17_519_541,
+        "dataset": "L02 都道府県地価調査",
+        "vintage": "2018-07-01",
+        "licence": "Open data since 2018; attribution required.",
+    },
+    "L02_2023": {
+        "filename": "ksj_L02_2023.zip",
+        "url": "https://nlftp.mlit.go.jp/ksj/gml/data/L02/L02-23/L02-23_GML.zip",
+        "expected_bytes": 17_598_886,
+        "dataset": "L02 都道府県地価調査",
+        "vintage": "2023-07-01",
+        "licence": "Open data since 2018; attribution required.",
     },
 }
 

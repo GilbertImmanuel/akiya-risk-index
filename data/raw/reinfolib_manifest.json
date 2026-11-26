@@ -1,0 +1,1412 @@
+{
+  "XIT001_13_2018": {
+    "filename": "reinfolib_XIT001_13_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "13",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 20891757,
+    "sha256": "C5CF7E4F7263B08007B69076F12D23D5DB68BCDC3E24F26549DF1FAE93612849",
+    "records": 31669,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_13_2023": {
+    "filename": "reinfolib_XIT001_13_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "13",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 20873225,
+    "sha256": "BA9FD25D2552E01858BFF3BACC8F3C862FA5DF3215493C7400C91DDF8DA07F3A",
+    "records": 31669,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_20_2018": {
+    "filename": "reinfolib_XIT001_20_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "20",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 4006943,
+    "sha256": "DFB8269D41DB403924B59654EA81E43BD6599352D32A1C393EB1225DE4A7B366",
+    "records": 6004,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_20_2023": {
+    "filename": "reinfolib_XIT001_20_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "20",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 3662078,
+    "sha256": "695FA9657946614F8E97F07BDC7D235C6D87B85413BE424D04B274F2FA0DF6A6",
+    "records": 5437,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_39_2018": {
+    "filename": "reinfolib_XIT001_39_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "39",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1417291,
+    "sha256": "F9BF9B679DA4689C396B7F2E55AD46CA0B6F3706FB933DE768324D17F3B6B1E0",
+    "records": 2286,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_39_2023": {
+    "filename": "reinfolib_XIT001_39_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "39",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1112219,
+    "sha256": "C102F4A462097BA92F52D1728F817507D76EB4A2EF9C149320FDEC22F1398672",
+    "records": 1781,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_01_2018": {
+    "filename": "reinfolib_XIT001_01_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "01",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 9497714,
+    "sha256": "7AEEE323CD9C3FA0CAB4651F44C2623461120EE34FF5722B2C8F37C23E9513C2",
+    "records": 14626,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_01_2023": {
+    "filename": "reinfolib_XIT001_01_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "01",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 9251923,
+    "sha256": "C82FA52B434108A598D6F80A7E48A362CD9E31B6B59061DEC5AF88A46B30454B",
+    "records": 14197,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_02_2018": {
+    "filename": "reinfolib_XIT001_02_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "02",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 2701817,
+    "sha256": "6689C98B80A0B8EBCEE7780C5D2516CE86A483107B16A8252FAF58D64974580C",
+    "records": 4254,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_02_2023": {
+    "filename": "reinfolib_XIT001_02_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "02",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 2357178,
+    "sha256": "0057EB526EB21BF975E8A4A4BD8C928589209431A902A7393F5A94099245E315",
+    "records": 3742,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_03_2018": {
+    "filename": "reinfolib_XIT001_03_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "03",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 2337494,
+    "sha256": "5E8C76D0A397F2D5F5D7C927649C3F06158125BC137034B92EDAB84C2464B786",
+    "records": 3681,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_03_2023": {
+    "filename": "reinfolib_XIT001_03_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "03",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1917009,
+    "sha256": "3EF33401FA1BDF7001F5B67CD4D866EF3ACEF1823F322F7B53B63484658E2C38",
+    "records": 3044,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_04_2018": {
+    "filename": "reinfolib_XIT001_04_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "04",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 4186500,
+    "sha256": "51BED3B99E9B85CA2075A468D4E97CBE9E7C22F55F2D1A219FA2360A1EF5E3DC",
+    "records": 6401,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_04_2023": {
+    "filename": "reinfolib_XIT001_04_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "04",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 3699194,
+    "sha256": "D548D3802E5DBD9AD1AF562747CCBC4F2F85D45D50601E1CCDA09FFCB4FC3808",
+    "records": 5682,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_05_2018": {
+    "filename": "reinfolib_XIT001_05_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "05",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 2110358,
+    "sha256": "A3ED77FBAAC5A3812F38B9A399C4C2B3A6B121800FE0439638A2147DAB33E3AD",
+    "records": 3367,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_05_2023": {
+    "filename": "reinfolib_XIT001_05_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "05",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1848395,
+    "sha256": "A68C67E6F7614CEE537278B689B9F5CF98D8DCDEA7661D775D1031F6D4965EEB",
+    "records": 2973,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_06_2018": {
+    "filename": "reinfolib_XIT001_06_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "06",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 2045353,
+    "sha256": "DB2646291143355D17F46A78A5AB96ECCB977929EC9546EE5C62D8EBC8D77AF8",
+    "records": 3279,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_06_2023": {
+    "filename": "reinfolib_XIT001_06_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "06",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1878212,
+    "sha256": "1D20185803963CF9E914B0A18047D4C6BB1B92F5BF1494A54F779775052780E8",
+    "records": 3010,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_07_2018": {
+    "filename": "reinfolib_XIT001_07_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "07",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 3547395,
+    "sha256": "F6FD9A0A959F643AB172A9E2F984BF7F0686E479B17370E640FE1DF0DCD4C318",
+    "records": 5537,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_07_2023": {
+    "filename": "reinfolib_XIT001_07_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "07",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 2627363,
+    "sha256": "6B6B7069404FEA5FC393230544C5158BC1647C355F3A4DECD3DC18C4D7E06633",
+    "records": 4010,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_08_2018": {
+    "filename": "reinfolib_XIT001_08_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "08",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 5034886,
+    "sha256": "8A527613E6758C04940BD276BD18D48B4C21BB7A8A94E420AC4A79251542A8BA",
+    "records": 7645,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_08_2023": {
+    "filename": "reinfolib_XIT001_08_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "08",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 4256597,
+    "sha256": "3E8A46918AB4713142D63FD7762061893D8FDE8115C955E34AF8A43F182CC32B",
+    "records": 6470,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_09_2018": {
+    "filename": "reinfolib_XIT001_09_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "09",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 3986713,
+    "sha256": "18AD6D954C7A2AA99A89FB093DEB19F4A65BA03B77D5B28037FBE64FE17EB507",
+    "records": 6129,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_09_2023": {
+    "filename": "reinfolib_XIT001_09_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "09",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 3167227,
+    "sha256": "39128DE6569EFBA40424442546F2B56F4560DD28AF546CE3B9DD68E345F0A414",
+    "records": 4829,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_10_2018": {
+    "filename": "reinfolib_XIT001_10_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "10",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 3314357,
+    "sha256": "9749FB5047E3A82F53F3CB313023E390FE006A830BD0C6A05E7B9061B90193D5",
+    "records": 5003,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_10_2023": {
+    "filename": "reinfolib_XIT001_10_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "10",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 2821828,
+    "sha256": "A3F1C0C3BCFAE8C8D12EE0B3D8B2A3CAADF4B1748E10BCCD5D7DE4A2CB3B4854",
+    "records": 4240,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_11_2018": {
+    "filename": "reinfolib_XIT001_11_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "11",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 11109393,
+    "sha256": "CB82ACEDF413CAE550F06D5F5A53DA79FF161F66976C8EC53F70FAB193883FD6",
+    "records": 16683,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_11_2023": {
+    "filename": "reinfolib_XIT001_11_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "11",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 10133054,
+    "sha256": "10FDD3F723A6472C3FE6FDAC8EBEA0B8644862DE375DDEC7F4F36951F5F25D93",
+    "records": 15175,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_12_2018": {
+    "filename": "reinfolib_XIT001_12_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "12",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 10107576,
+    "sha256": "46B93DA9FB0D87708DBC944A059A315A1C11A853174EA20977E570CBD1D5B01A",
+    "records": 15247,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_12_2023": {
+    "filename": "reinfolib_XIT001_12_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "12",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 9428416,
+    "sha256": "10916E6FCAA86B163B5CA212083479AFAFD951193B514E354157D4820DF542CB",
+    "records": 14218,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_14_2018": {
+    "filename": "reinfolib_XIT001_14_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "14",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 13924571,
+    "sha256": "1EE808757F5A667EF3D831F6F747FB3566DB3C1F0EF9606F5C6A41113A091F92",
+    "records": 20730,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_14_2023": {
+    "filename": "reinfolib_XIT001_14_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "14",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 13251371,
+    "sha256": "42B160D7B6366D3F6FA6F8C1D4050F49373B7E7EC24039C3CD60D241BC19B52F",
+    "records": 19732,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_15_2018": {
+    "filename": "reinfolib_XIT001_15_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "15",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 4354767,
+    "sha256": "D5918A167ACD5305D520226CA0EFF05588E1B4C2A6C8E32A3E8474E5EC937616",
+    "records": 6791,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_15_2023": {
+    "filename": "reinfolib_XIT001_15_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "15",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 3709749,
+    "sha256": "ADAF66D191F4C6820E3541F035ED3BB089DDF9F75A38F58BFE3DF6416D9D4B8D",
+    "records": 5766,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_16_2018": {
+    "filename": "reinfolib_XIT001_16_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "16",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1795426,
+    "sha256": "5591941676D6461DCD63CD92C39217BBB54A689AD72A3BCECC0D3705D74646F9",
+    "records": 2743,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_16_2023": {
+    "filename": "reinfolib_XIT001_16_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "16",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1311765,
+    "sha256": "D59ACE10E2C9DA8526B2E4312A2469508D18D71D01F4BAEC8006A65CB4B2269E",
+    "records": 2008,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_17_2018": {
+    "filename": "reinfolib_XIT001_17_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "17",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 2423545,
+    "sha256": "662F0BB010EB76F3FD5C19E9506D79BB3330DB8C343BF8927E1EA6C9905EB24B",
+    "records": 3773,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_17_2023": {
+    "filename": "reinfolib_XIT001_17_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "17",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1738046,
+    "sha256": "A769DEAA977401DE83B634C3E5382800A6EAAF30B61E747E8A140238A97B3862",
+    "records": 2671,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_18_2018": {
+    "filename": "reinfolib_XIT001_18_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "18",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1206580,
+    "sha256": "6F8AD2A3185BF6CFEAC766921E8C8C377AA0DE7DEF1CC75AC78EB74DEC7CC4DA",
+    "records": 1865,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_18_2023": {
+    "filename": "reinfolib_XIT001_18_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "18",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1122489,
+    "sha256": "FD3DF3871E3601293DBDD6F894786723DE6D082FA203A8516FA2312415B1C35B",
+    "records": 1741,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_19_2018": {
+    "filename": "reinfolib_XIT001_19_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "19",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1477197,
+    "sha256": "301EB00F8D5F02B606887EC0373125BA5081E5BC2ED1F883DE3B42707A46D8D5",
+    "records": 2210,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_19_2023": {
+    "filename": "reinfolib_XIT001_19_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "19",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1202230,
+    "sha256": "EB3346FC23214B6C9D3207D81E54BA4FBCCDCCE81FD8E416D3C65E5D4D6C952D",
+    "records": 1788,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_21_2018": {
+    "filename": "reinfolib_XIT001_21_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "21",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 3314833,
+    "sha256": "E084441C9E1186DD7B6E9EF1A757E2ED78079D67077D683C6E0C2744D797F9A3",
+    "records": 5133,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_21_2023": {
+    "filename": "reinfolib_XIT001_21_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "21",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 3229445,
+    "sha256": "71DD9AED12EA21C7B05CD218D7F8F0389A17B52D3D885CE23FDF2DCBE5A649EE",
+    "records": 4993,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_22_2018": {
+    "filename": "reinfolib_XIT001_22_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "22",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 6413814,
+    "sha256": "A61BF7A9FD41008C709230EF75BF0C8F1C964872E050C81967FE737D096098B5",
+    "records": 9817,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_22_2023": {
+    "filename": "reinfolib_XIT001_22_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "22",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 5837337,
+    "sha256": "68E0F650DFE093D64553D35D8C55D4BF8349C77F10AD141908BD8BF8F1CFC03E",
+    "records": 8930,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_23_2018": {
+    "filename": "reinfolib_XIT001_23_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "23",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 10997341,
+    "sha256": "94D27FD7B0F52A1AFA460B490D7AB579CD3BE77E22A82FA433EA13E038B696BE",
+    "records": 16639,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_23_2023": {
+    "filename": "reinfolib_XIT001_23_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "23",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 9784348,
+    "sha256": "8564BC1F458BC2417C151BEAAD717BFAFAB4F7BAE45B425F616FD05672F175E3",
+    "records": 14807,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_24_2018": {
+    "filename": "reinfolib_XIT001_24_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "24",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 3398833,
+    "sha256": "455C889645911C2A5F6BD84C038BFA682C08E999E9DA54EFBA693EC74C309BD6",
+    "records": 5163,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_24_2023": {
+    "filename": "reinfolib_XIT001_24_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "24",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 3012793,
+    "sha256": "5F41550CA310E08F8C8F0214337FE0ACB9AFE07288DD0BBAADC778D92C1F7162",
+    "records": 4592,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_25_2018": {
+    "filename": "reinfolib_XIT001_25_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "25",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 2526679,
+    "sha256": "4CD45F3B2CFE3EAF278A7E3B335CFD69D42F321024BDD220BAE63C73392F14D5",
+    "records": 3900,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_25_2023": {
+    "filename": "reinfolib_XIT001_25_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "25",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 2285425,
+    "sha256": "389DE0BA6E3A0022E42FDFC6016820D4C7F03967F31DC79EE99B4DA88451BDB4",
+    "records": 3491,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_26_2018": {
+    "filename": "reinfolib_XIT001_26_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "26",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 3957091,
+    "sha256": "D3D7D2C99783E557565D750C56FA47F1F0A3F209CA1BBC7E39FB9009478E3E42",
+    "records": 5907,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_26_2023": {
+    "filename": "reinfolib_XIT001_26_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "26",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 3932453,
+    "sha256": "91FAC59287081B150F58142B555818D0825215CBD2D50461945F9C04B94D5D19",
+    "records": 5881,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_27_2018": {
+    "filename": "reinfolib_XIT001_27_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "27",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 12051166,
+    "sha256": "3115FC7C452D30EF1B68D759DFDC1421C533DF1DFFA3DC85B9DF55440B34C28B",
+    "records": 18026,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_27_2023": {
+    "filename": "reinfolib_XIT001_27_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "27",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 13057854,
+    "sha256": "6EF8D10BF4DD8131226C31086258B09CCF989388D7406D54A0B692CA7DE19DFC",
+    "records": 19546,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_28_2018": {
+    "filename": "reinfolib_XIT001_28_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "28",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 8563977,
+    "sha256": "34692979267BF1752D42006ACC80AF1464D4C09ABF49C1E85FE0265CB9D244FB",
+    "records": 12898,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_28_2023": {
+    "filename": "reinfolib_XIT001_28_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "28",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 8192036,
+    "sha256": "04923B1D0DFF7C1343785A0B2DC92CEF59F9536DB6BDFEC2484C50BADB967B85",
+    "records": 12378,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_29_2018": {
+    "filename": "reinfolib_XIT001_29_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "29",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 2016703,
+    "sha256": "0A41D4AC840692B3C670E23CA442B595421ACC615B69BD8074A01B3E107A8C2D",
+    "records": 3055,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_29_2023": {
+    "filename": "reinfolib_XIT001_29_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "29",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1842707,
+    "sha256": "133B450185FB1BB12B6D6BC71DA66E66AE773B9B222D50FC20683E9E6F9D213B",
+    "records": 2799,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_30_2018": {
+    "filename": "reinfolib_XIT001_30_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "30",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1719104,
+    "sha256": "DC52C229F733FADC86814A5B7661C9FBCDAF74DFC9426C4569FA8FBA996B919B",
+    "records": 2583,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_30_2023": {
+    "filename": "reinfolib_XIT001_30_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "30",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1420071,
+    "sha256": "C26C92EF81307EB676E31E4E0EEA116F0DE25FD0488D5DF6D62E573B29086881",
+    "records": 2116,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_31_2018": {
+    "filename": "reinfolib_XIT001_31_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "31",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1015838,
+    "sha256": "31F605A052D74E837E3B7D7FA6F86AE143EDDF43625ED3F8F782D388E3BCC8F3",
+    "records": 1599,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_31_2023": {
+    "filename": "reinfolib_XIT001_31_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "31",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 979410,
+    "sha256": "466D0D4275DA2C152B374FACB63C72C3424D7DD99B19FD92EF8B9B4A5CA3C450",
+    "records": 1526,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_32_2018": {
+    "filename": "reinfolib_XIT001_32_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "32",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1340847,
+    "sha256": "056AE4A54539423324C311E19ED5A03AE4CFDF527C26769EC8B1D21300D50B4B",
+    "records": 2115,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_32_2023": {
+    "filename": "reinfolib_XIT001_32_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "32",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1228238,
+    "sha256": "B8CDCF68BD71B39A56CE4A4404ED216078784BCEE1F233A41F4856027EA6FDEF",
+    "records": 1943,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_33_2018": {
+    "filename": "reinfolib_XIT001_33_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "33",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 2399468,
+    "sha256": "381F33B7D44F74EEF8185F3738C7F99F277C7FA059091D78924811F284E17DD8",
+    "records": 3726,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_33_2023": {
+    "filename": "reinfolib_XIT001_33_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "33",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 2943581,
+    "sha256": "9530550B00AA9A9C1F9C3640007DB1B08C503334430389E702EB79DB3449D6AF",
+    "records": 4619,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_34_2018": {
+    "filename": "reinfolib_XIT001_34_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "34",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 3266409,
+    "sha256": "2EAC83F1A8D2C812F2DF6DF776077058143B3DB92B4F8B6B2E421EDDA4CDE030",
+    "records": 5013,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_34_2023": {
+    "filename": "reinfolib_XIT001_34_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "34",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 3848553,
+    "sha256": "8E5BD832C0734BBD215C2A1F8ADB53E93759E2B739E9D16F8D28BC6612203927",
+    "records": 5935,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_35_2018": {
+    "filename": "reinfolib_XIT001_35_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "35",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 2280235,
+    "sha256": "34681A40C7A64E92F7CD176AAE962A4099A188E085F94E83D314B1E157C000D1",
+    "records": 3516,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_35_2023": {
+    "filename": "reinfolib_XIT001_35_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "35",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 2207979,
+    "sha256": "589C8B4BBA5E7140493EFA69068DF40793E04AF3B34C5A8C5B174D7F92F18ED0",
+    "records": 3408,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_36_2018": {
+    "filename": "reinfolib_XIT001_36_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "36",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1230283,
+    "sha256": "C7779CE3ACF607ED6C68F67D30AB9F72A28CDD7A8DBE2B91EFDFC741B91F3035",
+    "records": 1943,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_36_2023": {
+    "filename": "reinfolib_XIT001_36_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "36",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1030243,
+    "sha256": "63A98FEB827A94CECDAF9208B4BBA7D1C5FB99A4EC49FBA40183C4A8A8B92EDB",
+    "records": 1631,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_37_2018": {
+    "filename": "reinfolib_XIT001_37_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "37",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1601952,
+    "sha256": "ACACED9F7253B5EFC9DB367F90CE60EFF2684FD6E4620CB82A4ED6F9DE49F50A",
+    "records": 2414,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_37_2023": {
+    "filename": "reinfolib_XIT001_37_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "37",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1412050,
+    "sha256": "A26A1234A03A134AED2DDB95EC678D1030ADAA780D346BB6ACC4C0F943572C3F",
+    "records": 2141,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_38_2018": {
+    "filename": "reinfolib_XIT001_38_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "38",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 2138715,
+    "sha256": "FE4A44C008E2D3B34957842417B11AD4C03D55DC2DF5126560550C6841115BE5",
+    "records": 3310,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_38_2023": {
+    "filename": "reinfolib_XIT001_38_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "38",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 2084767,
+    "sha256": "BFE43A2DF47EE6427B85F2F62D08F71FD9DF0DAF1B06C7C507DFA5B01C9D922B",
+    "records": 3241,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_40_2018": {
+    "filename": "reinfolib_XIT001_40_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "40",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 7487097,
+    "sha256": "015B332232E47782D92BF556B558399B9D0AD24013FF136A17BBF2E75BA79C50",
+    "records": 11310,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_40_2023": {
+    "filename": "reinfolib_XIT001_40_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "40",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 7018194,
+    "sha256": "1977DFE84305C0E56674E4A8E8CB6622AAA23506817423B0B0D900F8B02C7609",
+    "records": 10625,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_41_2018": {
+    "filename": "reinfolib_XIT001_41_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "41",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1324617,
+    "sha256": "C9A212E4D095AD1602E5CB6373C6E53E620073033BE948C08357A8AEF98B0605",
+    "records": 2045,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_41_2023": {
+    "filename": "reinfolib_XIT001_41_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "41",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1282086,
+    "sha256": "3B379476E29BFA875CFE610208EC162B4C7624CFD6B53CC9053414226CBEFE6A",
+    "records": 1982,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_42_2018": {
+    "filename": "reinfolib_XIT001_42_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "42",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1821374,
+    "sha256": "EAA050E151F6904576B8EB9EE4CC7FA0420ABCCAD04D64F20EFE58308627A64C",
+    "records": 2848,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_42_2023": {
+    "filename": "reinfolib_XIT001_42_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "42",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1777918,
+    "sha256": "B5046718419AD3F92AA031DFEBB5973A4D06A127736FA57F960EB711965256CE",
+    "records": 2774,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_43_2018": {
+    "filename": "reinfolib_XIT001_43_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "43",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 3243447,
+    "sha256": "544E743BC2DE02F4C28E15A69FEFCB3536F58A4F7399CDEEBBFF7DD1ABB8E925",
+    "records": 5100,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_43_2023": {
+    "filename": "reinfolib_XIT001_43_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "43",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 3012111,
+    "sha256": "FFC88EFA2D2227CDA45C3F2CFFE70ECCE80575116DE7CF668CE83423BBAFC086",
+    "records": 4722,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_44_2018": {
+    "filename": "reinfolib_XIT001_44_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "44",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 2203724,
+    "sha256": "A0BE786A9D03945341D937D2065832EECD4AFA9CFCF8CBE832EAD90CA7FE0F8D",
+    "records": 3472,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_44_2023": {
+    "filename": "reinfolib_XIT001_44_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "44",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1917297,
+    "sha256": "D435A6AF4855C97DE1C73A40E88992843B811E4BAC21F7D5482DD0B18E65DD48",
+    "records": 3025,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_45_2018": {
+    "filename": "reinfolib_XIT001_45_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "45",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 2468923,
+    "sha256": "12FDA258A1197D069D14D961224CC8C057A0D4C4B427CCA07AD96C27811852AE",
+    "records": 3976,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_45_2023": {
+    "filename": "reinfolib_XIT001_45_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "45",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 2219819,
+    "sha256": "CCD213322B6ECF3FD5BADE657DAA4F735FFBB63691DB0EF3CD88AB26EDBBED97",
+    "records": 3575,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_46_2018": {
+    "filename": "reinfolib_XIT001_46_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "46",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 3928441,
+    "sha256": "5D0C2C321BFA8F2EFF12F6989D62CD862E8BEDCEC7385B5819C1B998D5A75A7B",
+    "records": 6274,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_46_2023": {
+    "filename": "reinfolib_XIT001_46_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "46",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 3742096,
+    "sha256": "022F3338D6B7AF6563814FB240D197347BD89F14DFBCD9D3BF7A15F05ABBEF95",
+    "records": 5953,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_47_2018": {
+    "filename": "reinfolib_XIT001_47_2018.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2018,
+      "area": "47",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1702720,
+    "sha256": "1B379421425D758F395B9A086836003985C00DEC7E6CB1CF7B4D349556CB094E",
+    "records": 2604,
+    "licence": "Free use with attribution; API key required."
+  },
+  "XIT001_47_2023": {
+    "filename": "reinfolib_XIT001_47_2023.json",
+    "source": "MLIT Real Estate Information Library XIT001",
+    "url": "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001",
+    "query": {
+      "year": 2023,
+      "area": "47",
+      "priceClassification": "01"
+    },
+    "access_date": "2026-11-26",
+    "bytes": 1297597,
+    "sha256": "6C6975A174F1A65CB6620B75796AEE3982BCFC0F47215F8E894E7D92B55FD91D",
+    "records": 1964,
+    "licence": "Free use with attribution; API key required."
+  }
+}

@@ -323,3 +323,43 @@ Map by code per year, not by position.
 - **2008:** usable as city/ward context with stronger boundary flags; do not impute the 10 units that were not 市区 in 2008.
 - **Do not build a four-wave municipal panel.** The 2018–2023 panel remains the core; 2008/2013 are context only.
 - **Caveat:** rates are not computed for 2008/2013 because these tables do not include total dwellings. The context file reports counts and composition shares.
+
+
+## Market data - 2026-11-26
+
+### MLIT Real Estate Information Library XIT001
+
+- **Source:** MLIT, Real Estate Information Library, transaction and contract prices.
+- **Endpoint:** `https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001`
+- **Query:** `year=2018|2023`, `area=<prefecture code>`, `priceClassification=01` (transaction prices only; contract prices are a different series and start in 2021).
+- **Coverage:** all 47 prefectures, 2018 and 2023, 94 files.
+- **Records:** 314,309 in 2018; 292,780 in 2023 before filtering.
+- **Files:** `data/raw/reinfolib_XIT001_<prefecture>_<year>.json` (git-ignored).
+- **Manifest:** `data/raw/reinfolib_manifest.json` (URL, query, access date, bytes, SHA-256, record count).
+- **Licence:** free use with attribution; API key required.
+- **Attribution:** "Source: MLIT Real Estate Information Library."
+
+### L01 official land prices (地価公示)
+
+| Year | File | URL | Bytes | SHA-256 | Vintage |
+|---|---|---|---|---|---|
+| 2018 | `ksj_L01_2018.zip` | `https://nlftp.mlit.go.jp/ksj/gml/data/L01/L01-18/L01-18_GML.zip` | 16,074,319 | `54920EEBEF400C100DA02359379CBCF40F8AE859F671527D7C5A375868EA73CE` | 2018-01-01 |
+| 2023 | `ksj_L01_2023.zip` | `https://nlftp.mlit.go.jp/ksj/gml/data/L01/L01-23/L01-23_GML.zip` | 19,915,437 | `FCCC9713A8BEC69474B849FDDE51B0D41BAC17FE8B457B83B2742EDCDD7AA960` | 2023-01-01 |
+
+- **2018 field map:** administrative code `L01_021`, use `L01_025`, price `L01_006`.
+- **2023 field map:** administrative code `L01_022`, use `L01_027`, price `L01_006`.
+- **Licence:** 2018 is free for commercial use with attribution under the pre-2019 KSJ terms. 2023 is open data under the post-2019 terms. The derived municipal medians are facts and are published with attribution.
+
+### L02 prefectural land price survey (都道府県地価調査)
+
+| Year | File | URL | Bytes | SHA-256 | Vintage |
+|---|---|---|---|---|---|
+| 2018 | `ksj_L02_2018.zip` | `https://nlftp.mlit.go.jp/ksj/gml/data/L02/L02-18/L02-18_GML.zip` | 17,519,541 | `78784DA86EBDF068F7F63B15C34FD976D15CDF0F7D7124A8CFCD3C49E3C2A3D9` | 2018-07-01 |
+| 2023 | `ksj_L02_2023.zip` | `https://nlftp.mlit.go.jp/ksj/gml/data/L02/L02-23/L02-23_GML.zip` | 17,598,886 | `F4D2EBEB125B96AF3016154BA9072056064DA7079F0768C5432DF1A7D7F41659` | 2023-07-01 |
+
+- **2018 field map:** administrative code `L02_021`, use `L02_025`, price `L02_006`.
+- **2023 field map:** administrative code `L02_020`, use `L02_025`, price `L02_006`.
+- **Licence:** open data since 2018; attribution required.
+
+- **Manifest:** `data/raw/ksj_manifest.json`.
+- **Attribution:** "Source: MLIT National Land Numerical Information."

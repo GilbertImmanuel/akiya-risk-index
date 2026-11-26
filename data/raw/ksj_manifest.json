@@ -28,5 +28,45 @@
     "bytes": 448421619,
     "sha256": "D0CF37CF450438A62B14007179CBC7BD47B085F20465F6A32F7EAAD8AC962E7A",
     "licence": "Open data (CC BY 4.0) since 2018; attribution required."
+  },
+  "L01_2018": {
+    "filename": "ksj_L01_2018.zip",
+    "dataset": "L01 地価公示",
+    "vintage": "2018-01-01",
+    "url": "https://nlftp.mlit.go.jp/ksj/gml/data/L01/L01-18/L01-18_GML.zip",
+    "access_date": "2026-11-26",
+    "bytes": 16074319,
+    "sha256": "54920EEBEF400C100DA02359379CBCF40F8AE859F671527D7C5A375868EA73CE",
+    "licence": "Free for commercial use with attribution (pre-2019 terms); not the post-2019 open-data terms."
+  },
+  "L01_2023": {
+    "filename": "ksj_L01_2023.zip",
+    "dataset": "L01 地価公示",
+    "vintage": "2023-01-01",
+    "url": "https://nlftp.mlit.go.jp/ksj/gml/data/L01/L01-23/L01-23_GML.zip",
+    "access_date": "2026-11-26",
+    "bytes": 19915437,
+    "sha256": "FCCC9713A8BEC69474B849FDDE51B0D41BAC17FE8B457B83B2742EDCDD7AA960",
+    "licence": "Open data since 2019; attribution required."
+  },
+  "L02_2018": {
+    "filename": "ksj_L02_2018.zip",
+    "dataset": "L02 都道府県地価調査",
+    "vintage": "2018-07-01",
+    "url": "https://nlftp.mlit.go.jp/ksj/gml/data/L02/L02-18/L02-18_GML.zip",
+    "access_date": "2026-11-26",
+    "bytes": 17519541,
+    "sha256": "78784DA86EBDF068F7F63B15C34FD976D15CDF0F7D7124A8CFCD3C49E3C2A3D9",
+    "licence": "Open data since 2018; attribution required."
+  },
+  "L02_2023": {
+    "filename": "ksj_L02_2023.zip",
+    "dataset": "L02 都道府県地価調査",
+    "vintage": "2023-07-01",
+    "url": "https://nlftp.mlit.go.jp/ksj/gml/data/L02/L02-23/L02-23_GML.zip",
+    "access_date": "2026-11-26",
+    "bytes": 17598886,
+    "sha256": "F4D2EBEB125B96AF3016154BA9072056064DA7079F0768C5432DF1A7D7F41659",
+    "licence": "Open data since 2018; attribution required."
   }
 }

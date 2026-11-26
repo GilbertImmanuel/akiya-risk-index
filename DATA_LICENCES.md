@@ -26,3 +26,11 @@ source terms.
   in the data dictionary before reuse.
 
 See `research/data-sources.md` for the full inventory and caveats.
+
+
+## Market data notes
+
+- **XIT001 transaction prices** are reported/administrative records, not a census. Use them as a liquidity signal, not a precise transaction count.
+- **L01 2018** predates the 2019 open-data terms. It is free for commercial use with attribution under the older KSJ terms, not under the post-2019 open-data terms. The derived municipal medians are published with attribution.
+- **L02** is open data from 2018 onward.
+- Do not mix **transaction prices** and **contract prices**. The market panel uses transaction prices only (`priceClassification=01`).
