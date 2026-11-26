@@ -1,7 +1,21 @@
 # Research Log
 
-**Last updated:** 2026-11-23
+**Last updated:** 2026-11-26
 **Purpose:** A chronological record of searches, sources, and what they changed. This is the audit trail for the dossier.
+
+---
+
+## 2026-11-26 — Market panel built
+
+- **Action:** Pulled XIT001 transaction prices for all 47 prefectures, 2018 and 2023 (94 files; 314,309 records in 2018 and 292,780 in 2023 before filtering). Downloaded KSJ L01 and L02 for 2018 and 2023. Built the pilot and full municipal market panels.
+- **Schema finding:** the 2018 L01 and L02 shapefiles use different field positions from 2023. L01 2018 uses administrative code `L01_021` and use `L01_025`; L01 2023 uses `L01_022` and `L01_027`. L02 2018 uses code `L02_021`; L02 2023 uses `L02_020`. The parser keeps explicit per-year field maps.
+- **Definitions:** transaction prices only (`priceClassification=01`); residential land, land-and-building, and condominium transactions; L01 residential points for the headline land-price level and matched-site change; L02 as robustness. The 2018 row has no five-year change because 2013 was not pulled.
+- **Pilot:** 89 units in Tokyo, Nagano, and Kochi. Strict coverage **64.0%**; Tokyo 92.2%, Nagano 32.0%, Kochi 15.4%.
+- **Full panel:** **2,118 rows** (1,059 units x 2 years). Strict coverage **62.5%** (662 units); any market data **100%**. Designated cities 19/20; special wards 19/23; cities 539/772; towns/villages 85/244 (34.8%). L01 matched sites: 16,451; L02: 12,643.
+- **Validation:** unique `(region_code, year)` keys; transaction counts equal the asset-type sum; 12 units have no residential L01 points in 2023; 2 units have no reported transactions in 2023; 2018/2023 municipality-boundary moves among matched sites: 0.
+- **Licence:** L01 2018 is free for commercial use with attribution under the pre-2019 KSJ terms; L01 2023 and L02 are open data. Documented in `DATA_LICENCES.md` and `data/processed/README.md`.
+- **Outputs:** `data/processed/market_panel.csv`, `panel_with_market.csv`, `market_panel_pilot.csv`, `pilot_panel_v3.csv`; `src/13_market_pull.py`, `src/14_market_panel.py`; `data/raw/reinfolib_manifest.json`.
+- **Next:** Stage D — akiya-bank participation.
 
 ---
 

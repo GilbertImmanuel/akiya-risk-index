@@ -155,6 +155,8 @@ Japan has **926 towns/villages** (743 towns + 183 villages). Therefore **682 tow
 
 **Verdict:** core market data, with a rural-coverage caveat. Pilot three prefectures before committing.
 
+**Stage C result (2026-11-26):** pulled all 47 prefectures for 2018 and 2023. XIT001 returned **314,309 records in 2018** and **292,780 in 2023**. The full market panel has **2,118 rows**; **62.5%** of units meet the strict coverage definition (at least five L01 points in both years, three matched sites in 2023, and ten reported transactions in 2023). Any market data covers **100%**. Town/village strict coverage is **34.8%**, so the activation lens must flag thin cells.
+
 ---
 
 ## 6. Land price data
@@ -165,6 +167,8 @@ Japan has **926 towns/villages** (743 towns + 183 villages). Therefore **682 tow
 - **Caveats:** standard sites are not a random sample; municipal medians can be based on very few points; use 3-year pooling where needed.
 
 **Verdict:** good, with a thin-cell flag.
+
+**Stage C result (2026-11-26):** downloaded L01 and L02 for 2018 and 2023. The 2018 shapefiles use different field positions from 2023; explicit field maps are in `src/14_market_panel.py`. L01 2018 uses the pre-2019 KSJ terms (free for commercial use with attribution); L01 2023 and L02 are open data. L01 matched sites: **16,451**; L02: **12,643**.
 
 ---
 

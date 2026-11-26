@@ -27,11 +27,11 @@
 - Accessibility v0: 1,059-unit boundary layer, 9,007 station facilities, density and passenger metrics.
 - 2013/2008 city/ward context: 812/815 and 805/815 units, with boundary flags.
 - Public map v1: 1,059 features, six fixed-break indicators, Leaflet, Lighthouse 100.
+- Market data: 2018/2023 XIT001 transactions; L01/L02 land prices; 2,118-row panel; 62.5% strict coverage.
 - Public GitHub repository and GitHub Pages site.
 
 **Remaining**
 
-- Market data (land prices and transactions).
 - Akiya-bank participation.
 - Case studies.
 - Go/no-go memo.
@@ -72,20 +72,22 @@
 
 ---
 
-### Stage C — Market data
+### Stage C — Market data — **complete**
 
-- [ ] Pull XIT001 for Tokyo, Nagano, and Kochi, 2018 and 2023.
-- [ ] Download L01/L02 land-price files for 2018 and 2023.
-- [ ] Parse and filter: land-only, land+house, condos; residential focus.
-- [ ] Map designated-city wards to cities; keep special wards separate.
-- [ ] Build the pilot market panel; QA coverage and thin cells.
-- [ ] Decide whether to pull all 47 prefectures.
-- [ ] Pull the full market data if coverage is workable.
-- [ ] Join to the vacancy/accessibility panel; build pilot v3.
+- [x] Pull XIT001 for Tokyo, Nagano, and Kochi, 2018 and 2023.
+- [x] Download L01/L02 land-price files for 2018 and 2023.
+- [x] Parse and filter: land-only, land+house, condos; residential focus.
+- [x] Map designated-city wards to cities; keep special wards separate.
+- [x] Build the pilot market panel; QA coverage and thin cells.
+- [x] Decide whether to pull all 47 prefectures. **Yes: pilot strict coverage 64.0%.**
+- [x] Pull the full market data if coverage is workable.
+- [x] Join to the vacancy/accessibility panel; build pilot v3.
 
 **Headline:** official residential land price median and matched-site five-year change. Transactions are secondary.
 
-**Output:** market panel with coverage flags.
+**Result:** 2,118 rows (1,059 units x 2 years). Strict coverage **62.5%** (662 units); any market data **100%**. Designated cities 19/20; special wards 19/23; cities 539/772; towns/villages 85/244 (34.8%). XIT001 records: 314,309 in 2018 and 292,780 in 2023. L01 matched sites: 16,451; L02: 12,643. The 2018 L01/L02 schemas use different field positions from 2023, so the parser keeps explicit field maps.
+
+**Output:** `data/processed/market_panel.csv`, `panel_with_market.csv`, `market_panel_pilot.csv`, `pilot_panel_v3.csv`; `src/13_market_pull.py`, `src/14_market_panel.py`.
 
 ---
 
@@ -201,7 +203,7 @@ The Phase 0 gate.
 | **M2 — Core panel + accessibility v0** | **Complete** | 2018–2023 harmonised (1,057 units); accessibility metrics; boundary layer. |
 | **M2b — 2013/2008 context** | **Complete** | 812/815 and 805/815 city/ward units; boundary flags; comparability memo. |
 | **M3 — Public map v1** | **Complete** | 1,059 features; six indicators; simplified boundaries; Lighthouse 100. |
-| **M4 — Market panel** | Stage C | 2018/2023 land prices and transactions; coverage flags; pilot/full decision. |
+| **M4 — Market panel** | **Complete** | 2,118 rows; 62.5% strict coverage; 100% any market data; pilot/full decision made. |
 | **M5 — Akiya-bank participation** | Stage D | Participation table and aggregate trend; no scraping. |
 | **M6 — Case studies** | Stage E | 6–8 municipalities selected; protocol and notes. |
 | **M7 — Go/no-go** | Stage F | All criteria assessed; scope confirmed or revised. |
@@ -216,7 +218,7 @@ The Phase 0 gate.
 | Risk | Likelihood | Impact | Mitigation |
 |---|---|---|---|
 | 2013/2008 tables not comparable | Medium | High | Audit early; fall back to 2018–2023 core; document. |
-| Rural market data too thin | High | Medium | Pool years; use land-price points; flag insufficient evidence; activation lens may be urban-only. |
+| Rural market data too thin | Observed | Medium | 34.8% of towns/villages meet strict coverage; use L02 as robustness; flag thin cells; the activation lens is urban-weighted. |
 | Coverage bias (682 missing towns/villages; 500,360 vacant dwellings) | Certain | High | Define universe; case studies; coverage appendix; no “all Japan” claim; state the 5.6% uncovered vacancy. |
 | Sampling error / unstable rankings | High | High | Uncertainty bands; empirical Bayes; avoid overranking small differences. |
 | Municipal mergers | Medium | Medium | Crosswalk; aggregate predecessors; document unmapped units. |

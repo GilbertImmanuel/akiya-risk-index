@@ -1,6 +1,6 @@
 # Session Summary: What Was Verified, What Changed, and What Comes Next
 
-**Date:** 2026-11-23
+**Date:** 2026-11-26
 **Purpose:** A one-page executive summary of the research dossier. Read this after `README.md`; details are in the linked files.
 
 ---
@@ -17,6 +17,7 @@
 - **2018–2023 crosswalk:** the coverage change is **threshold-driven, not merger-driven** (no municipal mergers in the period). The balanced panel is **1,057 units** (1,056 matched + 1 name change).
 - **Accessibility v0:** **9,007 rail facilities** in 2023 (8,399 heavy-rail stations, 608 tram-only stops). The 1,059-unit panel contains **7,479 heavy-rail stations**; **126 units (11.9%) have none**. Station density correlates **+0.701** with population density and **−0.447** with the 2023 dilapidated “other vacant” rate, but only **−0.018** with its 2018–2023 change. Treat this as a descriptive activation variable, not a causal effect.
 - **Public map v1:** six fixed-break indicators for **1,059 municipal units**, covering dilapidated and total vacancy, recent vacancy change, population change, fiscal strength, and rail access. The map is live at `https://gilbertimmanuel.github.io/akiya-risk-index/map.html`.
+- **Market panel:** **2,118 rows** for 1,059 municipal units in 2018 and 2023. **62.5%** meet the strict market-coverage definition (at least five L01 residential points in both years, at least three matched sites in 2023, and at least ten reported residential transactions in 2023). **100%** have at least one market source. Coverage is 19/20 designated cities, 19/23 special wards, 539/772 cities, and 85/244 towns/villages (34.8%). L01 matched sites: 16,451; L02: 12,643. The 2018 L01 and L02 schemas differ from 2023; the parser uses explicit field maps.
 - **Demography:** The 2025 Census shows **122.97m people**, down **2.5%** from 2020; **57.18m households**, up **1.477m**; **91.2%** of municipal units lost population.
 - **Policy:** The 2023 Act took effect **2023-12-13** and created `管理不全空家等` (guidance → recommendation → tax exception removed). The **2026-04-01 address-change registration** is a registration rule, not a tax. There is **no national akiya tax**; the DPFP `空室税` bill is not law; Kyoto's local tax is planned for **FY2030**.
 - **Akiya banks:** **1,155 participating municipalities**, **750 currently listing**, **20,089 current listings**, ~29,000 cumulative transactions (Oct 2026). Listings are ~0.2% of the vacant stock; they are a selected signal, not a vacancy census.
@@ -28,7 +29,7 @@
 
 - Exact **municipal-level** `管理不全`/`特定空家` designation counts (published data are prefecture-level).
 - Whether the **2013 and 2008** municipal tables are directly comparable to 2018/2023 in coverage and category definitions.
-- Whether **rural transaction/land-price** coverage is sufficient for an activation index.
+- Whether the **thin rural market cells** can support a town/village activation ranking. Coverage is measurable but only 34.8% of towns/villages meet the strict definition; the activation lens must flag thin cells.
 - Whether akiya-bank **municipal listing counts** can be obtained without scraping.
 - The detailed legal effect of the **September 2026 amendment** beyond the primary MLIT page (partly based on a law-firm commentary).
 - Exact **tax-assessment timing** after a `管理不全` recommendation.
@@ -103,4 +104,4 @@ Remaining decisions are reversible/methodological and can be made during Phase 0
 
 ## 7. Next step
 
-Phase 0 is well advanced: the vacancy panel, total dwellings, crosswalk, 2013/2008 city/ward context, 2025 Census, fiscal capacity, accessibility v0, and the public map are built. The next step is **Stage C — market data**. After that: **Stage D — akiya-bank**, **Stage E — case studies**, and **Stage F — go/no-go**.
+Phase 0 is well advanced: the vacancy panel, total dwellings, crosswalk, 2013/2008 city/ward context, 2025 Census, fiscal capacity, accessibility v0, public map, and 2018/2023 market panel are built. The next step is **Stage D - akiya-bank**. After that: **Stage E - case studies** and **Stage F - go/no-go**.

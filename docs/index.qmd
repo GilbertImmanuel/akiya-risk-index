@@ -7,7 +7,7 @@ description: "A reproducible municipal study of housing vacancy, population chan
 ::: {.callout-note}
 ## Status: Phase 0 in progress
 
-The municipal map is live. Market data, akiya-bank participation, case studies, and the index are next.
+The municipal map is live and the 2018/2023 market panel is built. Akiya-bank participation, case studies, and the index are next.
 :::
 
 ## What this project is
@@ -77,8 +77,9 @@ See `DATA_LICENCES.md` in the repository for terms and attribution.
 
 ## What comes next
 
-1. Add market data: official land prices and transactions.
-2. Compile akiya-bank participation and aggregate listing trends.
-3. Select 6 to 8 case studies.
-4. Build the risk, activation, and capacity indices.
-5. Publish the report and open data.
+The market panel is built but not yet on the map; the public map still shows the six vacancy, population, fiscal, and rail indicators.
+
+1. Compile akiya-bank participation and aggregate listing trends.
+2. Select 6 to 8 case studies.
+3. Build the risk, activation, and capacity indices.
+4. Publish the report and open data.
