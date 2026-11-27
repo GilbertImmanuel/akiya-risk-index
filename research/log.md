@@ -1,7 +1,20 @@
 # Research Log
 
-**Last updated:** 2026-11-26
+**Last updated:** 2026-11-27
 **Purpose:** A chronological record of searches, sources, and what they changed. This is the audit trail for the dossier.
+
+---
+
+## 2026-11-27 — Akiya-bank aggregates built; municipal list blocked
+
+- **Action:** Added `src/15_akiya_bank.py` and downloaded three official MLIT PDFs: overview, national trend, and prefecture participation rates. Built the national trend, 47 prefecture rates, and the current summary.
+- **Trend:** 53 points from **March 2018 to October 2026**. Participants rose from **487 to 1,155**; listings rose from **3,458 to 20,010**. The chart labels **20,089** current listings; the October month-end bar is **20,010**. Both are retained.
+- **Current:** **1,155** participants, **750** listing municipalities, **~29,000** cumulative transactions, national participation rate **65.5%**.
+- **Prefecture:** 47 rates; range **12.2% (Okinawa) to 100.0% (Toyama, Oita)**. Tokyo 19.4%, Aichi 27.8%, Osaka 46.5%.
+- **Blocker:** AtHome `government/` returned **503 emergency maintenance**; LIFULL `towns/` returned **403 CloudFront** on 2026-11-27. The Wayback snapshots are stale (AtHome 908 on 2026-08-11; LIFULL 772 on 2026-01-28) and were not used as current. No scraping or bypass.
+- **Validation:** 53 trend rows; 47 prefecture rows; 58 percentage tokens with the last 11 axis labels; national average 65.5%; `uv run pytest` 10 passed; `ruff` clean.
+- **Outputs:** `data/processed/akiya_bank_trend.csv`, `akiya_bank_prefecture.csv`, `akiya_bank_summary.csv`; `data/raw/akiya_bank_manifest.json`; `src/15_akiya_bank.py`; `tests/test_akiya_bank.py`.
+- **Next:** retry the operator pages or save them manually; then build the municipal participation table. If still blocked, proceed to Stage E with a documented gap.
 
 ---
 

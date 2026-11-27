@@ -1,0 +1,29 @@
+{
+  "overview": {
+    "filename": "akiya_bank_overview_2026-10.pdf",
+    "dataset": "Akiya-bank overview",
+    "url": "https://www.mlit.go.jp/totikensangyo/const/content/002045626.pdf",
+    "access_date": "2026-11-27",
+    "bytes": 209992,
+    "sha256": "102A7347BB10AF388A2A6AA64A1D7D4F590A29D707CE2CBE566470175E3E487C",
+    "licence": "MLIT public document; attribution required."
+  },
+  "trend": {
+    "filename": "akiya_bank_trend_2026-10.pdf",
+    "dataset": "Akiya-bank participation and listing trend",
+    "url": "https://www.mlit.go.jp/totikensangyo/const/content/002045627.pdf",
+    "access_date": "2026-11-27",
+    "bytes": 1710149,
+    "sha256": "B4F78708E30F2F051C9A939D1716A1FE5756C0FBFCB2BBB1ADDCCD0FFEAAFCA0",
+    "licence": "MLIT public document; attribution required."
+  },
+  "prefecture": {
+    "filename": "akiya_bank_prefecture_2026-10.pdf",
+    "dataset": "Akiya-bank prefecture participation rates",
+    "url": "https://www.mlit.go.jp/totikensangyo/const/content/002045629.pdf",
+    "access_date": "2026-11-27",
+    "bytes": 570420,
+    "sha256": "A8AB091F3907DE84E781AFBDC2D9B12B136A324CF001B8F53471E48A1AA332B3",
+    "licence": "MLIT public document; attribution required."
+  }
+}

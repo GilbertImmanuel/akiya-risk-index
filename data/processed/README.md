@@ -71,3 +71,35 @@ Raw downloads are git-ignored. The manifests `data/raw/reinfolib_manifest.json` 
 ### Attribution
 
 Source: MLIT Real Estate Information Library; MLIT National Land Numerical Information L01 and L02; Statistics Bureau of Japan for total dwellings.
+
+## Akiya-bank aggregates
+
+`akiya_bank_trend.csv` is the national monthly series from the MLIT chart (March 2018 to October 2026). `akiya_bank_prefecture.csv` has the 47 prefecture participation rates. `akiya_bank_summary.csv` has the current counts.
+
+### Fields
+
+| File | Fields |
+|---|---|
+| `akiya_bank_trend.csv` | `month`, `participating_municipalities`, `listing_count` |
+| `akiya_bank_prefecture.csv` | `prefecture_code`, `prefecture`, `participation_rate_pct` |
+| `akiya_bank_summary.csv` | `as_of`, `participating_municipalities`, `listing_municipalities`, `latest_month_listings`, `chart_label_listings`, `cumulative_transactions`, `national_participation_rate_pct`, `note` |
+
+### Counts as of October 2026
+
+- **1,155** participating municipalities.
+- **750** municipalities listing.
+- **20,089** current listings on the chart label; the October 2026 month-end bar is **20,010**. Both are retained.
+- **~29,000** cumulative transactions.
+- National participation rate **65.5%**. Prefecture range: **12.2%** (Okinawa) to **100.0%** (Toyama and Oita). Rates are by municipality, not by population.
+
+### Caveats
+
+- Participation is not vacancy. Listings are marketed supply with owner consent, not a vacancy census.
+- The municipal participation list is not included. AtHome returned **503 emergency maintenance** and LIFULL returned **403 CloudFront** on 2026-11-27. The Wayback snapshots are stale and were not used as current. Do not scrape or bypass.
+- The trend chart's month labels are part of the image; the script hard-codes the 53 labels. Update them when MLIT advances the PDF.
+
+### Regeneration
+
+```bash
+uv run python src/15_akiya_bank.py
+```

@@ -262,6 +262,8 @@ Japan has **926 towns/villages** (743 towns + 183 villages). Therefore **682 tow
 
 **Verdict:** limited but usable as a selected signal. No scraping.
 
+**Stage D result (2026-11-27):** built the national trend and prefecture tables from the three official MLIT PDFs. Trend: **53 points, March 2018 to October 2026**; participants **487 to 1,155**; listings **3,458 to 20,010**. Current: **1,155** participants, **750** listing municipalities, **20,089** chart-label listings (October month-end **20,010**), **~29,000** cumulative transactions. Prefecture rates: **47**, national average **65.5%**, range **12.2% (Okinawa) to 100.0% (Toyama, Oita)**. The municipal participation list is blocked: AtHome returned **503 maintenance** and LIFULL returned **403 CloudFront** on 2026-11-27; the Wayback snapshots are stale and were not used as current. No scraping or bypass.
+
 ---
 
 ## 11. Policy designations

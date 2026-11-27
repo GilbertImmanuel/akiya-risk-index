@@ -24,6 +24,7 @@ data/raw/*
 !data/raw/SOURCES.md
 !data/raw/ksj_manifest.json
 !data/raw/reinfolib_manifest.json
+!data/raw/akiya_bank_manifest.json
 data/interim/*
 !data/interim/.gitkeep
 *.parquet

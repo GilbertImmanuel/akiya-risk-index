@@ -1,6 +1,6 @@
 # Session Summary: What Was Verified, What Changed, and What Comes Next
 
-**Date:** 2026-11-26
+**Date:** 2026-11-27
 **Purpose:** A one-page executive summary of the research dossier. Read this after `README.md`; details are in the linked files.
 
 ---
@@ -20,7 +20,7 @@
 - **Market panel:** **2,118 rows** for 1,059 municipal units in 2018 and 2023. **62.5%** meet the strict market-coverage definition (at least five L01 residential points in both years, at least three matched sites in 2023, and at least ten reported residential transactions in 2023). **100%** have at least one market source. Coverage is 19/20 designated cities, 19/23 special wards, 539/772 cities, and 85/244 towns/villages (34.8%). L01 matched sites: 16,451; L02: 12,643. The 2018 L01 and L02 schemas differ from 2023; the parser uses explicit field maps.
 - **Demography:** The 2025 Census shows **122.97m people**, down **2.5%** from 2020; **57.18m households**, up **1.477m**; **91.2%** of municipal units lost population.
 - **Policy:** The 2023 Act took effect **2023-12-13** and created `管理不全空家等` (guidance → recommendation → tax exception removed). The **2026-04-01 address-change registration** is a registration rule, not a tax. There is **no national akiya tax**; the DPFP `空室税` bill is not law; Kyoto's local tax is planned for **FY2030**.
-- **Akiya banks:** **1,155 participating municipalities**, **750 currently listing**, **20,089 current listings**, ~29,000 cumulative transactions (Oct 2026). Listings are ~0.2% of the vacant stock; they are a selected signal, not a vacancy census.
+- **Akiya banks:** **1,155 participating municipalities**, **750 currently listing**, **20,089 current listings** (chart label; the October 2026 month-end bar is **20,010**), ~29,000 cumulative transactions. National trend: **487 participants / 3,458 listings in March 2018** to **1,155 / 20,010 in October 2026**. National participation rate **65.5%**; prefecture range **12.2% (Okinawa) to 100.0% (Toyama, Oita)**. Listings are ~0.2% of the vacant stock; they are a selected signal, not a vacancy census.
 - **Existing work:** National maps, prefectural forecasts, academic driver studies, and metro spatial models exist. The gap is an open, reproducible, multi-wave municipal risk/activation panel with uncertainty and market validation.
 
 ---
@@ -30,7 +30,7 @@
 - Exact **municipal-level** `管理不全`/`特定空家` designation counts (published data are prefecture-level).
 - Whether the **2013 and 2008** municipal tables are directly comparable to 2018/2023 in coverage and category definitions.
 - Whether the **thin rural market cells** can support a town/village activation ranking. Coverage is measurable but only 34.8% of towns/villages meet the strict definition; the activation lens must flag thin cells.
-- Whether akiya-bank **municipal listing counts** can be obtained without scraping.
+- The **municipal akiya-bank participation list** is temporarily blocked (AtHome maintenance, LIFULL CloudFront); no scraping or bypass. The national trend and prefecture rates are built.
 - The detailed legal effect of the **September 2026 amendment** beyond the primary MLIT page (partly based on a law-firm commentary).
 - Exact **tax-assessment timing** after a `管理不全` recommendation.
 - Whether the **2025 Census municipal tables** are complete for all variables.
@@ -104,4 +104,4 @@ Remaining decisions are reversible/methodological and can be made during Phase 0
 
 ## 7. Next step
 
-Phase 0 is well advanced: the vacancy panel, total dwellings, crosswalk, 2013/2008 city/ward context, 2025 Census, fiscal capacity, accessibility v0, public map, and 2018/2023 market panel are built. The next step is **Stage D - akiya-bank**. After that: **Stage E - case studies** and **Stage F - go/no-go**.
+Phase 0 is well advanced: the vacancy panel, total dwellings, crosswalk, 2013/2008 city/ward context, 2025 Census, fiscal capacity, accessibility v0, public map, 2018/2023 market panel, and akiya-bank national/prefecture aggregates are built. The next step is the **municipal akiya-bank list**, then **Stage E - case studies** and **Stage F - go/no-go**.

@@ -363,3 +363,18 @@ Map by code per year, not by position.
 
 - **Manifest:** `data/raw/ksj_manifest.json`.
 - **Attribution:** "Source: MLIT National Land Numerical Information."
+
+## Akiya-bank aggregates - 2026-11-27
+
+### MLIT national akiya-bank PDFs
+
+| Dataset | File | URL | Bytes | SHA-256 | Vintage |
+|---|---|---|---|---|---|
+| Overview | `akiya_bank_overview_2026-10.pdf` | `https://www.mlit.go.jp/totikensangyo/const/content/002045626.pdf` | 209,992 | `102A7347BB10AF388A2A6AA64A1D7D4F590A29D707CE2CBE566470175E3E487C` | October 2026 |
+| Trend | `akiya_bank_trend_2026-10.pdf` | `https://www.mlit.go.jp/totikensangyo/const/content/002045627.pdf` | 1,710,149 | `B4F78708E30F2F051C9A939D1716A1FE5756C0FBFCB2BBB1ADDCCD0FFEAAFCA0` | March 2018 to October 2026 |
+| Prefecture | `akiya_bank_prefecture_2026-10.pdf` | `https://www.mlit.go.jp/totikensangyo/const/content/002045629.pdf` | 570,420 | `A8AB091F3907DE84E781AFBDC2D9B12B136A324CF001B8F53471E48A1AA332B3` | October 2026 |
+
+- **Access date:** 2026-11-27.
+- **Manifest:** `data/raw/akiya_bank_manifest.json`.
+- **Licence:** MLIT public document; attribution required.
+- **Municipal lists:** AtHome `https://www.akiya-athome.jp/government/` returned 503 emergency maintenance; LIFULL `https://www.homes.co.jp/akiyabank/towns/` returned 403 CloudFront on 2026-11-27. The official municipal lists were not scraped. Retry or save manually; do not bypass.

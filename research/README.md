@@ -1,7 +1,7 @@
 # The Empty House Atlas — Research Dossier
 
-**Status:** Phase 0 in progress. The vacancy panel, public map v1, and 2018/2023 market panel are built. Next: akiya-bank, case studies, and go/no-go.
-**Last updated:** 2026-11-26
+**Status:** Phase 0 in progress. The vacancy panel, public map v1, 2018/2023 market panel, and akiya-bank national/prefecture aggregates are built. Next: akiya-bank municipal participation, case studies, and go/no-go.
+**Last updated:** 2026-11-27
 **Project root:** `C:\Users\Gilbert\Documents\Projects\akiya-risk-index`
 
 ---
@@ -108,6 +108,6 @@ Where sources conflict, record both and explain the discrepancy. Do not convert 
 
 ## Next milestone
 
-**Phase 0 go/no-go:** vacancy, total dwellings, proper rates, the 2018–2023 crosswalk, 2013/2008 context, 2025 Census, FY2022 fiscal capacity, accessibility v0, the public map, and the 2018/2023 market panel are built. Next: **Stage D — akiya-bank**, then **Stage E — case studies**, and **Stage F — go/no-go**.
+**Phase 0 go/no-go:** vacancy, total dwellings, proper rates, the 2018–2023 crosswalk, 2013/2008 context, 2025 Census, FY2022 fiscal capacity, accessibility v0, the public map, the 2018/2023 market panel, and the akiya-bank national/prefecture aggregates are built. The municipal akiya-bank list is blocked on the operator pages. Next: **finish Stage D**, then **Stage E — case studies**, and **Stage F — go/no-go**.
 
 See `plan.md` for the full Phase 0/1 plan, milestones, data schema, risks, and go/no-go criteria.

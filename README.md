@@ -4,9 +4,9 @@ A reproducible, municipal-level study of housing vacancy in Japan: where
 structural vacancy is accumulating, what distinguishes places with different
 trajectories, and whether local housing markets already reflect the risk.
 
-**Status:** Phase 0 in progress. The public municipal map is live and the
-2018/2023 market panel is built. Next: akiya-bank participation, case studies,
-and the index.
+**Status:** Phase 0 in progress. The public municipal map, 2018/2023 market
+panel, and akiya-bank national aggregates are built. Next: akiya-bank municipal
+participation, case studies, and the index.
 
 ---
 

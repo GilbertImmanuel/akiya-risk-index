@@ -28,11 +28,12 @@
 - 2013/2008 city/ward context: 812/815 and 805/815 units, with boundary flags.
 - Public map v1: 1,059 features, six fixed-break indicators, Leaflet, Lighthouse 100.
 - Market data: 2018/2023 XIT001 transactions; L01/L02 land prices; 2,118-row panel; 62.5% strict coverage.
+- Akiya-bank aggregates: 53-month national trend and 47 prefecture rates.
 - Public GitHub repository and GitHub Pages site.
 
 **Remaining**
 
-- Akiya-bank participation.
+- Akiya-bank municipal participation list (blocked: AtHome maintenance, LIFULL CloudFront).
 - Case studies.
 - Go/no-go memo.
 - Phase 1 index, validation, and publication.
@@ -91,17 +92,19 @@
 
 ---
 
-### Stage D — Akiya-bank participation
+### Stage D — Akiya-bank participation — **partial**
 
 Independent of the MLIT data; can run alongside Stage C.
 
-- [ ] Compile the official participation list.
-- [ ] Extract the aggregate listing trend.
+- [ ] Compile the official municipal participation list. **Blocked:** AtHome returned 503 emergency maintenance and LIFULL returned 403 CloudFront on 2026-11-27. Retry or save the official pages manually; do not bypass.
+- [x] Extract the aggregate listing trend.
 - [ ] Build the participation table: participation dummy, listing status, counts.
-- [ ] Confirm no scraping is needed; document terms.
+- [x] Confirm no scraping is needed; document terms.
 - [ ] Join as a descriptive variable.
 
-**Output:** participation table and aggregate trend.
+**Result:** 53-month national trend (March 2018 to October 2026): participants **487 to 1,155**, listings **3,458 to 20,010**. The chart labels **20,089** current listings; the October month-end bar is **20,010**. Current: **1,155** participants, **750** listing municipalities, **~29,000** cumulative transactions. Prefecture rates: **47**, national average **65.5%**, range **12.2% (Okinawa) to 100.0% (Toyama, Oita)**.
+
+**Outputs:** `data/processed/akiya_bank_trend.csv`, `akiya_bank_prefecture.csv`, `akiya_bank_summary.csv`; `src/15_akiya_bank.py`. The municipal participation table is pending a current official list.
 
 ---
 
@@ -204,7 +207,7 @@ The Phase 0 gate.
 | **M2b — 2013/2008 context** | **Complete** | 812/815 and 805/815 city/ward units; boundary flags; comparability memo. |
 | **M3 — Public map v1** | **Complete** | 1,059 features; six indicators; simplified boundaries; Lighthouse 100. |
 | **M4 — Market panel** | **Complete** | 2,118 rows; 62.5% strict coverage; 100% any market data; pilot/full decision made. |
-| **M5 — Akiya-bank participation** | Stage D | Participation table and aggregate trend; no scraping. |
+| **M5 — Akiya-bank participation** | **Partial** | National trend and prefecture rates complete; municipal list blocked; no scraping. |
 | **M6 — Case studies** | Stage E | 6–8 municipalities selected; protocol and notes. |
 | **M7 — Go/no-go** | Stage F | All criteria assessed; scope confirmed or revised. |
 | **M8 — Index v1** | Phase 1b | Risk/activation/capacity indices; weights; uncertainty. |
